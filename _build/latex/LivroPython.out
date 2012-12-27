@@ -1,0 +1,51 @@
+\BOOKMARK [0][-]{chapter.1}{Pref\341cio: Computa\347\343o Cient\355fica}{}
+\BOOKMARK [1][-]{section.1.1}{Apresentando o Python}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Usando este Livro}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Fundamentos da Linguagem}{}
+\BOOKMARK [1][-]{section.2.1}{Primeiras impress\365es}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Uso Interativo vs. Execu\347\343o a Partir de Scripts}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Opera\347\365es com N\372meros}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{Nomes, Objetos e Espa\347os de Nomes}{}
+\BOOKMARK [0][-]{chapter.4}{Estruturas de Dados}{}
+\BOOKMARK [1][-]{section.4.1}{Listas}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Tuplas}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Strings}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{Conjuntos}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{Controle de fluxo}{}
+\BOOKMARK [1][-]{section.5.1}{Itera\347\343o}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Lidando com erros: Exce\347\365es}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Fun\347\365es lambda}{chapter.5}
+\BOOKMARK [0][-]{chapter.6}{Exerc\355cios}{}
+\BOOKMARK [0][-]{chapter.7}{Programa\347\343o Orientada a Objetos}{}
+\BOOKMARK [1][-]{section.7.1}{Definindo Objetos e seus Atributos em Python}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Heran\347a}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{Utilizando Classes como Estruturas de Dados Gen\351ricas.}{chapter.7}
+\BOOKMARK [0][-]{chapter.8}{Introdu\347\343o ao Matplotlib}{}
+\BOOKMARK [0][-]{chapter.9}{Exemplos Avan\347ados}{}
+\BOOKMARK [1][-]{section.9.1}{Mapas}{chapter.9}
+\BOOKMARK [0][-]{chapter.10}{Editores Gen\351ricos}{}
+\BOOKMARK [0][-]{chapter.11}{Editores Especializados}{}
+\BOOKMARK [1][-]{section.11.1}{Controle de Vers\365es em Software}{chapter.11}
+\BOOKMARK [0][-]{chapter.12}{Introdu\347\343o}{}
+\BOOKMARK [0][-]{chapter.13}{Integra\347\343o com a Linguagem C}{}
+\BOOKMARK [0][-]{chapter.14}{Integra\347\343o com C++}{}
+\BOOKMARK [1][-]{section.14.1}{Criando ``Applets'' em Jython}{chapter.14}
+\BOOKMARK [0][-]{chapter.15}{Exerc\355cios}{}
+\BOOKMARK [0][-]{chapter.16}{O interpretador Jython}{}
+\BOOKMARK [0][-]{chapter.17}{Introdu\347\343o}{}
+\BOOKMARK [0][-]{chapter.18}{NetworkX}{}
+\BOOKMARK [1][-]{section.18.1}{Construindo Grafos}{chapter.18}
+\BOOKMARK [1][-]{section.18.2}{Manipulando Grafos}{chapter.18}
+\BOOKMARK [1][-]{section.18.3}{Criando Grafos a Partir de Outros Grafos}{chapter.18}
+\BOOKMARK [1][-]{section.18.4}{Gerando um Grafo Dinamicamente}{chapter.18}
+\BOOKMARK [1][-]{section.18.5}{Construindo um Grafo a Partir de Dados}{chapter.18}
+\BOOKMARK [0][-]{chapter.19}{Exerc\355cios}{}
+\BOOKMARK [0][-]{chapter.20}{O M\363dulo Pickle}{}
+\BOOKMARK [0][-]{chapter.21}{O Pacote SQLObject}{}
+\BOOKMARK [1][-]{section.21.1}{Construindo um aranha digital}{chapter.21}
+\BOOKMARK [0][-]{chapter.22}{Exerc\355cios}{}
+\BOOKMARK [0][-]{chapter.23}{Introdu\347\343o ao Console Gnu/Linux}{}
+\BOOKMARK [1][-]{section.23.1}{A linguagem BASH}{chapter.23}
+\BOOKMARK [1][-]{section.23.2}{Entradas e Sa\355das, redirecionamento e ``Pipes''.}{chapter.23}
+\BOOKMARK [0][-]{chapter.24}{Indices and tables}{}
+\BOOKMARK [0][-]{section*.6}{\315ndice}{}
