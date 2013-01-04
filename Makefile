@@ -41,6 +41,7 @@ ghp:
 	git commit -a -m "novo build"
 	git checkout gh-pages
 	git checkout master _build/html/*
+	rm -rf _sources/ _static/ stuff/
 	mv _build/html/* .
 	rm -rf _build
 	git commit -a -m"nova versao"
