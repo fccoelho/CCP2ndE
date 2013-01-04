@@ -44,6 +44,7 @@ ghp:
 	rm -rf _sources/ _static/ stuff/
 	mv _build/html/* .
 	rm -rf _build
+	git add .
 	git commit -a -m"nova versao"
 	git push origin gh-pages
 	git checkout master
