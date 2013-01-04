@@ -40,8 +40,8 @@ ghp:
 	@echo "Copying the build to gh-pages."
 	git commit -a -m "novo build"
 	git checkout gh-pages
-	git checkout master _build/html/*
-	rm -rf _sources/ _static/ stuff/
+	git rebase master _build/html/*
+	rm *
 	mv _build/html/* .
 	rm -rf _build
 	git add .
