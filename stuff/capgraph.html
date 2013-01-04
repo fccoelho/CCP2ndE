@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introdução &mdash; LivroPython v1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/_static/jsMath/easy/load.js"></script>
+    <link rel="top" title="LivroPython v1.0 documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li><a href="../index.html">LivroPython v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <p>{Teoria de Grafos} {Grafos}
+{Breve introdução a teoria de grafos e sua representação computacional. Introdução ao Pacote \texttt{NetworkX}, voltado para a manipulação de grafos.
+\textbf{Pré-requisitos:} Programação orientada a objetos.}</p>
+<div class="section" id="introdu-o">
+<h1>Introdução<a class="headerlink" href="#introdu-o" title="Link permanente para este título">¶</a></h1>
+<p>A teoria de grafos é uma disciplina da matemática cujo objeto de
+estudo se presta, muito bem, a uma representação computacional como
+um objeto. Matematicamente, um grafo é definido por um conjunto
+finito de vértices (<span class="math">$V$</span>) e por um segundo conjunto
+(<span class="math">$A$</span>) de relações entre estes vértices, denominadas
+arestas. Grafos tem aplicações muito variadas, por exemplo: uma
+árvore genealógica é um grafo onde as pessoas são os vértices e
+suas relações de parentesco são as arestas do grafo.</p>
+<p>Um grafo pode ser definido de forma não ambígua, por sua lista de
+arestas (<span class="math">$A$</span>), que implica no conjunto de vértices que
+compõem o grafo. Grafos podem ser descritos ou mensurados através
+de um conjunto de propriedades:</p>
+<ul class="simple">
+<li>Grafos podem ser <em>direcionados</em> ou não;</li>
+<li>A <em>ordem</em> de um grafo corresponde ao seu número de vértices;</li>
+<li>O <em>tamanho</em> de um grafo corresponde ao seu número de arestas;</li>
+<li>Vértices, conectados por uma aresta, são ditos <em>vizinhos</em> ou
+<em>adjacentes</em>;</li>
+<li>A <em>ordem</em> de um vértice corresponde ao seu número de vizinhos;</li>
+<li>Um <em>caminho</em> é uma lista de arestas que conectam dois vértices;</li>
+<li>Um <em>ciclo</em> é um caminho que começa e termina no mesmo vértice;</li>
+<li>Um grafo sem ciclos é denominado <em>acíclico</em>.</li>
+</ul>
+<p>A lista acima não exaure as propriedades dos grafos, mas é
+suficiente para esta introdução.</p>
+<p>Podemos representar um grafo como um objeto Python de várias
+maneiras, dependendo de como desejamos utilizá-lo. A forma mais
+trivial de representação de um grafo em Python seria feita
+utilizando-se um dicionário. A Listagem ex:grafdict mostra um
+dicionário representando o grafo da figura fig:g1. Neste
+dicionário, utilizamos como chaves os vértices do grafo associados
+a suas respectivas listas de vizinhos. Como tudo em Python é um
+objeto, poderíamos já nos aproveitar dos métodos de dicionário para
+analisar nosso grafo (Listagem ex:vlist).</p>
+<blockquote>
+g =
+&#8216;a&#8217;:[&#8216;c&#8217;,&#8217;d&#8217;,&#8217;e&#8217;],&#8217;b&#8217;:[&#8216;d&#8217;,&#8217;e&#8217;],&#8217;c&#8217;:[&#8216;a&#8217;,&#8217;d&#8217;],&#8217;d&#8217;:[&#8216;b&#8217;,&#8217;c&#8217;,&#8217;a&#8217;],&#8217;e&#8217;:[&#8216;a&#8217;,&#8217;b&#8217;]</blockquote>
+<p>Podemos utilizar o método <tt class="docutils literal"><span class="pre">keys</span></tt> para obter uma lista dos
+vértices de nosso grafo.</p>
+<blockquote>
+g.keys() [&#8216;a&#8217;, &#8216;c&#8217;, &#8216;b&#8217;, &#8216;e&#8217;, &#8216;d&#8217;]</blockquote>
+<p>Uma extensão do conceito de grafos é o conceito de redes. Redes são
+grafos nos quais valores numéricos são associados às suas arestas.
+Redes herdam as propriedade dos grafos e possuem algumas
+propriedades específicas.</p>
+<p>A representação de redes, a partir de objetos pitônicos simples,
+como um dicionário, também é possivel. Porém, para dar mais alcance
+aos nossos exemplos sobre teoria de grafos, vamos nos utilizar do
+pacote <tt class="docutils literal"><span class="pre">NetworkX</span></tt> <a class="footnote-reference" href="#id3" id="id1">[1]</a> que já implementa uma representação
+bastante completa de grafos e redes em Python.</p>
+</div>
+<div class="section" id="networkx">
+<h1>NetworkX<a class="headerlink" href="#networkx" title="Link permanente para este título">¶</a></h1>
+<p>{NetworkX} O pacote <tt class="docutils literal"><span class="pre">NetworkX</span></tt> se presta à criação, manipulação e
+estudo da estrutura, dinâmica e funções de redes complexas.</p>
+<p>A criação de um objeto grafo a partir de seu conjunto de arestas,
+<span class="math">$A$</span>, é muito simples. Seja um grafo <span class="math">$G$</span> com
+vértices <span class="math">$V=\left\lbrace W,X,Y,Z\right\rbrace $</span>:
+<span class="math">$$`G:A= (W,Z),(Z,Y),(Y,X),(X,Z) :math:`$$</span>
+[frame=trBL,caption=Definindo um grafo através de seus vértices,label=ex:graph1] {code/graph1.py}
+Executando o código acima, obtemos: <span class="math">$$`['Y', 'X', 'Z', 'W']
+[('Y', 'X'), ('Y', 'Z'), ('X', 'Z'), ('Z', 'W')]:math:`$$</span></p>
+<p>Ao lidar com grafos, é conveniente representá-los graficamente.
+Vejamos como obter o diagrama do grafo da listagem ex:graph1:
+[frame=trBL,caption=Diagrama de um grafo,label=ex:graph2] {code/graph2.py}</p>
+<p>A funcionalidade do pacote <tt class="docutils literal"><span class="pre">NetworkX</span></tt> é bastante ampla. A seguir
+exploraremos um pouco desta funcionalidade.</p>
+<div class="section" id="construindo-grafos">
+<h2>Construindo Grafos<a class="headerlink" href="#construindo-grafos" title="Link permanente para este título">¶</a></h2>
+<p>O <tt class="docutils literal"><span class="pre">NetworkX</span></tt> oferece diferentes classes de grafos, dependendo do
+tipo de aplicação que desejada. Abaixo, temos uma lista dos
+comandos para criar cada tipo de grafo.</p>
+<blockquote>
+<p>[G=Graph()] Cria um grafo simples e vazio <span class="math">$G$</span>.</p>
+<p>[G=DiGraph()] Cria grafo direcionado e vazio <span class="math">$G$</span>.</p>
+<p>[G=XGraph()] Cria uma rede vazia, ou seja, com arestas que podem
+receber dados.</p>
+<p>[G=XDiGraph()] Cria uma rede direcionada.</p>
+<p>[G=empty_graph(n)] Cria um grafo vazio com n vértices.</p>
+<p>[G=empty_graph(n,create_using=DiGraph())] Cria um grafo
+direcionado vazio com n vértices.</p>
+<p>[G=create_empty_copy(H)] Cria um novo grafo vazio do mesmo tipo
+que H.</p>
+</blockquote>
+</div>
+<div class="section" id="manipulando-grafos">
+<h2>Manipulando Grafos<a class="headerlink" href="#manipulando-grafos" title="Link permanente para este título">¶</a></h2>
+<p>Uma vez de posse de um objeto grafo instanciado a partir de uma das
+classes listadas anteriormente, é de interesse poder manipulá-lo de
+várias formas. O próprio objeto dispõe de métodos para este fim:</p>
+<dl class="docutils">
+<dt>G.add_node(n)</dt>
+<dd><p class="first">Adiciona um único vértice a G.</p>
+<p>[G.add_nodes_from(lista)] Adiciona uma lista de vértices a G.</p>
+<p>[G.delete_node(n)]Remove o vértice <tt class="docutils literal"><span class="pre">n</span></tt> de G.</p>
+<p>[G.delete_nodes_from(lista)] Remove uma lista de vértices de G.</p>
+<p>[G.add_edge(u,v)]Adiciona a aresta <tt class="docutils literal"><span class="pre">(u,v)</span></tt> a G. Se G for um
+grafo direcionado, adiciona uma aresta direcionada
+<span class="math">$u\longrightarrow v$</span>. Equivalente a
+{G.add\_edge((u,v))}.</p>
+<p>[G.add_edges_from(lista)]Adiciona uma lista de arestas a G.</p>
+<p>[G.delete_edge(u,v)]Remove a aresta <tt class="docutils literal"><span class="pre">(u,v)</span></tt>.</p>
+<p>[G.delete_edges_from(lista)]Remove uma lista de arestas de G.</p>
+<p>[G.add_path(listadevertices)]Adiciona vértices e arestas de forma
+a compor um caminho ordenado.</p>
+<p>[G.add_cycle(listadevertices)]O mesmo que {add\_path}, exceto
+que o primeiro e o último vértice são conectados, formando um
+ciclo.</p>
+<p>[G.clear()]Remove todos os vértices e arestas de G.</p>
+<p>[G.copy()]Retorna uma cópia &#8220;rasa&#8221; do grafo G. <a class="footnote-reference" href="#id4" id="id2">[2]</a></p>
+<p class="last">[G.subgraph(listadevertices)]Retorna subgrafo correspondente à
+lista de vértices.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="criando-grafos-a-partir-de-outros-grafos">
+<h2>Criando Grafos a Partir de Outros Grafos<a class="headerlink" href="#criando-grafos-a-partir-de-outros-grafos" title="Link permanente para este título">¶</a></h2>
+<dl class="docutils">
+<dt>subgraph(G, listadevertices)</dt>
+<dd><p class="first">Retorna subgrafo de G correspondente à lista de vértices.</p>
+<p>[union(G1,G2)]União de grafos.</p>
+<p>[disjoint_union(G1,G2)]União disjunta, ou seja, assumindo que
+todos os vértices são diferentes.</p>
+<p>[cartesian_product(G1,G2)]Produto cartesiano de dois grafos
+(Figura fig:gpcc).</p>
+<p>[compose(G1,G2)]Combina grafos, identificando vértices com mesmo
+nome.</p>
+<p>[complement(G)]Retorna o complemento do grafo(Figura fig:gpcc).</p>
+<p>[create_empty_copy(G)]Cópia vazia de G.</p>
+<p>[convert_to_undirected(G)]Retorna uma cópia não direcionada de
+G.</p>
+<p>[convert_to_directed(G)]Retorna uma cópia não direcionada de G.</p>
+<p class="last">[convert_node_labels_to_integers(G)]Retorna uma cópia com os
+vértices renomeados como números inteiros.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="gerando-um-grafo-dinamicamente">
+<h2>Gerando um Grafo Dinamicamente<a class="headerlink" href="#gerando-um-grafo-dinamicamente" title="Link permanente para este título">¶</a></h2>
+<p>Muitas vezes, a topologia da associação entre componentes de um
+sistema complexo não está dada a priori. Frequentemente, esta
+estrutura é dada pela própria dinâmica do sistema.</p>
+<p>No exemplo que se segue, simulamos um processo de contágio entre os
+elementos de um conjunto de vértices, observando ao final, a
+estrutura produzida pelo contágio.
+[frame=trBL,caption=Construindo um grafo dinamicamente,label=ex:cont] {code/grafodin.py}</p>
+<blockquote>
+{Módulo threading:} Permite executar mais de uma parte do programa
+em paralelo, em um &#8220;fio&#8221; de execução independente. Este fios,
+compartilham todas as variáveis globais e qualquer alteração nestas
+é imediatamente visível a todos os outros fios.</blockquote>
+<p>{Módulos!threading}</p>
+<p>O objeto grafo do <tt class="docutils literal"><span class="pre">NetworkX</span></tt> aceita qualquer objeto como um
+vértice. Na listagem ex:cont, nos valemos deste fato para colocar
+instâncias da classe <tt class="docutils literal"><span class="pre">Contagio</span></tt> como vértices do grafo
+<span class="math">$G$</span>. O grafo G é contruído somente por vértices
+(desconectado). Então infectamos um vértice do grafo, chamando o
+seu método <tt class="docutils literal"><span class="pre">contraiu()</span></tt>. O vértice, após declarar-se doente e
+incrementar o contador de doentes a nível do grafo, chama o método
+<tt class="docutils literal"><span class="pre">transmite()</span></tt>.</p>
+<p>O método <tt class="docutils literal"><span class="pre">transmite</span></tt> assume que durante seu período infeccioso,
+cada vértice tem contatos efetivos com apenas dez outros vértices.
+Então cada vértice irá transmitir para cada um destes, desde que
+não estejam já doentes.</p>
+<p>Cada vértice infectado inicia o método <tt class="docutils literal"><span class="pre">contraiu</span></tt> em um &#8220;thread&#8221;
+separado. Isto significa que cada vértice sai infectando os
+restantes, em paralelo. Na verdade, como o interpretador Python só
+executa uma instrução por vez, cada um destes objetos recebe do
+interpretador uma fatia de tempo por vez, para executar suas
+tarefas. Pode ser que o tempo de uma destas fatias seja suficiente
+para infectar a todos no seu grupo, ou não. Depois que o processo
+se desenrola, temos a estrutura do grafo como resultado (Figura
+fig:cont)</p>
+</div>
+<div class="section" id="construindo-um-grafo-a-partir-de-dados">
+<h2>Construindo um Grafo a Partir de Dados<a class="headerlink" href="#construindo-um-grafo-a-partir-de-dados" title="Link permanente para este título">¶</a></h2>
+<p>O conceito de grafos e redes é extremamente útil na representação e
+análise de sistemas complexos, com muitos componentes que se
+relacionam entre si. Um bom exemplo é uma rede social, ou seja, uma
+estrutura de interação entre pessoas. Esta interação pode ser
+medida de diversas formas. No exemplo que se segue, vamos tentar
+inferir a rede social de um indivíduo, por meio de sua caixa de
+mensagens.
+[frame=trBL,caption=Construindo uma rede social a partir de e-mails,label=ex:mnet] {code/mnet.py}</p>
+<p>Na Listagem ex:mnet, usamos dois módulos interessantes da
+biblioteca padrão do Python: O módulo <tt class="docutils literal"><span class="pre">email</span></tt> e o módulo mailbox.
+<tt class="docutils literal"><span class="pre">mailbox</span></tt>.</p>
+<blockquote>
+{Módulo email:} Módulo para decodificar, manusear, e compor
+emails.</blockquote>
+<p>{Módulos!email}</p>
+<blockquote>
+{Módulo mailbox:} Conjuto de classes para lidar com caixas de
+correio no formato Unix, MMDF e MH.</blockquote>
+<p>{Módulos!mailbox}</p>
+<p>Neste exemplo, utilizei a minha mailbox associada com o programa
+Kmail; portanto, se você usa este mesmo programa, basta substituir
+o diretório de sua mailbox e o programa irá funcionar para você.
+Caso use outro tipo de programa de email, consulte a documentaçao
+do Python para buscar a forma correta de ler o seu mailbox.</p>
+<p>A classe <tt class="docutils literal"><span class="pre">Maildir</span></tt> retorna um iterador, que por sua vez,
+retornará mensagens decodificadas pela função msgfactory, definida
+por nós. Esta função se utiliza do módulo email para decodificar a
+mensagem.</p>
+<p>Cada mensagem recebida é processada para gerar um grafo do tipo
+&#8220;estrela&#8221;, com o remetente no centro e todos os destinatários da
+mensagem nas pontas. Este grafo é então adicionado ao grafo
+original, na forma de uma lista de arestas. Depois de todas as
+mensagens terem sido assim processadas, geramos a visualização do
+grafo (Figura fig:mnet).</p>
+</div>
+</div>
+<div class="section" id="exerc-cios">
+<h1>Exercícios<a class="headerlink" href="#exerc-cios" title="Link permanente para este título">¶</a></h1>
+<ol class="arabic simple">
+<li>Determine o conjunto de arestas <span class="math">$A$</span> que maximiza o tamanho
+do grafo cujos vértices são dados por <span class="math">$V=\{a,b,c,d,e\}$</span>.</li>
+<li>No exemplo do contágio, verifique se existe alguma relação entre o
+tamanho da amostra de cada vértice e a densidade final do grafo.</li>
+<li>Ainda no exemplo do contágio, refaça o experimento com um grafo de
+topologia dada a priori no qual os vértices só podem infectar seus
+vizinhos.</li>
+<li>Insira um print no laço for do exemplo ex:mnet para ver o formato
+de saída do iterador mbox.</li>
+<li>Modifique o programa ex:mnet para associar apenas mensagens que
+contêm uma palavra em comum.</li>
+</ol>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://networkx.lanl.gov/">https://networkx.lanl.gov/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Uma cópia rasa significa que se cria um novo objeto grafo
+referenciando o mesmo conteúdo. Ou seja, se algum vértice ou aresta
+for alterado no grafo original, a mudança se reflete no novo
+grafo.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3><a href="../index.html">Tabela de Conteúdo</a></h3>
+            <ul>
+<li><a class="reference external" href="">Introdução</a></li>
+<li><a class="reference external" href="#networkx">NetworkX</a><ul>
+<li><a class="reference external" href="#construindo-grafos">Construindo Grafos</a></li>
+<li><a class="reference external" href="#manipulando-grafos">Manipulando Grafos</a></li>
+<li><a class="reference external" href="#criando-grafos-a-partir-de-outros-grafos">Criando Grafos a Partir de Outros Grafos</a></li>
+<li><a class="reference external" href="#gerando-um-grafo-dinamicamente">Gerando um Grafo Dinamicamente</a></li>
+<li><a class="reference external" href="#construindo-um-grafo-a-partir-de-dados">Construindo um Grafo a Partir de Dados</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#exerc-cios">Exercícios</a></li>
+</ul>
+
+            <h3>Esta Página</h3>
+            <ul class="this-page-menu">
+              <li><a href="../_sources/stuff/capgraph.txt"
+                     rel="nofollow">Exibir Fonte</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Pesquisa rápida</h3>
+              <form class="search" action="../search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Ir" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Informe os termos para pesquisa ou um módulo, classe ou nome de função.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li><a href="../index.html">LivroPython v1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2009, Flávio Codeço Coelho.
+      Criado com <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.3.
+    </div>
+  </body>
+</html>
