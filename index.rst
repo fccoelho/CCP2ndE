@@ -5,7 +5,8 @@
 
 Computação Científica com Python
 ================================
-
+Flávio Codeço Coelho
+""""""""""""""""""""
 
 .. toctree::
    :maxdepth: 3

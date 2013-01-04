@@ -326,7 +326,9 @@ objeto <a class="footnote-reference" href="#id123" id="id3">[3]</a>. Podemos ext
 <div class="section" id="listas">
 <h2>Listas<a class="headerlink" href="#listas" title="Link permanente para este título">¶</a></h2>
 <p id="index-2">As listas formam o tipo de dados mais utilizado e versátil do Python. Listas são definidas como uma sequência de valores separados por vírgulas e delimitada por colchetes:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;pe&#39;</span><span class="p">]</span>
+<dl class="docutils">
+<dt>code-block:: python</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;pe&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span>
 <span class="go">[1, &#39;a&#39;, &#39;pe&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -337,6 +339,8 @@ objeto <a class="footnote-reference" href="#id123" id="id3">[3]</a>. Podemos ext
 <span class="go">&#39;pe&#39;</span>
 </pre></div>
 </div>
+</dd>
+</dl>
 <p>Na listagem <em class="xref std std-ref">ex-lista1</em>, criamos uma lista de três elementos. Uma lista é uma sequência ordenada de elementos, de forma que podemos selecionar elementos de uma lista por meio de sua posição. Note que o primeiro elemento da lista é <tt class="docutils literal"><span class="pre">lista[0]</span></tt>. Todas as contagens em Python começam em <tt class="docutils literal"><span class="pre">0</span></tt>.</p>
 <p>Uma lista também pode possuir elementos de tipos diferentes. Na listagem <em class="xref std std-ref">ex-lista1</em>, o elemento <tt class="docutils literal"><span class="pre">0</span></tt> é um inteiro enquanto que os outros elementos são strings. Para verificar isso, digite o comando <tt class="docutils literal"><span class="pre">type(lista[0])</span></tt>.</p>
 <p>Uma característica muito interessante das listas do Python, é que elas podem ser indexadas de trás para frente, ou seja, <tt class="docutils literal"><span class="pre">lista[-1]</span></tt> é o último elemento da lista. Como listas são sequências de tamanho variável, podemos assessar os últimos <strong>n</strong> elementos, sem ter que contar os elementos da lista.</p>

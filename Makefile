@@ -17,6 +17,7 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
 	@echo "  html      to make standalone HTML files"
+	@echo "  ghp       to upload HTML build to GH-pages"
 	@echo "  dirhtml   to make HTML files named index.html in directories"
 	@echo "  pickle    to make pickle files"
 	@echo "  json      to make JSON files"
@@ -34,10 +35,14 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+
+ghp:
 	@echo "Copying the build to gh-pages."
 	git commit -a -m "novo build"
 	git checkout gh-pages
 	git checkout master _build/html/*
+	mv _build/html/* .
+	rm -rf _build
 	git commit -a -m"nova versao"
 	git push origin gh-pages
 	git checkout master

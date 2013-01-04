@@ -259,8 +259,10 @@ Listas
 
 .. index:: listas, lista
 
-As listas formam o tipo de dados mais utilizado e versátil do Python. Listas são definidas como uma sequência de valores separados por vírgulas e delimitada por colchetes::
+As listas formam o tipo de dados mais utilizado e versátil do Python. Listas são definidas como uma sequência de valores separados por vírgulas e delimitada por colchetes:
 
+.. _ex-lista1:
+code-block:: python
     >>> lista=[1, 'a', 'pe'] 
     >>> lista 
     [1, 'a', 'pe'] 
@@ -270,6 +272,7 @@ As listas formam o tipo de dados mais utilizado e versátil do Python. Listas s�
     'pe'
     >>> lista[-1] 
     'pe'
+
 
 
 Na listagem :ref:`ex-lista1`, criamos uma lista de três elementos. Uma lista é uma sequência ordenada de elementos, de forma que podemos selecionar elementos de uma lista por meio de sua posição. Note que o primeiro elemento da lista é ``lista[0]``. Todas as contagens em Python começam em ``0``.
