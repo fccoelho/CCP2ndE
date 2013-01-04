@@ -35,6 +35,7 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+<<<<<<< HEAD
 
 ghp:
 	@echo "Copying the build to gh-pages."
@@ -49,6 +50,8 @@ ghp:
 	git push origin gh-pages
 	git checkout master
 	@echo "Finished pushing the new build to gh-pages"
+=======
+>>>>>>> master
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
