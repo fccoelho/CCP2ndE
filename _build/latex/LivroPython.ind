@@ -1,0 +1,44 @@
+\begin{theindex}
+\def\bigletter#1{{\Large\sffamily#1}\nopagebreak\vspace{1mm}}
+
+  \bigletter A
+  \item arange, \hyperpage{22}
+  \item array, \hyperpage{22}
+    \subitem shape, \hyperpage{22}
+
+  \indexspace
+  \bigletter L
+  \item linalg;
+    \subitem m\IeC {\'o}dulo numpy, \hyperpage{22}
+  \item lista, \hyperpage{11}
+  \item listas, \hyperpage{11}
+    \subitem m\IeC {\'e}todos, \hyperpage{12}
+
+  \indexspace
+  \bigletter M
+  \item m\IeC {\'o}dulo
+    \subitem numpy linalg;, \hyperpage{22}
+  \item m\IeC {\'o}dulos
+    \subitem numpy, \hyperpage{22}
+  \item Mathematica, \hyperpage{2}
+  \item Matlab, \hyperpage{2}
+
+  \indexspace
+  \bigletter N
+  \item numpy, \hyperpage{22}
+    \subitem linalg;, m\IeC {\'o}dulo, \hyperpage{22}
+
+  \indexspace
+  \bigletter P
+  \item Palavras reservadas, \hyperpage{5}
+  \item print, \hyperpage{22}
+
+  \indexspace
+  \bigletter R
+  \item R, \hyperpage{2}
+
+  \indexspace
+  \bigletter U
+  \item Uso interativo, \hyperpage{6}
+
+\end{theindex}
