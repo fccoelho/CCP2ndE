@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c38d4f0-5bb5-49f0-87ac-655c093a5e06" name="Default" comment="" />
+    <list default="true" id="8c38d4f0-5bb5-49f0-87ac-655c093a5e06" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/Cap1.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/Cap1.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/Cap2.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/Cap2.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/capBayes.doctree" afterPath="$PROJECT_DIR$/_build/doctrees/capBayes.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/_build/doctrees/environment.pickle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/objects.inv" afterPath="$PROJECT_DIR$/_build/html/objects.inv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cap1.rst" afterPath="$PROJECT_DIR$/Cap1.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Cap2.rst" afterPath="$PROJECT_DIR$/Cap2.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/Cap1.html" afterPath="$PROJECT_DIR$/_build/html/Cap1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/Cap2.html" afterPath="$PROJECT_DIR$/_build/html/Cap2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/Cap1.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/Cap1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/Cap2.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/Cap2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/_sources/capBayes.txt" afterPath="$PROJECT_DIR$/_build/html/_sources/capBayes.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/capBayes.html" afterPath="$PROJECT_DIR$/_build/html/capBayes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/index.html" afterPath="$PROJECT_DIR$/_build/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_build/html/searchindex.js" afterPath="$PROJECT_DIR$/_build/html/searchindex.js" />
+    </list>
     <ignored path="CCP2ndE.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.rst" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.rst" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1665" selection-end="1665" vertical-scroll-proportion="1.0551724">
+            <state line="54" column="0" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,19 +73,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="capmod.rst" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/capmod.rst">
+      <file leaf-file-name="Cap1.rst" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cap1.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="38" column="899" selection-start="7774" selection-end="7774" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="capBayes.rst" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/capBayes.rst">
+      <file leaf-file-name="Cap2.rst" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Cap2.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="389" column="4" selection-start="20233" selection-end="20233" vertical-scroll-proportion="0.9528736">
               <folding />
             </state>
           </provider>
@@ -91,11 +108,13 @@
         <option value="$PROJECT_DIR$/main.rst" />
         <option value="$PROJECT_DIR$/index.rst" />
         <option value="$PROJECT_DIR$/capBayes.rst" />
+        <option value="$PROJECT_DIR$/Cap1.rst" />
+        <option value="$PROJECT_DIR$/Cap2.rst" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1381" />
+    <option name="width" value="960" />
     <option name="height" value="1045" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -232,15 +251,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1381" height="1045" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="960" height="1045" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24943651" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15494506" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -358,13 +377,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.rst">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="7" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/capBayes.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -374,7 +386,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1665" selection-end="1665" vertical-scroll-proportion="1.0551724">
+        <state line="54" column="0" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="7" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cap1.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="899" selection-start="7774" selection-end="7774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cap2.rst">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="389" column="4" selection-start="20233" selection-end="20233" vertical-scroll-proportion="0.9528736">
           <folding />
         </state>
       </provider>

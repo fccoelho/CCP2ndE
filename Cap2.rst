@@ -2,8 +2,10 @@
    :format: html latex
 
 .. _cap-fundamentos:
+
+************************
 Fundamentos da Linguagem
-========================
+************************
 
     Breve introdução a conceitos básicos de programação e à linguagem Python. A maioria dos elementos básicos da linguagem são abordados neste capítulo, com exceção de classes, que são discutidas em detalhe no capítulo :ref:`cap-obj`. **Pré-requisitos:** Conhecimentos básicos de programação em qualquer linguagem.
 
@@ -15,17 +17,20 @@ Primeiras impressões
 Para uma primeira aproximação à linguagem, vamos examinar suas
 características básicas. Façamos isso interativamente, a partir do
 console Python. Vejamos como invocá-lo::
-    .. _ex-conspy
+
     $ python
-    Python 2.5.1 (r251:54863, May  2 2007, 16:56:35)
-    [GCC 4.1.2 (Ubuntu 4.1.2-0ubuntu4)] on linux2
+    Python 2.7.3 (default, Sep 26 2012, 21:51:14)
+    [GCC 4.7.2] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
+
+.. _ex-conspy:
 
 Toda linguagem, seja ela de programação ou linguagem natural, possui um conjunto de palavras que a caracteriza. As linguagens de programação tendem a ser muito mais compactas do que as linguagens naturais. O Python pode ser considerado uma linguagem compacta, mesmo em comparação com outras linguagens de programação. 
 
 As palavras que compõem uma linguagem de programação são ditas reservadas, ou seja, não podem ser utilizadas para nomear variáveis. Se o programador tentar utilizar uma das palavras reservadas como variável, incorrerá em um erro de sintaxe.
 Palavras reservadas não podem ser utilizadas como nomes de variáveis::
+
     >>> for=1
       File "<stdin>", line 1
         for=1
@@ -54,10 +59,12 @@ Usuários familiarizados com ambientes de programação científicos tais como M
 .. index:: Uso interativo,
 
 Tanto no uso interativo, como na execução a partir de scripts, o interpretador espera encontrar apenas uma expressão por linha do programa. Caso se deseje inserir mais de uma expressão em uma linha, as expressões devem ser separadas por :samp:`;`. Mas esta prática deve ser evitada. Expressões podem continuar em outra linha se algum de seus parênteses, colchetes, chaves ou aspas ainda não tiver sido fechado. Alternativamente, linhas podem ser quebradas pela aposição do caractere :samp:`\\` ao final da linha::
-    .. _ex-calc:
+
     >>> 1+1
     2
-    >>> 
+    >>>
+
+.. _ex-calc:
 
 No cabeçalho da shell do Python, acima (listagem :ref:`ex-conspy`), o interpretador identifica a versão instalada, data e hora em que foi compilada, o compilador C utilizado, detalhes sobre o sistema operacional e uma linhazinha de ajuda para situar o novato.
 
@@ -82,6 +89,7 @@ caracteres do arquivo (como na listagem ex-exec)::
 
 Depois, resta apenas ajustar as permissões do arquivo para que
 possamos executá-lo::
+
     $ chmod +x script.py
     $ ./script.py sys:1:
     DeprecationWarning: Non-ASCII character '4' in file ./teste on line
@@ -181,7 +189,8 @@ Números complexos
 """""""""""""""""
 
 Um Número complexo para o Python, é um
-objeto [3]_. Podemos extrair as partes componentes de um número complexo ``c`` utilizando atributos do tipo complexo: ``c.real`` e ``c.imag``. A função ``abs``, que retorna o módulo de um numero inteiro ou real, retorna o comprimento do vetor no plano complexo, quando aplicada a um número complexo. O módulo de um número complexo é também denominado magnitude:: 
+objeto [3]_. Podemos extrair as partes componentes de um número complexo ``c`` utilizando atributos do tipo complexo: ``c.real`` e ``c.imag``. A função ``abs``, que retorna o módulo de um numero inteiro ou real, retorna o comprimento do vetor no plano complexo, quando aplicada a um número complexo. O módulo de um número complexo é também denominado magnitude::
+
     >>> a=3.0+3.0j
     >>> a.real 
     3.0 
@@ -263,9 +272,9 @@ As listas formam o tipo de dados mais utilizado e versátil do Python. Listas s�
     'pe'
 
 
-Na listagem ex-lista1, criamos uma lista de três elementos. Uma lista é uma sequência ordenada de elementos, de forma que podemos selecionar elementos de uma lista por meio de sua posição. Note que o primeiro elemento da lista é ``lista[0]``. Todas as contagens em Python começam em ``0``. 
+Na listagem :ref:`ex-lista1`, criamos uma lista de três elementos. Uma lista é uma sequência ordenada de elementos, de forma que podemos selecionar elementos de uma lista por meio de sua posição. Note que o primeiro elemento da lista é ``lista[0]``. Todas as contagens em Python começam em ``0``.
 
-Uma lista também pode possuir elementos de tipos diferentes. Na listagem ex-lista1, o elemento ``0`` é um inteiro enquanto que os outros elementos são strings. Para verificar isso, digite o comando ``type(lista[0])``.
+Uma lista também pode possuir elementos de tipos diferentes. Na listagem :ref:`ex-lista1`, o elemento ``0`` é um inteiro enquanto que os outros elementos são strings. Para verificar isso, digite o comando ``type(lista[0])``.
 
 Uma característica muito interessante das listas do Python, é que elas podem ser indexadas de trás para frente, ou seja, ``lista[-1]`` é o último elemento da lista. Como listas são sequências de tamanho variável, podemos assessar os últimos **n** elementos, sem ter que contar os elementos da lista.
 
@@ -307,11 +316,12 @@ Só que não é a mesma lista, é uma nova lista com os mesmos elementos. Desta 
     ['a', 'pe', ['a', 'b'], 'que', 1, 2]
 
 
-As listas são conjuntos mutáveis, ao contrário de tuplas e strings, portanto pode-se adicionar(listagem ex-adlista), modificar ou remover (tabela tab:metlista) elementos de uma lista. 
+As listas são conjuntos mutáveis, ao contrário de tuplas e strings, portanto pode-se adicionar(listagem :ref:`ex-adlista`), modificar ou remover (tabela :ref:`tab:metlista`) elementos de uma lista.
 
-.. index:: listas; métodos
+.. index::
+   single: listas; métodos
 
-Note que as operações *in situ* não alocam memória extra para a operação, ou seja, a inversão ou a ordenação descritas na tabela :tab:`metlista`, são realizadas no mesmo espaço de memória da lista original. Operações *in situ* alteram a variável em si sem fazer uma cópia da mesma e, portanto não retornam nada.
+Note que as operações *in situ* não alocam memória extra para a operação, ou seja, a inversão ou a ordenação descritas na tabela :ref:`tab:metlista`, são realizadas no mesmo espaço de memória da lista original. Operações *in situ* alteram a variável em si sem fazer uma cópia da mesma e, portanto não retornam nada.
 
 O método ``L.insert`` insere um objeto antes da posição indicada pelo índice. Repare, na listagem ex-adlista, que o objeto em questão era uma lista, e o método insert não a fundiu com a lista original. Este exemplo nos mostra mais um aspecto da versatilidade do objeto lista, que pode ser composto por objetos de qualquer tipo::
 
@@ -321,7 +331,7 @@ O método ``L.insert`` insere um objeto antes da posição indicada pelo índice
     ['a', 'pe', ['a', 'b'], 'que', 1, 2, 'a', 'b']
 
 
-Já na listagem ex-extlista, os elementos da segunda lista são adicionados, individualmente, ao final da lista original::
+Já na listagem :ref:`ex-extlista`, os elementos da segunda lista são adicionados, individualmente, ao final da lista original::
 
     >>> lista.index('que') 
     3 
@@ -335,7 +345,7 @@ Já na listagem ex-extlista, os elementos da segunda lista são adicionados, ind
 
 Conforme ilustrado na listagem ex-buslista, o método ``L.index`` retorna o índice da primeira ocorrência do valor dado. Se o valor não existir, o interpretador retorna um ``ValueError``. Para testar se um elemento está presente em uma lista, pode-se utilizar o comando ``in`` [5]_ como ilustrado na listagem ex-buslista. Caso o elemento faça parte da lista, este comando retornará ``1``, caso contrário retornará ``0`` [6]_.
 
-Existem dois métodos básicos para remover elementos de uma lista: ``L.remove`` e ``L.pop`` -- listagem ex-remlista. O primeiro remove o elemento nomeado sem nada retornar, o segundo elimina e retorna o último ou o elemento da lista (se chamado sem argumentos), ou o determinado pelo índice, passado como argumento::
+Existem dois métodos básicos para remover elementos de uma lista: ``L.remove`` e ``L.pop`` -- listagem :ref:`ex-remlista`. O primeiro remove o elemento nomeado sem nada retornar, o segundo elimina e retorna o último ou o elemento da lista (se chamado sem argumentos), ou o determinado pelo índice, passado como argumento::
 
     >>> lista.remove("que") 
     >>> lista 
@@ -346,48 +356,38 @@ Existem dois métodos básicos para remover elementos de uma lista: ``L.remove``
     ['a', 'pe', 1, 2, 'a', 'b']
 
 
-Operadores aritméticos também podem ser utilizados para operações
-com listas. O operador de soma, "``+``", concatena duas listas. O
-operador "``+=``" é um atalho para o método ``L.extend`` conforme
-mostrado na listagem ex-oplista.
+Operadores aritméticos também podem ser utilizados para operações com listas. O operador de soma, "``+``", concatena duas listas. O operador "``+=``" é um atalho para o método ``L.extend`` conforme mostrado na listagem :ref:`ex-oplista`::
 
-    lista=['a', 'pe', 1, 2, 'a', 'b'] lista = lista + ['novo',
-    'elemento'] lista ['a', 'pe', 1, 2, 'a', 'b', 'novo', 'elemento']
-    lista += 'dois' lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i',
-    's'] lista += ['dois'] lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o',
-    'i', 's', 'dois'] li=[1,2] li\*3 [1, 2, 1, 2, 1, 2]
+    >>> lista=['a', 'pe', 1, 2, 'a', 'b']
+    >>> lista = lista + ['novo', 'elemento']
+    >>> lista ['a', 'pe', 1, 2, 'a', 'b', 'novo', 'elemento']
+    >>> lista += 'dois' lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i', 's']
+    >>> lista += ['dois'] lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i', 's', 'dois'] li=[1,2] li\*3 [1, 2, 1, 2, 1, 2]
 
 
-Note que a operação ``lista = lista + lista2`` cria uma nova
-``lista`` enquanto que o comando ``+=`` aproveita a lista original
-e a extende. Esta diferença faz com que o operador ``+=`` seja
-muito mais rápido, especialmente para grandes listas. O operador de
-multiplicação, ````*''``, é um repetidor/concatenador de listas
-conforme mostrado ao final da listagem ex-oplista. A operação de
-multiplicação *in situ*(``*=``) também é válida.
+Note que a operação ``lista = lista + lista2`` cria uma nova ``lista`` enquanto que o comando ``+=`` aproveita a lista original e a extende. Esta diferença faz com que o operador ``+=`` seja
+muito mais rápido, especialmente para grandes listas. O operador de multiplicação, ````*''``, é um repetidor/concatenador de listas conforme mostrado ao final da listagem :ref:`ex-oplista`. A operação de multiplicação *in situ*(``*=``) também é válida.
 
-Um tipo de lista muito útil em aplicações científicas, é lista
-numérica sequencial. Para construir estas listas podemos utilizar o
-comando ``range`` (exemplo ex-range). O comando ``range`` aceita 1,
-2 ou três argumentos: início, fim e passo, respectivamente (ver
-exemplo ex-range).
+Um tipo de lista muito útil em aplicações científicas, é lista numérica sequencial. Para construir estas listas podemos utilizar o comando ``range`` (exemplo :ref:`ex-range`). O comando ``range`` aceita 1, 2 ou três argumentos: início, fim e passo, respectivamente (ver exemplo :ref:`ex-range`)::
 
-    range(10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] range(2,20,2)números pares
-    [2, 4, 6, 8, 10, 12, 14, 16, 18] range(1,20,2)números ímpares [1,
-    3, 5, 7, 9, 11, 13, 15, 17, 19]
-
+    >>> range(10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> range(2,20,2) #números pares
+    [2, 4, 6, 8, 10, 12, 14, 16, 18]
+    >>> range(1,20,2) #números ímpares
+    [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 Tuplas
 ------
 
-{tuplas} Uma tupla, é uma lista imutável, ou seja, ao contrário de
-uma lista, após a sua criação, ela não pode ser alterada. Uma tupla
-é definida de maneira similar a uma lista, com exceção dos
-delimitadores do conjunto de elementos que no caso de uma tupla são
-parênteses (listagem ex-criatupla).
+.. index: tuplas
 
-    tu = ('Genero', 'especie', 'peso', 'estagio') tu[0] 'Genero'
-    tu[1:3] ('especie', 'peso')
+Uma tupla, é uma lista imutável, ou seja, ao contrário de uma lista, após a sua criação, ela não pode ser alterada. Uma tupla é definida de maneira similar a uma lista, com exceção dos delimitadores do conjunto de elementos que no caso de uma tupla são parênteses (listagem ex-criatupla)::
+
+    >>> tu = ('Genero', 'especie', 'peso', 'estagio')
+    >>> tu[0]
+    'Genero'
+    >>> tu[1:3]
+    ('especie', 'peso')
 
 
 Os elementos de uma tupla podem ser referenciados através de
