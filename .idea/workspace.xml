@@ -2,6 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c38d4f0-5bb5-49f0-87ac-655c093a5e06" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/.directory" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/Cap1.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/Cap2.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/CapObj.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/Capplot.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/bash.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capBayes.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capbd.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capext.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capferr.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capgraph.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/capmod.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/index.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/jython.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/main.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/Cap1.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/Cap2.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/CapObj.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/Capplot.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/bash.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capBayes.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capbd.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capext.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capferr.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capgraph.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/capmod.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/jython.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/stuff/unix.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/doctrees/unix.doctree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/.buildinfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/Cap1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/Cap2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/CapObj.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/Capplot.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/bash.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capBayes.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capbd.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capext.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capferr.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capgraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/capmod.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/index.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/jython.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/main.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/Cap1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/Cap2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/CapObj.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/Capplot.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/bash.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capBayes.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capbd.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capext.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capferr.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capgraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/capmod.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/jython.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/stuff/unix.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_sources/unix.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/ajax-loader.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/basic.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/comment-bright.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/comment-close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/comment.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/contents.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/cover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/default.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/doctools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/down-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/down.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/file.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/minus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/navigation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/plus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/pygments.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/searchtools.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/sidebar.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/sphinxdoc.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/translations.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/underscore.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/up-pressed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/up.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/_static/websupport.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/Cap1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/Cap2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/CapObj.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/Capplot.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/bash.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capBayes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capbd.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capext.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capferr.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capgraph.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/capmod.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/jython.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/html/stuff/unix.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.idx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.ilg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.ind" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/LivroPython.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/fncychap.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/python.ist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/sphinx.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/sphinxhowto.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/sphinxmanual.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_build/latex/tabulary.sty" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
     </list>
@@ -35,7 +147,7 @@
       <file leaf-file-name="Makefile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="21" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.29310346">
+            <state line="42" column="13" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.31264368">
               <folding />
             </state>
           </provider>
@@ -163,24 +275,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CCP2ndE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CCP2ndE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -190,8 +284,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -246,8 +340,8 @@
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18571429" sideWeight="0.34933037" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18571429" sideWeight="0.64285713" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1901099" sideWeight="0.3549107" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1901099" sideWeight="0.63727677" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -420,7 +514,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="21" selection-start="1501" selection-end="1501" vertical-scroll-proportion="0.29310346">
+        <state line="42" column="13" selection-start="1493" selection-end="1493" vertical-scroll-proportion="0.31264368">
           <folding />
         </state>
       </provider>
