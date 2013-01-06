@@ -34,14 +34,6 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-	@echo "Copying the build to gh-pages."
-	git commit -a -m "novo build"
-	git checkout gh-pages
-	git checkout master _build/html/*
-	git commit -a -m"nova versao"
-	git push origin gh-pages
-	git checkout master
-	@echo "Finished pushing the new build to gh-pages"
 
 dirhtml:
 	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
