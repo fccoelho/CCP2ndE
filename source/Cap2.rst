@@ -1,35 +1,36 @@
 .. role:: math(raw)
    :format: html latex
 
-========================
+.. _cap-fundamentos:
+
+************************
 Fundamentos da Linguagem
-========================
+************************
 
-Breve introdução a conceitos básicos de programação e à linguagem Python. A maioria dos elementos básicos da linguagem são abordados neste capítulo, com exceção de classes, que são discutidas em detalhe no capítulo \\ref{cap:obj}. **Pré-requisitos:** Conhecimentos básicos de programação em qualquer linguagem.
+    Breve introdução a conceitos básicos de programação e à linguagem Python. A maioria dos elementos básicos da linguagem são abordados neste capítulo, com exceção de classes, que são discutidas em detalhe no capítulo :ref:`cap-obj`. **Pré-requisitos:** Conhecimentos básicos de programação em qualquer linguagem.
 
-Neste Capítulo, faremos uma breve introdução à linguagem
-Python. Esta introdução servirá de base para os exemplos dos
-capítulos subseqüentes. Para uma introdução mais completa à
-linguagem, recomendamos ao leitor a consulta a livros e outros
-documentos voltados especificamente para programação em Python.
+Neste Capítulo, faremos uma breve introdução à linguagem Python. Esta introdução servirá de base para os exemplos dos capítulos subseqüentes. Para uma introdução mais completa à linguagem, recomendamos ao leitor a consulta a livros e outros documentos voltados especificamente para programação em Python.
 
 Primeiras impressões
-====================
+--------------------
 
 Para uma primeira aproximação à linguagem, vamos examinar suas
 características básicas. Façamos isso interativamente, a partir do
 console Python. Vejamos como invocá-lo::
 
     $ python
-    Python 2.5.1 (r251:54863, May  2 2007, 16:56:35)
-    [GCC 4.1.2 (Ubuntu 4.1.2-0ubuntu4)] on linux2
+    Python 2.7.3 (default, Sep 26 2012, 21:51:14)
+    [GCC 4.7.2] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
+
+.. _ex-conspy:
 
 Toda linguagem, seja ela de programação ou linguagem natural, possui um conjunto de palavras que a caracteriza. As linguagens de programação tendem a ser muito mais compactas do que as linguagens naturais. O Python pode ser considerado uma linguagem compacta, mesmo em comparação com outras linguagens de programação. 
 
 As palavras que compõem uma linguagem de programação são ditas reservadas, ou seja, não podem ser utilizadas para nomear variáveis. Se o programador tentar utilizar uma das palavras reservadas como variável, incorrerá em um erro de sintaxe.
 Palavras reservadas não podem ser utilizadas como nomes de variáveis::
+
     >>> for=1
       File "<stdin>", line 1
         for=1
@@ -37,37 +38,37 @@ Palavras reservadas não podem ser utilizadas como nomes de variáveis::
     SyntaxError: invalid syntax
 
 
-A linguagem Python em sua versão atual (2.5), possui 30 palavras reservadas. São elas: *and*, *as*, *assert*, *break*, *class*, *continue*, *def*, *del*, *elif*, *else*, *except*, *exec* *finally*, *for*, *from*, *global*, *if*, *import*, *in*, *is*, *lambda*, *not*, *or*, *pass*, *print*, *raise*, *return*, *try*, *while* e *yield*. Além destas palavras, existem constantes, tipos e funções internas ao Python, que estão disponíveis para a construção de programas. Estes elementos podem ser inspecionados através do comando *dir(__builtins__)*. Nenhum dos elementos do módulo *\_\_builtins\_\_} deve ser redefinido\footnote{Atenção, os componentes de \_\_builtins\_\_, não geram erros de sintaxe ao ser redefinidos.}. 
-\index{Palavras reservadas}
-O console interativo do Python possui um sistema de ajuda integrado que pode ser usado para acessar a documentação de qualquer elemento da linguagem. O comando *help()}, inicia a ajuda interativa. A partir daí, podemos por exemplo, digitar *keywords} para acessar a ajuda das palavras reservadas listadas acima. Se digitarmos *for} em seguida, obteremos a seguinte ajuda:
-\begin{lstlisting}[frame=trBL, caption= Definição da palavra reservada *for}.,label=]
-7.3 The for statement
+A linguagem Python em sua versão atual (2.5), possui 30 palavras reservadas. São elas: *and*, *as*, *assert*, *break*, *class*, *continue*, *def*, *del*, *elif*, *else*, *except*, *exec* *finally*, *for*, *from*, *global*, *if*, *import*, *in*, *is*, *lambda*, *not*, *or*, *pass*, *print*, *raise*, *return*, *try*, *while* e *yield*. Além destas palavras, existem constantes, tipos e funções internas ao Python, que estão disponíveis para a construção de programas. Estes elementos podem ser inspecionados através do comando *dir(__builtins__)*. Nenhum dos elementos do módulo *\_\_builtins\_\_* deve ser redefinido\footnote{Atenção, os componentes de *\_\_builtins\_\_*, não geram erros de sintaxe ao ser redefinidos. 
 
-  The for statement is used to iterate over the elements of a sequence
-  (such as a string, tuple or list) or other iterable object:
-...
-\end{lstlisting}
+.. index:: Palavras reservadas
+
+O console interativo do Python possui um sistema de ajuda integrado que pode ser usado para acessar a documentação de qualquer elemento da linguagem. O comando :samp:`help()`, inicia a ajuda interativa. A partir daí, podemos por exemplo, digitar *keywords* para acessar a ajuda das palavras reservadas listadas acima. Se digitarmos *for* em seguida, obteremos a seguinte ajuda::
+    7.3 The for statement
+
+    The for statement is used to iterate over the elements of a sequence
+    (such as a string, tuple or list) or other iterable object:
+    ...
 
 
-\section{Uso Interativo \emph{vs.} Execução a Partir de Scripts}
-Usuários familiarizados com ambientes de programação científicos tais como Matlab, R e similares, ficarão satisfeitos em saber que o Python também pode ser utilizado de forma interativa. Para isso, basta invocar o interpretador na linha de comando (Python shell, em Unix) ou invocar um shell mais sofisticado como o Idle, que vem com a distribuição padrão do Python, ou o Ipython (ver \ref{sec:ipython}).
 
-\index{uso interativo}
+Uso Interativo *vs.* Execução a Partir de Scripts
+-------------------------------------------------
 
-Tanto no uso interativo, como na execução a partir de scripts, o interpretador espera encontrar apenas uma expressão por linha do programa. Caso se deseje inserir mais de uma expressão em uma linha, as expressões devem ser separadas por *;}. Mas esta prática deve ser evitada. Expressões podem continuar em outra linha se algum de seus parênteses, colchetes, chaves ou aspas ainda não tiver sido fechado. Alternativamente, linhas podem ser quebradas pela aposição do caractere \verb|\| ao final da linha.
+Usuários familiarizados com ambientes de programação científicos tais como Matlab, R e similares, ficarão satisfeitos em saber que o Python também pode ser utilizado de forma interativa. Para isso, basta invocar o interpretador na linha de comando (Python shell, em Unix) ou invocar um shell mais sofisticado como o Idle, que vem com a distribuição padrão do Python, ou o Ipython (ver :ref:`sec_ipython`).
 
-\begin{lstlisting}[caption=Usando o Python como uma calculadora., label=ex:calc]
->>> 1+1
-2
->>> 
-\end{lstlisting}
-No cabeçalho da shell do Python, acima (listagem \ref{ex:conspy}), o interpretador identifica a versão instalada, data e hora em que foi compilada, o compilador C utilizado, detalhes sobre o sistema operacional e uma linhazinha de ajuda para situar o novato.
+.. index:: Uso interativo,
 
-Para executar um programa, a maneira usual (em Unix) é digitar: *python script.py}. No Windows basta um duplo clique sobre arquivos **.py}.
+Tanto no uso interativo, como na execução a partir de scripts, o interpretador espera encontrar apenas uma expressão por linha do programa. Caso se deseje inserir mais de uma expressão em uma linha, as expressões devem ser separadas por :samp:`;`. Mas esta prática deve ser evitada. Expressões podem continuar em outra linha se algum de seus parênteses, colchetes, chaves ou aspas ainda não tiver sido fechado. Alternativamente, linhas podem ser quebradas pela aposição do caractere :samp:`\\` ao final da linha::
 
-\begin{lstlisting}[caption=Executando script.py via comando de linha., label=ex:script]
-$`
-    python script.py
+    >>> 1+1
+    2
+    >>>
+
+.. _ex-calc:
+
+No cabeçalho da shell do Python, acima (listagem :ref:`ex-conspy`), o interpretador identifica a versão instalada, data e hora em que foi compilada, o compilador C utilizado, detalhes sobre o sistema operacional e uma linhazinha de ajuda para situar o novato.
+
+Para executar um programa, a maneira usual (em Unix) é digitar: *python script.py*. No Windows basta um duplo clique sobre arquivos com extensão *.py*.
 
 
 No Linux e em vários UNIXes, podemos criar scripts que são
@@ -78,8 +79,8 @@ script::
     #!/usr/bin/env python
 
 
-Note que os caracteres {\\#!} devem ser os dois primeiros
-caracteres do arquivo (como na listagem ex:exec)::
+Note que os caracteres :samp:`\\#!` devem ser os dois primeiros
+caracteres do arquivo (como na listagem ex-exec)::
 
     #!/usr/bin/env python
 
@@ -87,10 +88,10 @@ caracteres do arquivo (como na listagem ex:exec)::
 
 
 Depois, resta apenas ajustar as permissões do arquivo para que
-possamos executá-lo: ``chmod +x script.py`` (listagem ex:chmod).
+possamos executá-lo::
 
-    :math:`$ chmod +x script.py
-$` ./script.py sys:1:
+    $ chmod +x script.py
+    $ ./script.py sys:1:
     DeprecationWarning: Non-ASCII character '4' in file ./teste on line
     3, but no encoding declared; see
     http://www.python.org/peps/pep-0263.html for details Alô Mundo!
@@ -100,324 +101,293 @@ Mas que lixo é aquele antes do nosso "**Alô mundo**"? Trata-se do
 interpretador reclamando do acento circunflexo em "**Alô**". Para
 que o Python não reclame de acentos e outros caracteres da língua
 portuguesa não contidos na tabela ASCII, precisamos adicionar a
-seguinte linha ao script: # -\*- coding: latin-1 -\*-.
+seguinte linha ao script: :samp:`# -\*- coding: latin-1 -\*-`.
 Experimente editar o script acima e veja o resultado.
 
-No exemplo da listagem ex:exec, utilizamos o comando ``print`` para
+.. note::
+    Aqui assume-se que a codificação do seu editor de texto é :samp:`latin1`. O
+    importante e casar a codificação do seu editor de texto com a especificada
+    no início do seu script.
+
+No exemplo da listagem ex-exec, utilizamos o comando ``print`` para
 fazer com que nosso script produzisse uma string como saída, ou
 seja, para escrever no stdout [1]_. Como podemos receber
 informações pelo ``stdin``? O Python nos oferece duas funções para
 isso: ``input('texto')``, que executa o que o usuário digitar,
-sendo portanto perigoso, e {raw\\\_input('texto')}, que retorna uma
+sendo portanto perigoso, e ``raw_input('texto')``, que retorna uma
 string com a resposta do usuário.
 
-Nas listagens que se seguem, alternaremos entre a utilização de
-scripts e a utilização do Python no modo interativo (como na
-listagem ex:calc). A presença do símbolo "{>>>}", característico da
-shell do Python será suficiente para diferenciar os dois casos.
-Exemplos de scripts virão dentro de caixas.
+Nas listagens que se seguem, alternaremos entre a utilização de scripts e a utilização do Python no modo interativo. A presença do símbolo ``>>>``, característico da shell do Python será suficiente para diferenciar os dois casos. Exemplos de scripts virão dentro de caixas.
 
 Operações com Números
 ---------------------
 
 Noventa e nove por cento das aplicações científicas envolvem algum
 tipo de processamento numérico. Vamos iniciar nosso contato com o
-Python através dos números (Listagem ex:arit).
+Python através dos números::
 
-    2+2 4 Comentário ... 2\*2 4 2\*\*2 Comentário na mesma linha 4
-    (50-5\*6)/4 5 Divisão de inteiros retorna "floor": ... 7/3 2 7/-3
-    -3 7/3. 2.3333333333333335
+    >>> 2+2 #Comentário ...
+    4  
+    >>> 2*2 
+    4 
+    >>> 2**2
+    4
+    >>> (50-5*6)/4 #Divisão de inteiros retorna "floor": ...
+    5  
+    >>> 7/3 
+    2 
+    >>> 7/-3
+    -3 
+    >>> 7/3. 
+    2.3333333333333335
 
+Operadores aritméticos
+""""""""""""""""""""""
+Nosso primeiro exemplo numérico (Listagem ex-arit) [2]_, trata números em sua representação mais simples: como constantes. É desta forma que utilizamos uma calculadora comum. Em programação é mais comum termos números associados a quantidades, a que precisamos nos referenciar e que podem se modificar. Esta representação de números chama-se variável.
 
-{operadores aritméticos} Nosso primeiro exemplo numérico (Listagem
-ex:arit) [2]_, trata números em sua representação mais simples:
-como constantes. É desta forma que utilizamos uma calculadora
-comum. Em programação é mais comum termos números associados a
-quantidades, a que precisamos nos referenciar e que podem se
-modificar. Esta representação de números chama-se variável.
+O sinal de ``=`` é utilizado para atribuir valores a variáveis::
 
-O sinal de ``=`` é utilizado para atribuir valores a
-variáveis(Listagem ex:atr).
-
-    largura = 20 altura = 5\*9 largura \* altura 900
-
-
-Um valor pode ser atribuído a diversas variáveis com uma única
-operação de atribuição, ou múltiplos valores a múltiplas variáveis
-(Listagem ex:multatr). Note que no exemplo de atribuição de
-múltiplos valores a múltiplas variáveis (Listagem ex:multatr, linha
-9) os valores poderiam estar em uma tupla.
-
-    x = y = z = 0 Zero x, y e z x 0 y 0 z 0 a,b,c=1,2,3 a 1 b 2 c 3
-
-
-O Python também reconhece números reais (ponto-flutuante) e
-complexos naturalmente. Em operações entre números reais e inteiros
-o resultado será sempre real. Da mesma forma, operações entre
-números reais e complexos resultam sempre em um número complexo.
-Números complexos são sempre representados por dois números
-ponto-flutuante: a parte real e a parte imaginária. A parte
-imaginária é representada com um sufixo "j" ou "J".
-
-    1j \* 1J (-1+0j) 1j \* complex(0,1) (-1+0j) 3+1j\*3 (3+3j)
-    (3+1j)\*3 (9+3j) (1+2j)/(1+1j) (1.5+0.5j)
+    >>> largura = 20 
+    >>> altura = 5*9 
+    >>> largura * altura 
+    900
 
 
-{Números complexos} Um Número complexo para o Python, é um
-objeto [3]_. Podemos extrair as partes componentes de um número
-complexo ``c`` utilizando atributos do tipo complexo: ``c.real`` e
-``c.imag``. A função ``abs``, que retorna o módulo de um numero
-inteiro ou real, retorna o comprimento do vetor no plano complexo,
-quando aplicada a um número complexo. O módulo de um número
-complexo é também denominado magnitude (listagem ex:complex2).
+Um valor pode ser atribuído a diversas variáveis com uma única operação de atribuição, ou múltiplos valores a múltiplas variáveis (Listagem ex-multatr). Note que no exemplo de atribuição de múltiplos valores a múltiplas variáveis (Listagem ex-multatr, linha 9) os valores poderiam estar em uma tupla::
 
-    a=3.0+3.0j a.real 3.0 a.imag 3.0 abs(a) sqrt(a.real\*\*2 +
-    a.imag\*\*2) 4.2426406871192848
+    >>> x = y = z = 0  
+    >>> x 
+    0 
+    >>> y 
+    0 
+    >>> z 
+    0 
+    >>> a,b,c=1,2,3
+    >>> a 
+    1 
+    >>> b 
+    2 
+    >>> c 
+    3
 
+
+O Python também reconhece números reais (ponto-flutuante) e complexos naturalmente. Em operações entre números reais e inteiros o resultado será sempre real. Da mesma forma, operações entre números reais e complexos resultam sempre em um número complexo. Números complexos são sempre representados por dois números ponto-flutuante: a parte real e a parte imaginária. A parte imaginária é representada com um sufixo "j" ou "J"::
+
+    >>> 1j * 1J 
+    (-1+0j) 
+    >>> 1j * complex(0,1) 
+    (-1+0j) 
+    >>> 3+1j*3 
+    (3+3j)
+    >>> (3+1j)\*3 
+    (9+3j) 
+    >>> (1+2j)/(1+1j) 
+    (1.5+0.5j)
+
+
+Números complexos
+"""""""""""""""""
+
+Um Número complexo para o Python, é um
+objeto [3]_. Podemos extrair as partes componentes de um número complexo ``c`` utilizando atributos do tipo complexo: ``c.real`` e ``c.imag``. A função ``abs``, que retorna o módulo de um numero inteiro ou real, retorna o comprimento do vetor no plano complexo, quando aplicada a um número complexo. O módulo de um número complexo é também denominado magnitude::
+
+    >>> a=3.0+3.0j
+    >>> a.real 
+    3.0 
+    >>> a.imag 
+    3.0 
+    >>> abs(a)
+    4.2426406871192848
+    >>> sqrt(a.real**2 + a.imag**2) 
+    4.2426406871192848
 
 Nomes, Objetos e Espaços de Nomes
 =================================
 
-{espaço de nomes} Nomes em Python são identificadores de objetos, e
-também são chamados de variáveis. Nomes devem ser iniciados por
-letras maiúsculas ou minúsculas e podem conter algarismos, desde
-que não sejam o primeiro caractere. O Python faz distinção entre
-maiúsculas e minúsculas portanto, ``nome != Nome``.
+{espaço de nomes} Nomes em Python são identificadores de objetos, e também são chamados de variáveis. Nomes devem ser iniciados por letras maiúsculas ou minúsculas e podem conter algarismos, desde que não sejam o primeiro caractere. O Python faz distinção entre maiúsculas e minúsculas portanto, ``nome != Nome``.
 
-No Python, todos os dados são objetos tipados, que são associados
-dinamicamente a nomes. O sinal de igual (``=``), liga o resultado
-da avaliação da expressão do seu lado direito a um nome situado à
-sua esquerda. A esta operação damos o nome de atribuição (ver
-exemplo na listagem ex:attr).
+No Python, todos os dados são objetos tipados, que são associados dinamicamente a nomes. O sinal de igual (``=``), liga o resultado da avaliação da expressão do seu lado direito a um nome situado à sua esquerda. A esta operação damos o nome de atribuição::
 
-    a=3\*2\*\*7 a,b = ('laranja','banana')
+    >>> a=3*2**7 
+    >>> a,b = ('laranja','banana')
 
 
-As variáveis criadas por atribuição ficam guardadas na memória do
-computador. Para evitar preenchimento total da memória, assim que
-um objeto deixa de ser referenciado por um nome (deixa de existir
-no espaço de nomes corrente), ele é imediatamente apagado da
-memória pelo interpretador.
+As variáveis criadas por atribuição ficam guardadas na memória do computador. Para evitar preenchimento total da memória, assim que um objeto deixa de ser referenciado por um nome (deixa de existir no espaço de nomes corrente), ele é imediatamente apagado da memória pelo interpretador.
 
-O conceito de espaço de nomes é uma característica da linguagem
-Python que contribui para sua robustez e eficiência. Espaços de
-nomes são dicionários (ver ss:dict) contendo as variáveis, objetos
-e funções disponíveis durante a execução de um programa. A um dado
-ponto da execução de um programa, existem sempre dois dicionários
-disponíveis para a resolução de nomes: um local e um global. Estes
-dicionários podem ser acessados para leitura através das funções
-``locals()`` e ``globals()``, respectivamente. Sempre que o
-interpretador Python encontra uma palavra que não pertence ao
-conjunto de palavras reservadas da linguagem, ele a procura,
-primeiro no espaço de nomes local e depois no global. Se a palavra
-não é encontrada, um erro do tipo ``NameError`` é acionado (exemplo
-ex:nameerror).
+O conceito de espaço de nomes é uma característica da linguagem Python que contribui para sua robustez e eficiência. Espaços de nomes são dicionários (ver ss:dict) contendo as variáveis, objetos e funções disponíveis durante a execução de um programa. A um dado ponto da execução de um programa, existem sempre dois dicionários disponíveis para a resolução de nomes: um local e um global. Estes dicionários podem ser acessados para leitura através das funções ``locals()`` e ``globals()``, respectivamente. Sempre que o interpretador Python encontra uma palavra que não pertence ao conjunto de palavras reservadas da linguagem, ele a procura, primeiro no espaço de nomes local e depois no global. Se a palavra não é encontrada, um erro do tipo ``NameError`` é acionado::
 
-    maria Traceback (most recent call last): File "stdin", line 1, in ?
+    >>> maria 
+    Traceback (most recent call last): File "stdin", line 1, in ?
     NameError: name 'maria' is not defined
 
 
-O espaço de nomes local, muda ao longo da execução de um programa.
-Toda a vez que a execução adentra uma função, o espaço de nomes
-local passa a refletir apenas as variáveis definidas dentro daquela
-função [4]_. Ao sair da função, o dicionário local torna-se igual
-ao global.
+O espaço de nomes local, muda ao longo da execução de um programa. Toda a vez que a execução adentra uma função, o espaço de nomes local passa a refletir apenas as variáveis definidas dentro daquela função [4]_. Ao sair da função, o dicionário local torna-se igual ao global::
 
-    a=1 len(globals().items()) 4 len(locals().items()) 4 def fun(): ...
-    a='novo valor' ... print len(locals().items()) ... print a ...
-    fun() 1 novo valor print a 1 len(locals().items()) 5 locals()
+    >>> a=1 
+    >>> len(globals().items()) 
+    4 
+    >>> len(locals().items()) 
+    4 
+    >>> def fun(): 
+    ... a='novo valor' 
+    ... print len(locals().items()) 
+    ... print a 
+    ...    
+    >>> fun() 
+    1 
+    novo valor 
+    >>> print a 
+    1 
+    >>> len(locals().items()) 
+    5 
+    >>> locals()
     'builtins': module 'builtin' (built-in), 'name': 'main', 'fun':
     function fun at 0xb7c18ed4, 'doc': None, 'a': 1
 
 
-Também é importante lembrar que o espaço de nomes local sempre
-inclui os {\\\_\\\_builtins\\\_\\\_} como vemos na listagem
-ex:locals.
+Também é importante lembrar que o espaço de nomes local sempre inclui os ``__builtins__`` como vemos acima.
 
 Estruturas de Dados
 ===================
 
-Qualquer linguagem de programação pode ser simplisticamente
-descrita como uma ferramenta, através da qual, dados e algoritmos
-são implementados e interagem para a solução de um dado problema.
-Nesta seção vamos conhecer os tipos e estruturas de dados do Python
-para que possamos, mais adiante, utilizar toda a sua flexibilidade
-em nossos programas.
+Qualquer linguagem de programação pode ser simplisticamente descrita como uma ferramenta, através da qual, dados e algoritmos são implementados e interagem para a solução de um dado problema. Nesta seção vamos conhecer os tipos e estruturas de dados do Python para que possamos, mais adiante, utilizar toda a sua flexibilidade em nossos programas.
 
-No Python, uma grande ênfase é dada à simplicidade e à
-flexibilidade de forma a maximizar a produtividade do programador.
-No tocante aos tipos e estruturas de dados, esta filosofia se
-apresenta na forma de uma tipagem dinâmica, porém forte. Isto quer
-dizer que os tipos das variáveis não precisam ser declarados pelo
-programador, como é obrigatório em linguagens de tipagem estática
-como o C, FORTRAN, Visual Basic, etc. Os tipos das variáveis são
-inferidos pelo interpretador. As principais estruturas de dados
-como ``Listas`` e ``Dicionários``, podem ter suas dimensões
-alteradas, dinamicamente durante a execução do Programa , o que
-facilita enormemente a vida do programador, como veremos mais
-adiante. {Listas}{listas}
+No Python, uma grande ênfase é dada à simplicidade e à flexibilidade de forma a maximizar a produtividade do programador. No tocante aos tipos e estruturas de dados, esta filosofia se apresenta na forma de uma tipagem dinâmica, porém forte. Isto quer dizer que os tipos das variáveis não precisam ser declarados pelo programador, como é obrigatório em linguagens de tipagem estática como o C, FORTRAN, Visual Basic, etc. Os tipos das variáveis são inferidos pelo interpretador. As principais estruturas de dados como ``Listas`` e ``Dicionários``, podem ter suas dimensões alteradas, dinamicamente durante a execução do Programa , o que facilita enormemente a vida do programador, como veremos mais adiante. 
 
-As listas formam o tipo de dados mais utilizado e versátil do
-Python. Listas são definidas como uma sequência de valores
-separados por vírgulas e delimitada por colchetes:
+Listas
+------
 
-    lista=[1, 'a', 'pe'] lista [1, 'a', 'pe'] lista[0] 1 lista[2] 'pe'
-    lista[-1] 'pe'
+.. index:: listas, lista
+
+As listas formam o tipo de dados mais utilizado e versátil do Python. Listas são definidas como uma sequência de valores separados por vírgulas e delimitada por colchetes::
+
+    >>> lista=[1, 'a', 'pe'] 
+    >>> lista 
+    [1, 'a', 'pe'] 
+    >>> lista[0] 
+    1 
+    >>> lista[2] 
+    'pe'
+    >>> lista[-1] 
+    'pe'
 
 
-Na listagem ex:lista1, criamos uma lista de três elementos. Uma
-lista é uma sequência ordenada de elementos, de forma que podemos
-selecionar elementos de uma lista por meio de sua posição. Note que
-o primeiro elemento da lista é ``lista[0]``. Todas as contagens em
-Python começam em ``0``.
+Na listagem :ref:`ex-lista1`, criamos uma lista de três elementos. Uma lista é uma sequência ordenada de elementos, de forma que podemos selecionar elementos de uma lista por meio de sua posição. Note que o primeiro elemento da lista é ``lista[0]``. Todas as contagens em Python começam em ``0``.
 
-Uma lista também pode possuir elementos de tipos diferentes. Na
-listagem ex:lista1, o elemento ``0`` é um inteiro enquanto que os
-outros elementos são strings. Para verificar isso, digite o comando
-``type(lista[0])``.
+Uma lista também pode possuir elementos de tipos diferentes. Na listagem :ref:`ex-lista1`, o elemento ``0`` é um inteiro enquanto que os outros elementos são strings. Para verificar isso, digite o comando ``type(lista[0])``.
 
-Uma característica muito interessante das listas do Python, é que
-elas podem ser indexadas de trás para frente, ou seja,
-``lista[-1]`` é o último elemento da lista. Como listas são
-sequências de tamanho variável, podemos assessar os últimos **n**
-elementos, sem ter que contar os elementos da lista.
+Uma característica muito interessante das listas do Python, é que elas podem ser indexadas de trás para frente, ou seja, ``lista[-1]`` é o último elemento da lista. Como listas são sequências de tamanho variável, podemos assessar os últimos **n** elementos, sem ter que contar os elementos da lista.
 
-Listas podem ser "fatiadas", ou seja, podemos selecionar uma porção
-de uma lista que contenha mais de um elemento.
+Listas podem ser "fatiadas", ou seja, podemos selecionar uma porção de uma lista que contenha mais de um elemento::
 
-    lista=['a','pe', 'que', 1] lista[1:3] ['pe', 'que'] lista[-1] 1
-    lista[3] 1
+    >>> lista=['a','pe', 'que', 1] 
+    >>> lista[1:3] 
+    ['pe', 'que'] 
+    >>> lista[-1] 
+    1
+    >>> lista[3] 
+    1
 
 
-O comando ``lista[1:3]``, delimita uma "fatia" que vai do elemento
-``1`` (o segundo elemento) ao elemento imediatamente anterior ao
-elemento ``3``. Note que esta seleção inclui o elemento
-correspondente ao limite inferior do intervalo, mas não o limite
-superior. Isto pode gerar alguma confusão, mas tem suas utilidades.
-Índices negativos também podem ser utilizados nestas expressões.
+O comando ``lista[1:3]``, delimita uma "fatia" que vai do elemento ``1`` (o segundo elemento) ao elemento imediatamente anterior ao elemento ``3``. Note que esta seleção inclui o elemento correspondente ao limite inferior do intervalo, mas não o limite superior. Isto pode gerar alguma confusão, mas tem suas utilidades. Índices negativos também podem ser utilizados nestas expressões. 
 
-Para retirar uma fatia que inclua o último elemento, temos que usar
-uma variação deste comando seletor de intervalos:
+Para retirar uma fatia que inclua o último elemento, temos que usar uma variação deste comando seletor de intervalos::
 
-    lista[2:] ['que', 1]
+    >>> lista[2:] 
+    ['que', 1]
 
 
-Este comando significa todos os elementos a partir do elemento !2!
-(o terceiro), até o final da lista. Este comando poderia ser
-utilizado para selecionar elementos do início da lista:
-``lista[:3]``, só que desta vez não incluindo o elemento ``3`` (o
-quarto elemento).
+Este comando significa todos os elementos a partir do elemento ``2`` (o terceiro), até o final da lista. Este comando poderia ser utilizado para selecionar elementos do início da lista: ``lista[:3]``, só que desta vez não incluindo o elemento ``3`` (o quarto elemento).
 
-Se os dois elementos forem deixados de fora, são selecionados todos
-os elementos da lista:
+Se os dois elementos forem deixados de fora, são selecionados todos os elementos da lista::
 
-    lista[:] ['a', 'pe', 'que', 1]
+    >>> lista[:] 
+    ['a', 'pe', 'que', 1]
 
 
-Só que não é a mesma lista, é uma nova lista com os mesmos
-elementos. Desta forma, ``lista[:]`` é uma maneira de fazer uma
-cópia completa de uma lista. Normalmente este recurso é utilizado
-junto com uma atribuição ``a = lista[:]``.
+Só que não é a mesma lista, é uma nova lista com os mesmos elementos. Desta forma, ``lista[:]`` é uma maneira de fazer uma cópia completa de uma lista. Normalmente este recurso é utilizado junto com uma atribuição ``a = lista[:]``::
 
-    lista[:] ['a', 'pe', 'que', 1] lista.append(2) adiciona 2 ao final
-    ['a', 'pe', 'que', 1, 2] lista.insert(2,['a','b']) lista ['a',
-    'pe', ['a', 'b'], 'que', 1, 2]
-
-
-As listas são conjuntos mutáveis, ao contrário de tuplas e strings,
-portanto pode-se adicionar(listagem ex:adlista), modificar ou
-remover (tabela tab:metlista) elementos de uma lista.
+    >>> lista[:] 
+    ['a', 'pe', 'que', 1] 
+    >>> lista.append(2) #adiciona 2 ao final
+    ['a', 'pe', 'que', 1, 2] 
+    >>> lista.insert(2,['a','b']) 
+    >>> lista 
+    ['a', 'pe', ['a', 'b'], 'que', 1, 2]
 
 
+As listas são conjuntos mutáveis, ao contrário de tuplas e strings, portanto pode-se adicionar(listagem :ref:`ex-adlista`), modificar ou remover (tabela :ref:`tab:metlista`) elementos de uma lista.
 
-{listas!métodos}
+.. index::
+   single: listas; métodos
 
-Note que as operações *in situ* não alocam memória extra para a
-operação, ou seja, a inversão ou a ordenação descritas na tabela
-tab:metlista, são realizadas no mesmo espaço de memória da lista
-original. Operações *in situ* alteram a variável em si sem fazer
-uma cópia da mesma e, portanto não retornam nada.
+Note que as operações *in situ* não alocam memória extra para a operação, ou seja, a inversão ou a ordenação descritas na tabela :ref:`tab:metlista`, são realizadas no mesmo espaço de memória da lista original. Operações *in situ* alteram a variável em si sem fazer uma cópia da mesma e, portanto não retornam nada.
 
-O método ``L.insert`` insere um objeto antes da posição indicada
-pelo índice. Repare, na listagem ex:adlista, que o objeto em
-questão era uma lista, e o método insert não a fundiu com a lista
-original. Este exemplo nos mostra mais um aspecto da versatilidade
-do objeto lista, que pode ser composto por objetos de qualquer
-tipo.
+O método ``L.insert`` insere um objeto antes da posição indicada pelo índice. Repare, na listagem ex-adlista, que o objeto em questão era uma lista, e o método insert não a fundiu com a lista original. Este exemplo nos mostra mais um aspecto da versatilidade do objeto lista, que pode ser composto por objetos de qualquer tipo::
 
-    lista2=['a','b'] lista.extend(lista2) lista ['a', 'pe', ['a', 'b'],
-    'que', 1, 2, 'a', 'b']
+    >>> lista2=['a','b'] 
+    >>> lista.extend(lista2) 
+    >>> lista 
+    ['a', 'pe', ['a', 'b'], 'que', 1, 2, 'a', 'b']
 
 
-Já na listagem ex:extlista, os elementos da segunda lista são
-adicionados, individualmente, ao final da lista original.
+Já na listagem :ref:`ex-extlista`, os elementos da segunda lista são adicionados, individualmente, ao final da lista original::
 
-    lista.index('que') 3 lista.index('a') 0 lista.index('z') Traceback
-    (most recent call last): File "input", line 1, in ? ValueError:
-    list.index(x): x not in list 'z' in lista 0
-
-
-Conforme ilustrado na listagem ex:buslista, o método ``L.index``
-retorna o índice da primeira ocorrência do valor dado. Se o valor
-não existir, o interpretador retorna um ``ValueError``. Para testar
-se um elemento está presente em uma lista, pode-se utilizar o
-comando ``in`` [5]_ como ilustrado na listagem ex:buslista. Caso o
-elemento faça parte da lista, este comando retornará ``1``, caso
-contrário retornará ``0`` [6]_.
-
-Existem dois métodos básicos para remover elementos de uma lista:
-``L.remove`` e ``L.pop`` -- listagem ex:remlista. O primeiro remove
-o elemento nomeado sem nada retornar, o segundo elimina e retorna o
-último ou o elemento da lista (se chamado sem argumentos), ou o
-determinado pelo índice, passado como argumento (Listagem
-ex:remlista).
-
-    lista.remove("que") lista ['a', 'pe', ['a', 'b'], 1, 2, 'a', 'b']
-    lista.pop(2) ['a', 'b'] lista ['a', 'pe', 1, 2, 'a', 'b']
+    >>> lista.index('que') 
+    3 
+    >>> lista.index('a') 
+    0 
+    >>> lista.index('z') 
+    Traceback (most recent call last): 
+    File "input", line 1, in ? 
+    ValueError: list.index(x): x not in list 'z' in lista 0
 
 
-Operadores aritméticos também podem ser utilizados para operações
-com listas. O operador de soma, "``+``", concatena duas listas. O
-operador "``+=``" é um atalho para o método ``L.extend`` conforme
-mostrado na listagem ex:oplista.
+Conforme ilustrado na listagem ex-buslista, o método ``L.index`` retorna o índice da primeira ocorrência do valor dado. Se o valor não existir, o interpretador retorna um ``ValueError``. Para testar se um elemento está presente em uma lista, pode-se utilizar o comando ``in`` [5]_ como ilustrado na listagem ex-buslista. Caso o elemento faça parte da lista, este comando retornará ``1``, caso contrário retornará ``0`` [6]_.
 
-    lista=['a', 'pe', 1, 2, 'a', 'b'] lista = lista + ['novo',
-    'elemento'] lista ['a', 'pe', 1, 2, 'a', 'b', 'novo', 'elemento']
-    lista += 'dois' lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i',
-    's'] lista += ['dois'] lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o',
-    'i', 's', 'dois'] li=[1,2] li\*3 [1, 2, 1, 2, 1, 2]
+Existem dois métodos básicos para remover elementos de uma lista: ``L.remove`` e ``L.pop`` -- listagem :ref:`ex-remlista`. O primeiro remove o elemento nomeado sem nada retornar, o segundo elimina e retorna o último ou o elemento da lista (se chamado sem argumentos), ou o determinado pelo índice, passado como argumento::
+
+    >>> lista.remove("que") 
+    >>> lista 
+    ['a', 'pe', ['a', 'b'], 1, 2, 'a', 'b']
+    >>> lista.pop(2) 
+    ['a', 'b'] 
+    >>> lista 
+    ['a', 'pe', 1, 2, 'a', 'b']
 
 
-Note que a operação ``lista = lista + lista2`` cria uma nova
-``lista`` enquanto que o comando ``+=`` aproveita a lista original
-e a extende. Esta diferença faz com que o operador ``+=`` seja
-muito mais rápido, especialmente para grandes listas. O operador de
-multiplicação, ````*''``, é um repetidor/concatenador de listas
-conforme mostrado ao final da listagem ex:oplista. A operação de
-multiplicação *in situ*(``*=``) também é válida.
+Operadores aritméticos também podem ser utilizados para operações com listas. O operador de soma, "``+``", concatena duas listas. O operador "``+=``" é um atalho para o método ``L.extend`` conforme mostrado na listagem :ref:`ex-oplista`::
 
-Um tipo de lista muito útil em aplicações científicas, é lista
-numérica sequencial. Para construir estas listas podemos utilizar o
-comando ``range`` (exemplo ex:range). O comando ``range`` aceita 1,
-2 ou três argumentos: início, fim e passo, respectivamente (ver
-exemplo ex:range).
+    >>> lista=['a', 'pe', 1, 2, 'a', 'b']
+    >>> lista = lista + ['novo', 'elemento']
+    >>> lista ['a', 'pe', 1, 2, 'a', 'b', 'novo', 'elemento']
+    >>> lista += 'dois' lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i', 's']
+    >>> lista += ['dois'] lista ['a', 'pe', 1, 2, 'a', 'b', 'd', 'o', 'i', 's', 'dois'] li=[1,2] li\*3 [1, 2, 1, 2, 1, 2]
 
-    range(10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] range(2,20,2)números pares
-    [2, 4, 6, 8, 10, 12, 14, 16, 18] range(1,20,2)números ímpares [1,
-    3, 5, 7, 9, 11, 13, 15, 17, 19]
 
+Note que a operação ``lista = lista + lista2`` cria uma nova ``lista`` enquanto que o comando ``+=`` aproveita a lista original e a extende. Esta diferença faz com que o operador ``+=`` seja
+muito mais rápido, especialmente para grandes listas. O operador de multiplicação, ````*''``, é um repetidor/concatenador de listas conforme mostrado ao final da listagem :ref:`ex-oplista`. A operação de multiplicação *in situ*(``*=``) também é válida.
+
+Um tipo de lista muito útil em aplicações científicas, é lista numérica sequencial. Para construir estas listas podemos utilizar o comando ``range`` (exemplo :ref:`ex-range`). O comando ``range`` aceita 1, 2 ou três argumentos: início, fim e passo, respectivamente (ver exemplo :ref:`ex-range`)::
+
+    >>> range(10) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> range(2,20,2) #números pares
+    [2, 4, 6, 8, 10, 12, 14, 16, 18]
+    >>> range(1,20,2) #números ímpares
+    [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 Tuplas
 ------
 
-{tuplas} Uma tupla, é uma lista imutável, ou seja, ao contrário de
-uma lista, após a sua criação, ela não pode ser alterada. Uma tupla
-é definida de maneira similar a uma lista, com exceção dos
-delimitadores do conjunto de elementos que no caso de uma tupla são
-parênteses (listagem ex:criatupla).
+.. index: tuplas
 
-    tu = ('Genero', 'especie', 'peso', 'estagio') tu[0] 'Genero'
-    tu[1:3] ('especie', 'peso')
+Uma tupla, é uma lista imutável, ou seja, ao contrário de uma lista, após a sua criação, ela não pode ser alterada. Uma tupla é definida de maneira similar a uma lista, com exceção dos delimitadores do conjunto de elementos que no caso de uma tupla são parênteses (listagem ex-criatupla)::
+
+    >>> tu = ('Genero', 'especie', 'peso', 'estagio')
+    >>> tu[0]
+    'Genero'
+    >>> tu[1:3]
+    ('especie', 'peso')
 
 
 Os elementos de uma tupla podem ser referenciados através de
@@ -437,16 +407,16 @@ em uma tupla, como se faz em listas.
     x 2 y 3 z 4
 
 
-Conforme exemplificado em ex:criatupla2, uma tupla vazia, é
+Conforme exemplificado em ex-criatupla2, uma tupla vazia, é
 definida pela expressão ``()``, já no caso de uma tupla unitária,
 isto é, com apenas um elemento, fazemos a atribuição com uma
 vírgula após o elemento, caso contrário (``tu=('casa')`` ), o
 interpretador não poderá distinguir se os parênteses estão sendo
 utilizados como delimitadores normais ou delimitadores de tupla. O
 comando ``tu=('casa',)`` é equivalente ao apresentado na quarta
-linha da listagem ex:criatupla2, apenas mais longo.
+linha da listagem ex-criatupla2, apenas mais longo.
 
-Na sétima linha da listagem ex:criatupla2, temos uma extensão do
+Na sétima linha da listagem ex-criatupla2, temos uma extensão do
 conceito apresentado na linha anterior: a definição de uma tupla
 sem a necessidade de parênteses. A este processo, se dá o nome de
 *empacotamento de sequência*. O empacotamento de vários elementos
@@ -456,7 +426,7 @@ As tuplas, apesar de não serem tão versáteis quanto as listas, são
 mais rápidas. Portanto, sempre que se precisar de uma sequênca de
 elementos para servir apenas de referência, sem a necessidade de
 edição, deve-se utilizar uma tupla. Tuplas também são úteis na
-formatação de strings como veremos na listagem ex:formstring.
+formatação de strings como veremos na listagem ex-formstring.
 
 Apesar das tuplas serem imutáveis, pode-se contornar esta limitação
 fatiando e concatenando tuplas. Listas também podem ser convertidas
@@ -464,7 +434,7 @@ em tuplas, com a função ``tuple(lista)``, assim como tuplas podem
 ser convertidas em listas através da função ``list(tupla)``.
 
 Uma outra aplicação interessante para tuplas, mostrada na listagem
-ex:criatupla2, é a atribuição múltipla, em que uma tupla de
+ex-criatupla2, é a atribuição múltipla, em que uma tupla de
 valores, é atribuída a uma lista de nomes de variáveis armazenados
 em uma tupla. Neste caso, as duas sequências devem ter, exatamente,
 o mesmo número de elementos.
@@ -486,7 +456,7 @@ definir strings contendo quebras de linha.
     primeira linha segunda linha terceira linha
 
 
-Conforme ilustrado na listagem ex:string, uma string é uma
+Conforme ilustrado na listagem ex-string, uma string é uma
 sequência de quaisquer caracteres alfanuméricos, incluindos
 espaços. A função ``len()``, retorna o comprimento da string, ou de
 uma lista ou tupla. As funções ``min()`` e ``max()`` retornam o
@@ -514,7 +484,7 @@ envolve o marcador {\\%s}.
 
 {strings!formatando}
 
-Na listagem ex:formstring, temos uma expressão de sintaxe não tão
+Na listagem ex-formstring, temos uma expressão de sintaxe não tão
 óbvia mas de grande valor na geração de strings. O operador {\\%}
 (módulo), indica que os elementos da tupla seguinte serão mapeados,
 em sequência, nas posições indicadas pelos marcadores {\\%s} na
@@ -530,7 +500,7 @@ simples concatenação de strings. Mas não é. Vejamos porquê:
     concatenate 'str' and 'int' objects
 
 
-Pelo erro apresentado na listagem ex:concstring, vemos que a
+Pelo erro apresentado na listagem ex-concstring, vemos que a
 formatação da string utilizando o operador módulo e os marcadores
 {\\%s}, faz mais do que apenas concatenar strings, também converte
 a variável **peso** (inteiro) em uma string.
@@ -559,7 +529,7 @@ strings, listas, tuplas e até mesmo outros dicionários. Também não
 há qualquer restrição para o armazenamento de diferentes tipos de
 dados em um mesmo dicionário.
 
-Conforme exemplificado em ex:criadic, pode-se adicionar novos ítens
+Conforme exemplificado em ex-criadic, pode-se adicionar novos ítens
 a um dicionário, a qualquer momento, bastando atribuir um valor a
 uma chave. Contudo, é preciso ter cuidado. Se você tentar criar um
 ítem com uma chave que já existe, o novo ítem substituirá o
@@ -571,7 +541,7 @@ antigo.
 
 Os métodos !D.iteritems()!, ``D.iterkeys()`` e ``D.itervalues()``
 criam iteradores. Iteradores permitem iterar através dos ítens,
-chaves ou valores de um dicionário. Veja a listagem ex:iterdic:
+chaves ou valores de um dicionário. Veja a listagem ex-iterdic:
 
     Z.items() [('Na', 40), ('C', 12), ('H', 1), ('O', 16), ('N', 12)]
     i=Z.iteritems() i dictionary-iterator object at 0x8985d00 i.next()
@@ -594,7 +564,7 @@ de conjunto foi introduzida na linguagem Python. Um conjunto no
 Python é uma coleção de elementos sem ordenação e sem repetições. O
 objeto conjunto em Python aceita operações matemáticas de conjuntos
 tais como união, interseção, diferença e diferença simétrica
-(exemplo ex:conjuntos).
+(exemplo ex-conjuntos).
 
     a = set('pirapora') b = set('paranapanema') a letras em a set(['i',
     'p', 'r', 'a', 'o']) a - b Letras em a mas não em b set(['i', 'o'])
@@ -603,7 +573,7 @@ tais como união, interseção, diferença e diferença simétrica
     não em ambos set(['i', 'm', 'e', 'o', 'n'])
 
 
-No exemplo ex:conjuntos pode-se observar as seguintes
+No exemplo ex-conjuntos pode-se observar as seguintes
 correspondências entre a notação do Python e a notação matemática
 convencional:
 
@@ -632,7 +602,7 @@ representar decisões:
 também são conhecidas por ramificações. O Python nos disponibiliza
 três palavras reservadas para este fim: ``if`` , ``elif`` e
 ``else``. O seu uso é melhor demonstrado através de um exemplo
-(Listagem ex:ifelif).
+(Listagem ex-ifelif).
 
     if a == 1: este bloco é executado se a for 1 pass elif a == 2: este
     bloco é executado se a for 2 pass else: este bloco é executado se
@@ -641,14 +611,14 @@ três palavras reservadas para este fim: ``if`` , ``elif`` e
 
 {if}{elif}{else}
 
-No exemplo ex:ifelif, vemos também emprego da palavra reservada
+No exemplo ex-ifelif, vemos também emprego da palavra reservada
 ``pass``, que apesar de não fazer nada é muito útil quando ainda
 não sabemos quais devem ser as consequências de determinada
 condição.
 
 Uma outra forma elegante e compacta de implementar uma ramificação
 condicional da execução de um programa é através de dicionários
-(Listagem ex:brdict). As condições são as chaves de um dicionário
+(Listagem ex-brdict). As condições são as chaves de um dicionário
 cujos valores são funções. Esta solução não contempla o ``else``,
 porém.
 
@@ -669,7 +639,7 @@ arbitrário de vezes. Existem vários tipos de laços disponíveis no
 Python.
 
 {O laço \*while}:}{while} O laço ``while`` repete uma tarefa
-enquanto uma condição for verdadeira (Listagem ex:loops). Esta
+enquanto uma condição for verdadeira (Listagem ex-loops). Esta
 tarefa consiste em um ou mais comandos indentados em relação ao
 comando que inicia o laço. O fim da indentação indica o fim do
 bloco de instruções que deve ser executado pelo laço.
@@ -685,7 +655,7 @@ interrompe automaticamente ao final da sequência.
 
 {Iteração avançada:}O Python nos oferece outras técnicas de
 iteração sobre sequências que podem ser bastante úteis na redução
-da complexidade do código. No exemplo ex:iterdic nós vimos que
+da complexidade do código. No exemplo ex-iterdic nós vimos que
 dicionários possuem métodos específicos para iterar sobre seus
 componentes. Agora suponhamos que desejássemos iterar sobre uma
 lista e seu índice?
@@ -695,14 +665,14 @@ lista e seu índice?
     0: a 1: b 2: c 3: d 4: e
 
 
-{enumerate} A função ``enumerate`` (exemplo ex:enumerate) gera um
-iterador similar ao visto no exemplo ex:iterdic. O laço ``for``
+{enumerate} A função ``enumerate`` (exemplo ex-enumerate) gera um
+iterador similar ao visto no exemplo ex-iterdic. O laço ``for``
 chama o método ``next`` deste iterador repetidas vezes, até que
-receba a mensagem ``StopIteration`` (ver exemplo ex:iterdic).
+receba a mensagem ``StopIteration`` (ver exemplo ex-iterdic).
 
 O comando ``zip`` nos permite iterar sobre um conjunto de
 seqûencias pareando sequencialmente os elementos das múltiplas
-listas (exemplo ex:zip).
+listas (exemplo ex-zip).
 
     perguntas = ['nome','cargo','partido'] respostas =
     ['Lula','Presidente','PT'] for p,r in zip(perguntas,respostas):
@@ -715,9 +685,9 @@ listas (exemplo ex:zip).
 {zip}
 
 Podemos ainda desejar iterar sobre uma sequência em ordem reversa
-(exemplo ex:rev), ou iterar sobre uma sequência ordenada sem
-alterar a sequência original (exemplo ex:itsort). Note que no
-exemplo ex:itsort, a lista original foi convertida em um conjunto
+(exemplo ex-rev), ou iterar sobre uma sequência ordenada sem
+alterar a sequência original (exemplo ex-itsort). Note que no
+exemplo ex-itsort, a lista original foi convertida em um conjunto
 (``set``) para eliminar as repetições.
 
     for i in reversed(range(5)): print i 4 3 2 1 0
@@ -760,9 +730,9 @@ Suponhamos que você escreva um programa que realiza divisões em
 algum ponto, e dependendo dos dados fornecidos ao programa, o
 denominador torna-se zero. Como a divisão por zero não é possível,
 o seu programa para, retornando uma mensagem similar a da listagem
-ex:exception. Caso você queira continuar com a execução do programa
+ex-exception. Caso você queira continuar com a execução do programa
 apesar do erro, poderíamos solucionar o problema conforme o exposto
-na listagem ex:try
+na listagem ex-try
 
     for i in range(5): ... try: ... q=1./i ... print q ... except
     ZeroDivisionError: ... print "Divisão por zero!" ... Divisão por
@@ -781,7 +751,7 @@ a palavra-chave ``except``:
 ``except (NameError, ValueError,IOError):pass``, ou simplesmente
 não passar nada: ``except: pass``. Pode acontecer ainda que
 queiramos lidar de forma diferente com cada tipo de erro (listagem
-ex:multexc).
+ex-multexc).
 
     try: f = open('arq.txt') s = f.readline() i = int(s.strip()) except
     IOError, (errno, strerror): print "Erro de I/O (
@@ -828,7 +798,7 @@ opcionalmente, uma lista de argumentos que serão ser passados para
 a função quando ela for chamada. Argumentos podem ter valores
 "default" se listados da forma ``a=1``. Argumentos com valores
 default devem vir necessariamente após todos os argumentos sem
-valores default(Listagem ex:funbas).
+valores default(Listagem ex-funbas).
 
     def fun(a,b=1): ... print a,b ... fun(2) 2 1 fun(2,3) 2 3
     fun(b=5,2) SyntaxError: non-keyword arg after keyword arg
@@ -840,19 +810,19 @@ precedidos por ``*`` ou ``**``. No exemplo acima, argumentos
 passados anonimamente (não associados a um nome) serão colocados em
 uma tupla de nome ``t``, e argumentos passados de forma nominal
 (z=2,q='asd')serão adicionados a um dicionário, chamado
-``d``(Listagem ex:kwargs).
+``d``(Listagem ex-kwargs).
 
     def fun(\*t, \*\*d): print t, d fun(1,2,c=2,d=4) (1,2)
     'c':3,'d':4
 
 
 {funções!lista de argumentos variável} Funções são chamadas
-conforme ilustrado na linha 3 da listagem ex:kwargs. Argumentos
+conforme ilustrado na linha 3 da listagem ex-kwargs. Argumentos
 obrigatórios, sem valor "default", devem ser passados primeiro.
 Argumentos opcionais podem ser passados fora de ordem, desde que
 após os argumentos obrigatórios, que serão atribuídos
 sequencialmente aos primeiros nomes da lista definida no cabeçalho
-da função(Listagem ex:funbas).
+da função(Listagem ex-funbas).
 
 Muitas vezes é conveniente "desempacotar" os argumentos passados
 para uma função a partir de uma tupla ou dicionário.
@@ -865,13 +835,13 @@ para uma função a partir de uma tupla ou dicionário.
 Argumentos passados dentro de um dicionário podem ser utilizados
 simultâneamente para argumentos de passagem obrigatória (declarados
 no cabeçalho da função sem valor "default") e para argumentos
-opcionais, declarados ou não(Listagem ex:passdic).
+opcionais, declarados ou não(Listagem ex-passdic).
 
     def fun2(a, b=1,\*\*outros): ... print a, b, outros ... dic =
     'a':1,'b':2,'c':3,'d':4 fun2(\*\*dic) 1 2 'c': 3, 'd': 4
 
 
-Note que no exemplo ex:passdic, os valores cujas chaves
+Note que no exemplo ex-passdic, os valores cujas chaves
 correspondem a argumentos declarados, são atribuídos a estes e
 retirados do dicionário, que fica apenas com os ítens restantes.
 
@@ -896,7 +866,7 @@ definidas em apenas uma linha. Por definição, podem conter uma
     r4(16) utilizando 2
 
 
-Observe no exemplo (ex:lamb), que lambda lembra a definição de
+Observe no exemplo (ex-lamb), que lambda lembra a definição de
 variáveis do espaço de nome em que foi criada. Assim, ``r4`` passa
 a ser uma função que calcula a raiz quarta de um número. Este
 exemplo nos mostra que podemos modificar o funcionamento de uma
@@ -911,7 +881,7 @@ método ``next()``.
     letras('gato'): print L g a t o
 
 
-Como vemos na listagem ex:ger um gerador é uma função sobre a qual
+Como vemos na listagem ex-ger um gerador é uma função sobre a qual
 podemos iterar. {Decoradores}{decoradores} Decoradores são uma
 alteração da sintaxe do Python, introduzida a partir da versão 2.4,
 para facilitar a modificação de funções (sem alterá-las),
@@ -924,20 +894,20 @@ url: http://wiki.python.org/moin/PythonDecoratorLibrary.
     f.name novaf.doc = f.doc novaf.dict.update(f.dict) return novaf
 
 
-Na listagem ex:dec, vemos um decorador muito simples. Como seu nome
+Na listagem ex-dec, vemos um decorador muito simples. Como seu nome
 diz, não faz nada, além de ilustrar a mecânica de um decorador.
 Decoradores esperam um único argumento: uma função. A listagem
-ex:decuso, nos mostra como utilizar o decorador.
+ex-decuso, nos mostra como utilizar o decorador.
 
     @faznada def soma(a,b): return a+b
 
     soma(1,2) chamando... (1, 2) Out[5]:3
 
 
-O decorador da listagem ex:dec, na verdade adiciona uma linha de
+O decorador da listagem ex-dec, na verdade adiciona uma linha de
 código à função que decora: {print "chamando...",args,kwargs}.
 
-Repare que o decorador da listagem ex:dec, passa alguns atributos
+Repare que o decorador da listagem ex-dec, passa alguns atributos
 básicos da função original para a nova função, de forma que a
 função decorada possua o mesmo nome, docstring, etc. que a funçao
 original. No entanto, esta passagem de atributos "polui" o código
@@ -980,7 +950,7 @@ usuário.
     soma(a, b) Esta funcao soma dois numeros: soma(2,3) 5
 
 
-No exemplo ex:docst, adicionamos uma docstring explicando a
+No exemplo ex-docst, adicionamos uma docstring explicando a
 finalidade da função soma e ainda incluímos um exemplo. Incluir um
 exemplo de uso da função cortado e colado diretamente do console
 Python (incluindo o resultado), nos permitirá utilizar o módulo
@@ -1005,11 +975,11 @@ importar: ``from modulo import nome1, nome2``. Podemos ainda
 renomear um objeto ao importá-lo: ``import numpy as N`` ou ainda
 ``from numpy import det as D``.
 
-[float,frame=trBL, caption=Módulo exemplo, label=ex:modfib] {code/fibo.py}
+[float,frame=trBL, caption=Módulo exemplo, label=ex-modfib] {code/fibo.py}
 
-Seja um pequeno módulo como o do exemplo ex:modfib. Podemos
+Seja um pequeno módulo como o do exemplo ex-modfib. Podemos
 importar este módulo em uma sessão do interpretador iniciada no
-mesmo diretório que contém o módulo (exemplo ex:import).
+mesmo diretório que contém o módulo (exemplo ex-import).
 
     import fibo fibo.fib(50) 1 1 2 3 5 8 13 21 34 fibo.name 'fibo'
 
@@ -1032,7 +1002,7 @@ executado, entretanto como o {\\\_\\\_name\\\_\\\_} de fibo é
 do ``if`` não são executadas. Qual então a função destas linhas de
 código? Módulos podem ser executados diretamente pelo
 interpretador, sem serem importados primeiro. Vejamos isso no
-exemplo ex:runmod. Podemos ver que agora o {\\\_\\\_name\\\_\\\_}
+exemplo ex-runmod. Podemos ver que agora o {\\\_\\\_name\\\_\\\_}
 do módulo é {\`\`\\\_\\\_main\\\_\\\_''} e, portanto, as linhas de
 código dentro do bloco ``if`` são executadas. Note que neste caso
 importamos o módulo ``sys``, cujo atributo ``argv`` nos retorna uma
@@ -1051,13 +1021,13 @@ A linguagem Python tem como uma de suas principais vantagens uma biblioteca bast
 
 Para simplicidade de distribuição e utilização, módulos podem ser agrupados em ``pacotes''. Um pacote nada mais é do que um diretório contendo um arquivo denominado *\_\_init\_\_.py} (este arquivo não precisa conter nada). Portanto, pode-se criar um pacote simplesmente criando um diretório chamado, por exemplo, ``pacote'' contendo os seguintes módulos: *modulo1.py} e *modulo2.py}\footnote{Além de *\_\_init\_\_.py}, naturalmente.}. Um pacote pode conter um número arbitrário de módulos, assim como outros pacotes.
 
-Como tudo o mais em Python, um pacote também é um objeto. Portanto, ao importar o pacote ``pacote'' em uma sessão Python, modulo1 e modulo2 aparecerão como seus atributos (listagem \ref{ex:importing}).
-\begin{lstlisting}[caption=importing a package,label=ex:importing]
+Como tudo o mais em Python, um pacote também é um objeto. Portanto, ao importar o pacote ``pacote'' em uma sessão Python, modulo1 e modulo2 aparecerão como seus atributos (listagem :ref:`ex-importing}).
+\begin{lstlisting}[caption=importing a package,label=ex-importing]
 >>> import pacote
 >>> dir(pacote)
 ['modulo1','modulo2']
 \end{lstlisting}
-\index{pacotes}
+\.. index:: pacotes;
 
 \subsection{Pacotes Úteis para Computação Científica}
 \subsubsection{*Numpy}}
@@ -1065,12 +1035,12 @@ Um dos pacotes mais importantes, senão o mais importante para quem deseja utili
 
 Exemplos de objetos e funções pertencentes ao pacote *numpy} aparecerão regularmente na maioria dos exemplos deste livro. Uma lista extensiva de exemplos de Utilização do Numpy pode ser consultada neste endereço: \url{http://www.scipy.org/Numpy_Example_List}
 
-Na listagem \ref{ex:det}, vemos um exemplo de uso típico do *numpy}. O *numpy} nos oferece um objeto matriz, que visa representar o conceito matemático de matriz. Operações matriciais derivadas da algebra linear, são ainda oferecidas como funções através do subpacote linalg (Listagem \ref{ex:det}).
+Na listagem :ref:`ex-det}, vemos um exemplo de uso típico do *numpy}. O *numpy} nos oferece um objeto matriz, que visa representar o conceito matemático de matriz. Operações matriciais derivadas da algebra linear, são ainda oferecidas como funções através do subpacote linalg (Listagem :ref:`ex-det}).
 
-\index{numpy}
-\index{módulos!numpy}
+.. index:: numpy;
+.. index:: módulos!numpy;
 
-\begin{lstlisting}[ caption=Calculando e mostrando o determinante de uma matriz. ,label=ex:det]
+\begin{lstlisting}[ caption=Calculando e mostrando o determinante de uma matriz. ,label=ex-det]
 >>> from numpy import * 
 >>> a = arange(9)
 >>> print a
@@ -1086,30 +1056,30 @@ Na listagem \ref{ex:det}, vemos um exemplo de uso típico do *numpy}. O *numpy} 
 >>> 
 \end{lstlisting}
 
-Na primeira linha do exemplo \ref{ex:det}, importamos todas as funções e classes definidas no módulo numpy.
+Na primeira linha do exemplo :ref:`ex-det}, importamos todas as funções e classes definidas no módulo numpy.
 
 
 Na segunda linha, usamos o comando *arange(9)} para criar um vetor *a}  de 9 elementos. Este comando é equivalente ao *range} para criar listas, só que retorna um vetor (matriz unidimensional). Note que este vetor é composto de números inteiros sucessivos começando em zero. Todas as enumerações em Python começam em zero. Como em uma lista, *a[0]} é o primeiro elemento do vetor *a}. O objeto que criamos, é do tipo \textbf{array}, definido no módulo *numpy}. Uma outra forma de criar o mesmo objeto seria: 
 *a = array([0,1,2,3,4,5,6,7,8])}.
 
-\index{arange}
-\index{print}
+.. index:: arange;
+.. index:: print;
 
 Na terceira linha, nós mostramos o conteúdo da variável *a} com o comando *print}. Este comando imprime na tela o valor de uma variável.
 
-\index{array}
-\index{array!.shape}
+.. index:: array;
+.. index:: array;shape
 
 Como tudo em Python é um objeto, o objeto array apresenta diversos métodos e atributos. O atributo chamado *shape} contém o formato da matriz como uma tupla, que pode ser multi-dimensional ou não. Portanto, para converter vetor *a} em uma matriz *3$`:math:`$3}, basta atribuir o valor *(3,3)} a *shape}. Conforme já vimos, atributos e métodos de objetos são referenciados usando-se esta notação de ponto\footnote{nome\_da\_variável.atributo}.
 
 Na quinta linha, usamos o comando *print} para mostrar a alteração na forma da variável *a}. 
 
-\index{módulo!numpy.linalg}
+.. index:: triple: módulo;numpy;linalg;
 
 Na sexta linha importamos a função *det} do módulo *numpy.linalg} para calcular o determinante da nossa matriz. A função *det(a)} nos informa, então, que o determinante da matriz *a} é *0.0}. 
 \subsubsection{*Scipy}}
-\index{scipy}
-\index{módulo!scipy}
+.. index:: scipy
+.. index:: pair:módulo;scipy
 Outro módulo muito útil para quem faz computação numérica com Python, é o *scipy}. O *scipy} depende do numpy e provê uma grande coleção de rotinas numéricas voltadas para aplicações em matemática, engenharia e estatística. 
 
 Diversos exemplos da segunda parte deste livro se utilizarão do scipy, portanto, não nos extenderemos em exemplos de uso do *scipy}.
@@ -1124,7 +1094,8 @@ O Python facilita muito a tarefa tanto do documentador quanto do usuário da doc
 
 A principal maneira de documentar programas em Python é através da adição de strings de documentação (``docstrings'') a funções e classes ao redigir o código. Módulos também podem possuir ``docstrings'' contendo uma sinopse da sua funcionalidade. Estas strings servem não somente como referência para o próprio programador durante o desenvolvimento, como também como material para ferramentas de documentação automática. A principal ferramenta de documentação disponível para desenvolvedores é o *pydoc}, que vem junto com a distribuição  da linguagem.
 
-\subsection{Pydoc}\index{pydoc}
+\subsection{Pydoc}
+.. index:: pydoc
 O *pydoc} é uma ferramenta que extrai e formata a documentação de programas Python. Ela pode ser utilizada de dentro do console do interpretador Python, ou diretamente do console do Linux.
 \begin{lstlisting}[caption= ,label=]
 $`
@@ -1163,7 +1134,7 @@ facilidades como a geração da documentação em formato ``PDF`` ou
 ``HTML`` e suporte à formatação das "docstrings".
 
 O uso do Epydoc é similar ao do ``pydoc``. Entretanto, devido à sua
-maior versatilidade, suas opções são bem mais numerosas (ex:epdh).
+maior versatilidade, suas opções são bem mais numerosas (ex-epdh).
 
     epydoc -h
 
@@ -1194,13 +1165,13 @@ Exercícios
 
 
 #.
-   Repita a iteração do exemplo ex:enumerate sem utilizar a função
+   Repita a iteração do exemplo ex-enumerate sem utilizar a função
    enumerate. Execute a iteração do objeto gerado por ``enumerate``
    manualmente, sem o auxílio do laço ``for`` e observe o seu
    resultado.
 
 #.
-   Adicione a funcionalidade ``else`` à listagem ex:brdict utilizando
+   Adicione a funcionalidade ``else`` à listagem ex-brdict utilizando
    exceções.
 
 #.

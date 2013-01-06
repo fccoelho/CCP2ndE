@@ -1,0 +1,796 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Comandos do Console Linux &mdash; CCP2ndE 2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="CCP2ndE 2 documentation" href="index.html" />
+    <link rel="prev" title="Introdução ao Console Gnu/Linux" href="bash.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="bash.html" title="Introdução ao Console Gnu/Linux"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">CCP2ndE 2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cover.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Tabela de Conteúdo</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Comandos do Console Linux</a><ul>
+<li><a class="reference internal" href="#arquivos-e-diretorios">Arquivos e diretórios:</a></li>
+<li><a class="reference internal" href="#visualizacao-de-arquivos">Visualização de arquivos:</a></li>
+<li><a class="reference internal" href="#criacao-e-edicao-de-arquivos">Criação e Edição de Arquivos:</a></li>
+<li><a class="reference internal" href="#propriedades-dos-arquivos">Propriedades dos Arquivos:</a></li>
+<li><a class="reference internal" href="#localizacao-de-arquivos">Localização de Arquivos:</a></li>
+<li><a class="reference internal" href="#manipulacao-de-arquivos-texto">Manipulação de Arquivos Texto:</a></li>
+<li><a class="reference internal" href="#compressao-de-arquivos">Compressão de Arquivos:</a></li>
+<li><a class="reference internal" href="#comparacao-de-arquivos">Comparação de Arquivos:</a></li>
+<li><a class="reference internal" href="#discos-e-sistemas-de-arquivos">Discos e Sistemas de Arquivos:</a></li>
+<li><a class="reference internal" href="#impressao">Impressão:</a></li>
+<li><a class="reference internal" href="#verificacao-ortografica">Verificação Ortográfica:</a></li>
+<li><a class="reference internal" href="#processos">Processos:</a></li>
+<li><a class="reference internal" href="#agendando-tarefas">Agendando Tarefas:</a></li>
+<li><a class="reference internal" href="#sistema-e-rede">Sistema e Rede:</a></li>
+<li><a class="reference internal" href="#audio-e-video">Audio e Vídeo:</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Tópico anterior</h4>
+  <p class="topless"><a href="bash.html"
+                        title="capítulo anterior">Introdução ao Console Gnu/Linux</a></p>
+  <h3>Esta Página</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/unix.txt"
+           rel="nofollow">Exibir Fonte</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pesquisa rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Digite os termos da busca ou o nome de um módulo, classe ou função.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="comandos-do-console-linux">
+<h1>Comandos do Console Linux<a class="headerlink" href="#comandos-do-console-linux" title="Link permanente para este título">¶</a></h1>
+<blockquote>
+<div><p>Cada um destes comandos possui uma vasta gama de opções e
+variações. Para obter maiores detalhes sobre qualquer um deles,
+basta digitar o seguinte comando no console: &#8216;man comando&#8217; e a
+documentação do comando aparecerá instantaneamente. Para retornar
+ao console tecle &#8216;q&#8217;.</p>
+<p>Seguindo a filosofia do Unix onde cada programa deve fazer apenas
+uma coisa bem, estes comandos podem e devem ser combinados para
+tarefas mais complexas. Nós Criamos uma [área de dicas] aberta, Na
+qual qualquer um pode adicionar suas próprias receitas de
+utilização destes (e outros) comandos.</p>
+</div></blockquote>
+<div class="section" id="arquivos-e-diretorios">
+<h2>Arquivos e diretórios:<a class="headerlink" href="#arquivos-e-diretorios" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>ls</dt>
+<dd><p class="first last">Lista arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>cp</dt>
+<dd><p class="first last">Copia arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mv</dt>
+<dd><p class="first last">Renomeia ou move arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>rm</dt>
+<dd><p class="first last">Apaga arquivos (de verdade!).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ln</dt>
+<dd><p class="first last">Cria links para arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pwd</dt>
+<dd><p class="first last">Imprime o nome do diretório corrente (caminho completo).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mkdir</dt>
+<dd><p class="first last">Cria um diretório.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>rmdir</dt>
+<dd><p class="first last">Remove um diretório. Para remover recursivamente toda uma arvore de diretórios use <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">-rf</span></tt> (cuidado!).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="visualizacao-de-arquivos">
+<h2>Visualização de arquivos:<a class="headerlink" href="#visualizacao-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>cat</dt>
+<dd><p class="first last">Joga o arquivo inteiro na tela.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>less</dt>
+<dd><p class="first last">Visualiza o arquivo com possibilidade de movimentação e</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>busca dentro do mesmo.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>head</dt>
+<dd><p class="first last">visualiza o início do arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>tail</dt>
+<dd><p class="first last">visualiza o final do arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>nl</dt>
+<dd><p class="first last">Visualiza com numeração das linhas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>od</dt>
+<dd><p class="first last">Visualiza arquivo binário em base octal.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>xxd</dt>
+<dd><p class="first last">Visualiza arquivo binário em base hexadecimal.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>gv</dt>
+<dd><p class="first last">Visualiza arquivos Postscript/PDF.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>xdvi</dt>
+<dd><p class="first last">Visualiza arquivos DVI gerados pelo TeX.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="criacao-e-edicao-de-arquivos">
+<h2>Criação e Edição de Arquivos:<a class="headerlink" href="#criacao-e-edicao-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>emacs</dt>
+<dd><p class="first last">Editor de textos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>vim</dt>
+<dd><p class="first last">Editor de textos (&#8216;:q&#8217; para sair. ;-p)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>gnumeric</dt>
+<dd><p class="first last">Editar planilhas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>abiword</dt>
+<dd><p class="first last">Processador de textos</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>oofice</dt>
+<dd><p class="first last">inicia o openoffice</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="propriedades-dos-arquivos">
+<h2>Propriedades dos Arquivos:<a class="headerlink" href="#propriedades-dos-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>stat</dt>
+<dd><p class="first last">Mostra atributos dos arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>wc</dt>
+<dd><p class="first last">conta bytes/palavras/linhas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>du</dt>
+<dd><p class="first last">Uso de espaço em disco.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>file</dt>
+<dd><p class="first last">Identifica tipo do arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>touch</dt>
+<dd><p class="first last">Atualiza registro de ultima atualização do arquivo. Caso o</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>arquivo não exista ele é criado.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>chown</dt>
+<dd><p class="first last">Altera o dono o arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>chgrp</dt>
+<dd><p class="first last">Altera o grupo o arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>chmod</dt>
+<dd><p class="first last">Altera as permissões de um arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>chattr</dt>
+<dd><p class="first last">Altera atributos avançados de um arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>lsattr</dt>
+<dd><p class="first last">Lista atributos avançados do arquivo.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="localizacao-de-arquivos">
+<h2>Localização de Arquivos:<a class="headerlink" href="#localizacao-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>find</dt>
+<dd><p class="first last">localiza arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>locate</dt>
+<dd><p class="first last">Localiza arquivo por meio de índice criado com</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">updatedb</span></tt>.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>which</dt>
+<dd><p class="first last">Localiza comandos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>whereis</dt>
+<dd><p class="first last">Localiza o binário (executável), fontes, e página man de</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>um comando.</p>
+</div></blockquote>
+</div>
+<div class="section" id="manipulacao-de-arquivos-texto">
+<h2>Manipulação de Arquivos Texto:<a class="headerlink" href="#manipulacao-de-arquivos-texto" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>grep</dt>
+<dd><p class="first last">Busca em texto retornando linhas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>cut</dt>
+<dd><p class="first last">Extrai colunas de um arquivo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>paste</dt>
+<dd><p class="first last">Anexa colunas de um arquivo texto.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>sort</dt>
+<dd><p class="first last">Ordena linhas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>uniq</dt>
+<dd><p class="first last">Localiza linhas idênticas.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="compressao-de-arquivos">
+<h2>Compressão de Arquivos:<a class="headerlink" href="#compressao-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>gzip</dt>
+<dd><p class="first last">Compacta arquivos no formato GNU Zip.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>compress</dt>
+<dd><p class="first last">Compacta arquivos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>bzip2</dt>
+<dd><p class="first last">Compacta arquivos(maior compactação do que o gzip, porém</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>mais lento.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>zip</dt>
+<dd><p class="first last">Compacta arquivos no formato zip(Windows).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="comparacao-de-arquivos">
+<h2>Comparação de Arquivos:<a class="headerlink" href="#comparacao-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>diff</dt>
+<dd><p class="first last">Compara arquivos linha a linha.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>comm</dt>
+<dd><p class="first last">Compara arquivos ordenados.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>cmp</dt>
+<dd><p class="first last">Compara arquivos byte por byte.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>md5sum</dt>
+<dd><p class="first last">Calcula checksums.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="discos-e-sistemas-de-arquivos">
+<h2>Discos e Sistemas de Arquivos:<a class="headerlink" href="#discos-e-sistemas-de-arquivos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>df</dt>
+<dd><p class="first last">Espaço livre em todos os discos(pendrives e etc.) montados.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mount</dt>
+<dd><p class="first last">Torna um disco acessível.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>fsck</dt>
+<dd><p class="first last">Verifica um disco procurando por erros.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>sync</dt>
+<dd><p class="first last">Esvazia caches de disco.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="impressao">
+<h2>Impressão:<a class="headerlink" href="#impressao" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>lpr</dt>
+<dd><p class="first last">Imprime arquivos na impressora padrão do sistema.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>lpq</dt>
+<dd><p class="first last">Visualiza a fila de impressão.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>lprm</dt>
+<dd><p class="first last">Remove arquivos da fila de impressão.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="verificacao-ortografica">
+<h2>Verificação Ortográfica:<a class="headerlink" href="#verificacao-ortografica" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>ispell</dt>
+<dd><p class="first last">verificação ortográfica interativa.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>dict</dt>
+<dd><p class="first last">Cliente para servidor de dicionários. Busca palavras.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="processos">
+<h2>Processos:<a class="headerlink" href="#processos" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>ps</dt>
+<dd><p class="first last">Lista todos os processos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>w</dt>
+<dd><p class="first last">Lista os processos do usuário.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>uptime</dt>
+<dd><p class="first last">Retorna tempo desde o último boot, e carga do sistema.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>top</dt>
+<dd><p class="first last">Monitora Processos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>free</dt>
+<dd><p class="first last">Mostra memória livre.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>kill</dt>
+<dd><p class="first last">Mata processos.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>nice</dt>
+<dd><p class="first last">Ajusta a prioridade de um processo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>renice</dt>
+<dd><p class="first last">Altera a prioridade de um processo.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="agendando-tarefas">
+<h2>Agendando Tarefas:<a class="headerlink" href="#agendando-tarefas" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>watch</dt>
+<dd><p class="first last">Executa programas a intervalos regulares.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>crontab</dt>
+<dd><p class="first last">Agenda tarefas periódicas.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="sistema-e-rede">
+<h2>Sistema e Rede:<a class="headerlink" href="#sistema-e-rede" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>uname</dt>
+<dd><p class="first last">Mostra informações sobre o sistema.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>hostname</dt>
+<dd><p class="first last">Mostra o nome da máquina.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ifconfig</dt>
+<dd><p class="first last">Mostra/ajusta configuração de rede.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>host</dt>
+<dd><p class="first last">Busca na tabela de DNS.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ping</dt>
+<dd><p class="first last">verifica se determinada máquina está acessível.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>traceroute</dt>
+<dd><p class="first last">Visualiza o caminho ate uma determinada máquina.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ssh</dt>
+<dd><p class="first last">Login remoto seguro.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>telnet</dt>
+<dd><p class="first last">Login remoto.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>scp</dt>
+<dd><p class="first last">Cópia segura de arquivos entre máquinas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>sftp</dt>
+<dd><p class="first last">Cópia segura de arquivos entre máquinas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ftp</dt>
+<dd><p class="first last">Cópia de arquivos entre máquinas.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>pine</dt>
+<dd><p class="first last">Cliente de email modo texto amigável.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mutt</dt>
+<dd><p class="first last">Cliente de email modo texto.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mail</dt>
+<dd><p class="first last">Cliente de email mínimo.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>links</dt>
+<dd><p class="first last">Navegador web em modo texto.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>wget</dt>
+<dd><p class="first last">Download de páginas da web.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>gaim</dt>
+<dd><p class="first last">Mensagem instantâneas (requer interface gráfica).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>write</dt>
+<dd><p class="first last">Envia mensagens para outro usuário.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mesg</dt>
+<dd><p class="first last">Permite/proibe escrita no seu terminal via <tt class="docutils literal"><span class="pre">write</span></tt>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="audio-e-video">
+<h2>Audio e Vídeo:<a class="headerlink" href="#audio-e-video" title="Link permanente para este título">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>grip</dt>
+<dd><p class="first last">Toca CDs e extrai seu conteúdo para arquivos mp3(requer</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>interface gráfica).</p>
+<ul>
+<li><dl class="first docutils">
+<dt>xmms</dt>
+<dd><p class="first last">Toca arquivos de áudio.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="bash.html" title="Introdução ao Console Gnu/Linux"
+             >anterior</a> |</li>
+        <li><a href="index.html">CCP2ndE 2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009-2013, Flávio Codeço Coelho.
+      Criado com <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

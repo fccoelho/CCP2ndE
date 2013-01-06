@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introdução &mdash; CCP2ndE 2 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="CCP2ndE 2 documentation" href="index.html" />
+    <link rel="next" title="O interpretador Jython" href="jython.html" />
+    <link rel="prev" title="Editores Genéricos" href="capferr.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             accesskey="I">índice</a></li>
+        <li class="right" >
+          <a href="jython.html" title="O interpretador Jython"
+             accesskey="N">próximo</a> |</li>
+        <li class="right" >
+          <a href="capferr.html" title="Editores Genéricos"
+             accesskey="P">anterior</a> |</li>
+        <li><a href="index.html">CCP2ndE 2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/cover.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Tabela de Conteúdo</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introdução</a></li>
+<li><a class="reference internal" href="#integracao-com-a-linguagem-c">Integração com a Linguagem <tt class="docutils literal"><span class="pre">C</span></tt></a></li>
+<li><a class="reference internal" href="#integracao-com-c">Integração com <tt class="docutils literal"><span class="pre">C++</span></tt></a><ul>
+<li><a class="reference internal" href="#criando-applets-em-jython">Criando &#8220;Applets&#8221; em Jython</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exercicios">Exercícios</a></li>
+</ul>
+
+  <h4>Tópico anterior</h4>
+  <p class="topless"><a href="capferr.html"
+                        title="capítulo anterior">Editores Genéricos</a></p>
+  <h4>Próximo tópico</h4>
+  <p class="topless"><a href="jython.html"
+                        title="próximo capítulo">O interpretador Jython</a></p>
+  <h3>Esta Página</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/capext.txt"
+           rel="nofollow">Exibir Fonte</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Pesquisa rápida</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Ir" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Digite os termos da busca ou o nome de um módulo, classe ou função.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <p>{Interagindo com Outras Linguagens}(ch:capext)
+{Introdução a vários métodos de integração do Python com outras linguagens. \textbf{Pré-requisitos:} Capítulos \ref{cap:intro} e \ref{cap:obj}.}</p>
+<div class="section" id="introducao">
+<h1>Introdução<a class="headerlink" href="#introducao" title="Link permanente para este título">¶</a></h1>
+<p>O Python é uma linguagem extremamente poderosa e versátil,
+perfeitamente apta a ser, não somente a primeira, como a última
+linguagem de programação que um cientista precisará aprender.
+Entretanto, existem várias situações nas quais torna-se
+interessante combinar o seu código escrito em Python com códigos
+escritos em outras linguagens. Uma das situações mais comuns, é a
+necessidade de obter maior performance em certos algoritmos através
+da re-implementação em uma linguagem compilada. Outra Situação
+comum é possibilidade de se utilizar de bibliotecas desenvolvidas
+em outras linguagens e assim evitar ter que reimplementá-las em
+Python.</p>
+<p>O Python é uma linguagem que se presta. extremamente bem. a estas
+tarefas existindo diversos métodos para se alcançar os objetivos
+descritos no parágrafo acima. Neste capítulo, vamos explorar apenas
+os mais práticos e eficientes, do ponto de vista do tempo de
+implementação.</p>
+</div>
+<div class="section" id="integracao-com-a-linguagem-c">
+<h1>Integração com a Linguagem <tt class="docutils literal"><span class="pre">C</span></tt><a class="headerlink" href="#integracao-com-a-linguagem-c" title="Link permanente para este título">¶</a></h1>
+<p>A linguagem <tt class="docutils literal"><span class="pre">C</span></tt> é uma das linguagens mais utilizadas no
+desenvolvimento de softwares que requerem alta performance. Um bom
+exemplo é o Linux (kernel) e a própria linguagem Python. Este fato
+torna o <tt class="docutils literal"><span class="pre">C</span></tt> um candidato natural para melhorar a performance de
+programas em Python.</p>
+<p>Vários pacotes científicos para Python como o <em>Numpy</em> e <em>Scipy</em>,
+por exemplo, tem uma grande porção do seu código escrito em <tt class="docutils literal"><span class="pre">C</span></tt>
+para máxima performance. Coincidentemente, o primeiro método que
+vamos explorar para incorporar código <tt class="docutils literal"><span class="pre">C</span></tt> em programas Python, é
+oferecido como parte do pacote <em>Scipy</em>. {Weave}{weave} O <tt class="docutils literal"><span class="pre">weave</span></tt>
+é um módulo do pacote scipy, que permite inserir trechos de código
+escrito em <tt class="docutils literal"><span class="pre">C</span></tt> ou <tt class="docutils literal"><span class="pre">C++</span></tt> dentro de programas em Python. Existem
+várias formas de se utilizar o <tt class="docutils literal"><span class="pre">weave</span></tt> dependendo do tipo de
+aplicação que se tem. Nesta seção, vamos explorar apenas a
+aplicação do módulo <tt class="docutils literal"><span class="pre">inline</span></tt> do <tt class="docutils literal"><span class="pre">weave</span></tt>, por ser mais simples e
+cobrir uma ampla gama de aplicações. Além disso, utilizações mais
+avançadas do <tt class="docutils literal"><span class="pre">weave</span></tt>, exigem um conhecimento mais profundo da
+linguagem <tt class="docutils literal"><span class="pre">C</span></tt>, o que está fora do escopo deste livro. Caso os
+exemplos incluídos não satisfaçam os anseios do leitor, existe uma
+farta documentação no site www.scipy.org.</p>
+<p>Vamos começar a explorar o <tt class="docutils literal"><span class="pre">weave</span></tt> com um exemplo trivial
+(computacionalmente) um simples loop com uma única operação
+(exemplo ex:weaveloop).</p>
+<p>[frame=trBL, caption=Otimização de loops com o \texttt{weave}, label=ex:weaveloop] {code/weaveloop.py}</p>
+<p>No exemplo ex:weaveloop podemos ver como funciona o <tt class="docutils literal"><span class="pre">weave</span></tt>. Uma
+string contém o código <tt class="docutils literal"><span class="pre">C</span></tt> a ser compilado. A função <tt class="docutils literal"><span class="pre">inline</span></tt>
+compila o código em questão, passando para o mesmo as variáveis
+necessárias.</p>
+<p>Note que, na primeira execução do loop, o <tt class="docutils literal"><span class="pre">weave</span></tt> é mais lento
+que o Python, devido à compilação do código; mas em seguida, com a
+rotina já compilada e carregada na memória, este atraso não existe
+mais.</p>
+<p>O <tt class="docutils literal"><span class="pre">weave.inline</span></tt> tem uma performance inferior à de um programa em
+<tt class="docutils literal"><span class="pre">C</span></tt> equivalente, executado fora do Python. Mas a sua simplicidade
+de utilização, compensa sempre que se puder obter um ganho de
+performance sobre o Python puro.</p>
+<p>[frame=trBL, caption=Calculando iterativamente a série de Fibonacci em Python e em \texttt{C}(\texttt{weave.inline}), label=ex:weavefib] {code/weavefib.py}</p>
+<p>No exemplo ex:weavefib, o ganho de performance do <tt class="docutils literal"><span class="pre">weave.inline</span></tt>
+já não é tão acentuado.</p>
+<blockquote>
+<div>:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>$ python weavefib.py</div></blockquote>
+<p>Tempo médio no python: 1.69277e-05 segundos
+Tempo médio no weave: 1.3113e-05 segundos
+Aceleração média: 1.49554 +- 0.764275
+end{lstlisting}</p>
+<p>subsection{Ctypes}index{Ctypes}
+O pacote texttt{ctypes}, parte integrante do Python a partir da versão 2.5, é um módulo que nos permite invocar funções de bibliotecas em texttt{C} pré-compiladas, como se fossem funções em Python.  Apesar da aparente facilidade de uso, ainda é necessário ter consciência do tipo de dados a função, que se deseja utilizar, requer. Por conseguinte, é necessário que o usuario tenha um bom conhecimento da linguagem texttt{C}.</p>
+<p>Apenas alguns objetos do python podem ser passados para funções através do ctypes: texttt{None, inteiros, inteiros longos, strings, e strings unicode}. Outros tipos de dados devem ser convertidos, utilizando tipos fornecidos pelo texttt{ctypes}, compatíveis com texttt{C}.</p>
+<p>Dado seu estágio atual de desenvolvimento, o texttt{ctypes} não é a ferramenta mais indicada ao cientista que deseja fazer uso das conveniências do texttt{C} em seus programas Python. Portanto, vamos apenas dar dois exemplos básicos para que o leitor tenha uma ideia de como funciona o texttt{ctypes}. Para maiores informações recomendamos o tutorial do ctypes (url{ <a class="reference external" href="http://python.net/crew/theller/ctypes/tutorial.html">http://python.net/crew/theller/ctypes/tutorial.html</a>})</p>
+<p>Nos exemplos abaixo assumimos que o leitor está utilizando Linux pois o uso do texttt{ctypes} no Windows não é idêntico.</p>
+<p>begin{lstlisting}[frame=trBL, caption=Carregando bibliotecas em texttt{C}, label=ex:ctypes1]
+&gt;&gt;&gt; from ctypes import *
+&gt;&gt;&gt; libc = cdll.LoadLibrary(&#8220;libc.so.6&#8221;)
+&gt;&gt;&gt; libc
+&lt;CDLL &#8216;libc.so.6&#8217;, handle ... at ...&gt;
+end{lstlisting}</p>
+<p>Uma vez importada uma biblioteca (listagem ref{ex:ctypes1}), podemos chamar funções como atributos das mesmas.
+begin{lstlisting}[frame=trBL, caption=Chamando fuções em bibliotecas importadas com o ctypes, label=ex:ctypes2]
+&gt;&gt;&gt; libc.printf
+&lt;_FuncPtr object at 0x...&gt;
+&gt;&gt;&gt; print libc.time(None)
+1150640792
+&gt;&gt;&gt; printf = libc.printf
+&gt;&gt;&gt; printf(&#8220;Ola, %sn&#8221;, &#8220;Mundo!&#8221;)
+Ola, Mundo!
+end{lstlisting}</p>
+<p>subsection{Pyrex}index{Pyrex}
+O Pyrex é uma linguagem muito similar ao Python feita para gerar módulos em texttt{C} para o Python.
+Desta forma, envolve um pouco mais de trabalho por parte do usuário, mas é de grande valor para acelerar código escrito em Python com pouquíssimas modificações.</p>
+<p>O Pyrex não inclui todas as possibilidades da linguagem Python. As principais modificações são as que se seguem:
+begin{itemize}</p>
+<blockquote>
+<div>item Não é permitido definir funções dentro de outras funções;</div></blockquote>
+<p>item definições de classe devem ocorrer apenas no espaço de nomes global do módulo, nunca dentro de funções ou de outras classes;
+item Não é permitido texttt{import <a href="#id3"><span class="problematic" id="id4">*</span></a>}. As outras formas de texttt{import} são permitidas;
+item Geradores não podem ser definidos em Pyrex;
+item As funções texttt{globals()} e texttt{locals()} não podem ser utilizadas.
+end{itemize}</p>
+<p>Além das limitações acima, existe um outro conjunto de limitações que é considerado temporário pelos desenvolvedores do Pyrex. São as seguintes:
+begin{itemize}</p>
+<blockquote>
+<div>item Definições de classes e funções não podem ocorrer dentro de estruturas de controle (if, elif, etc.);</div></blockquote>
+<p>item Operadores textit{in situ} (+=, <a href="#id5"><span class="problematic" id="id6">*</span></a>=, etc.) não são suportados pelo Pyrex;
+item List comprehensions não são suportadas;
+item Não há suporte a Unicode.
+end{itemize}</p>
+<p>Para exemplificar o uso do Pyrex, vamos implementar uma função geradora de números primos em Pyrex (listagem ref{ex:pyrex}).</p>
+<p>lstinputlisting[frame=trBL, caption=Calculando números primos em Pyrex, label=ex:pyrex]{code/primes.pyx}</p>
+<p>Vamos analisar o código Pyrex, nas linhas onde ele difere do que seria escrito em Python. Na linha 2 encontramos a primeira peculiaridade: o argumento de entrada kmax é definido como inteiro por meio da expressão texttt{int kmax}. Em Pyrex, devemos declarar os tipos das variáveis. Nas linhas 3 e 4 também ocorre a declaração dos tipos das variáveis que serão utilizadas na função. Note como é definida uma lista de inteiros. Se uma variável não é declarada, o Pyrex assume que ela é um objeto Python.</p>
+<p>Quanto mais variáveis conseguirmos declarar como tipos básicos de texttt{C}, mais eficiente será o código texttt{C} gerado pelo Pyrex. A variável texttt{result}(linha 5) não é declarada como uma lista de inteiros, pois não sabemos ainda qual será seu tamanho. O restante do código é equivalente ao Python. Devemos apenas notar a preferência do laço texttt{while} ao invés de um laço do tipo texttt{for i in range(x)}. Este ultimo seria mais lento devido a incluir a função texttt{range} do Python.</p>
+<p>O próximo passo é gerar a versão em texttt{C} da listagem ref{ex:pyrex}, compilar e linká-lo, transformando-o em um módulo Python.
+begin{lstlisting}[language=csh,frame=trBL, caption=Gerando Compilando e linkando, label=ex:pyrexc]
+$`</p>
+<blockquote>
+<div>pyrexc primes.pyx
+:math:<a href="#id7"><span class="problematic" id="id8">`</span></a>$ gcc -c -fPIC -I/usr/include/python2.4/ primes.c</div></blockquote>
+<dl class="docutils">
+<dt>$` gcc</dt>
+<dd>-shared primes.o -o primes.so</dd>
+</dl>
+<p>Agora vamos comparar a performance da nossa função com uma função
+em Python razoávelmente bem implementada (Listagem ex:pyrex2).
+Afinal temos que dar uma chance ao Python, não?</p>
+<p>[frame=trBL, caption=Calculando números primos em Python, label=ex:pyrex2] {code/primes2.py}</p>
+<p>Comparemos agora a performance das duas funções para encontrar
+todos os números primos menores que 100000. Para esta comparação
+utilizaremos o ipython que nos facilita esta tarefa através da
+função mágica {\%timeit}.</p>
+<blockquote>
+<div>In [1]:from primes import primes In [2]:from primes2 import primes
+as primesp In [3]:%timeit primes(100000) 10 loops, best of 3: 19.6
+ms per loop In [4]:%timeit primesp(100000) 10 loops, best of 3: 512
+ms per loop</div></blockquote>
+<p>Uma das desvantagens do Pyrex é a necessidade de compilar e linkar
+os programas antes de poder utilizá-los. Este problema se acentua
+se seu programa Python utiliza extensões em Pyrex e precisa ser
+distribuido a outros usuários. Felizmente, existe um meio de
+automatizar a compilação das extensões em Pyrex, durante a
+instalação de um módulo. O pacote setuptools, dá suporte à
+compilação automática de extensões em <tt class="docutils literal"><span class="pre">Pyrex</span></tt>. Basta escrever um
+script de instalação similar ao da listagem ex:setupix. Uma vez
+criado o script (batizado, por exemplo, de <tt class="docutils literal"><span class="pre">setupyx.py</span></tt>), para
+compilar a nossa extensão, basta executar o seguinte comando:
+<tt class="docutils literal"><span class="pre">python</span> <span class="pre">setupix.py</span> <span class="pre">build</span></tt>.</p>
+<p>Para compilar uma extensão Pyrex, o usuário deve naturalmente ter o
+Pyrex instalado. Entretanto para facilitar a distribuição destas
+extensões, o pacote setuptools, na ausência do Pyrex, procura a
+versão em <tt class="docutils literal"><span class="pre">C</span></tt> gerada pelo autor do programa, e se ela estiver
+incluida na distribuição do programa, o setuptools passa então para
+a etapa de compilação e linkagem do código <tt class="docutils literal"><span class="pre">C</span></tt>.</p>
+<p>[frame=trBL, caption=Automatizando a compilação de extensões em \texttt{Pyrex} por meio do setuptools, label=ex:setupix] {code/setupyx.py}</p>
+<blockquote>
+<div>import setuptools from setuptools.extension import Extension</div></blockquote>
+</div>
+<div class="section" id="integracao-com-c">
+<h1>Integração com <tt class="docutils literal"><span class="pre">C++</span></tt><a class="headerlink" href="#integracao-com-c" title="Link permanente para este título">¶</a></h1>
+<p>A integração de programas em Python com bibliotecas em <tt class="docutils literal"><span class="pre">C++</span></tt> é
+normalmente feita por meio ferramentas como SWIG (www.swig.org),
+SIP(www.riverbankcomputing.co.uk/sip/) ou Boost.Python
+(<a class="reference external" href="http://www.boost.org/libs/python/">http://www.boost.org/libs/python/</a>). Estas ferramentas, apesar de
+relativamente simples, requerem um bom conhecimento de <tt class="docutils literal"><span class="pre">C++</span></tt> por
+parte do usuário e, por esta razão, fogem ao escopo deste capítulo.
+No entanto, o leitor que deseja utilizar código já escrito em
+<tt class="docutils literal"><span class="pre">C++</span></tt> pode e deve se valer das ferramentas supracitadas, cuja
+documentação é bastante clara.</p>
+<p>Elegemos para esta seção sobre <tt class="docutils literal"><span class="pre">C++</span></tt>. uma ferramenta original. O
+ShedSkin. {Shedskin}{Shedskin} O ShedSkin
+(<a class="reference external" href="http://shed-skin.blogspot.com/)se">http://shed-skin.blogspot.com/)se</a> auto intitula
+&#8220;um compilador de Python para <tt class="docutils literal"><span class="pre">C++</span></tt> otimizado&#8221;. O que ele faz ,
+na verdade, é converter programas escritos em Python para <tt class="docutils literal"><span class="pre">C++</span></tt>,
+permitindo assim grandes ganhos de velocidade. Apesar de seu
+potencial, o ShedSkin ainda é uma ferramenta um pouco limitada. Uma
+de suas principais limitações, é que o programa em Python a ser
+convertido deve possuir apenas variáveis &#8220;estáticas&#8221;, ou seja as
+variáveis devem manter-se do mesmo tipo durante toda a execução do
+programa. Se uma variável é definida como um número inteiro, nunca
+poderá receber um número real, uma lista ou qualquer outro tipo de
+dado.</p>
+<p>O ShedSkin também não suporta toda a biblioteca padrão do Python na
+versão testada (0.0.15). Entretanto, mesmo com estas limitações,
+esta ferramenta pode ser muito útil. Vejamos um exemplo: A
+integração numérica de uma função, pela regra do trapézio. Esta
+regra envolve dividir a área sob a função em um dado intervalo em
+multiplos trapézios e somar as suas áreas(figura fig:trapezio.</p>
+<p>Matemáticamente, podemos expressar a regra trapezoidal da seguinte
+fórmula.</p>
+<blockquote>
+<div>:math:<a href="#id9"><span class="problematic" id="id10">`</span></a>$int_a^b f(x);dx approx frac{h}{2}(f(a)+f(b))+hsum_{i=1}^{n-1}f(a+ih),;;;h=frac{b-a}{n}</div></blockquote>
+<p>$`</p>
+<p>(eq:trapezio)</p>
+<p>Na listagem ex:trapintloop podemos ver uma implementação simples da
+regra trapezoidal.</p>
+<p>[frame=trBL, caption=implementação  da regra trapezoidal(utilizando laço for) conforme especificada na equação \ref{eq:trapezio}, label=ex:trapintloop] {code/trapintloop.py}</p>
+<p>Executando o script da Listagem ex:trapintloop (trapintloop.py)
+observamos o tempo de execução da integração das duas funções.</p>
+<blockquote>
+<div>:math:<a href="#id11"><span class="problematic" id="id12">`</span></a>$ python trapintloop.py</div></blockquote>
+<p>resultado: 16
+Tempo: 11.68 seg
+resultado: 49029
+Tempo: 26.96 seg
+end{lstlisting}</p>
+<p>Para converter o script ref{ex:trapintloop} em texttt{C++} tudo o que precisamos fazer é:
+begin{lstlisting}[language=csh,frame=trBL, caption=Verificando o tempo de execução em texttt{C++} ]
+$`</p>
+<blockquote>
+<div><p>ss trapintloop.py *** SHED SKIN Python-to-C++ Compiler 0.0.15
+*** Copyright 2005, 2006 Mark Dufour; License GNU GPL version 2
+or later (See LICENSE) (If your program does not compile, please
+mail me at <a class="reference external" href="mailto:mark&#46;dufour&#37;&#52;&#48;gmail&#46;com">mark<span>&#46;</span>dufour<span>&#64;</span>gmail<span>&#46;</span>com</a>!!)</p>
+<p>*WARNING* trapintloop:13: &#8216;xrange&#8217;, &#8216;enumerate&#8217; and &#8216;reversed&#8217;
+return lists for now [iterative type analysis..] ** iterations: 2
+templates: 55 [generating c++ code..]
+:math:<a href="#id13"><span class="problematic" id="id14">`</span></a>$ make run</p>
+</div></blockquote>
+<p>g++ -O3  -I ...
+./trapintloop
+resultado: 16
+Tempo: 0.06 seg
+resultado: 49029
+Tempo: 1.57 seg
+end{lstlisting}</p>
+<p>Com estes dois comandos, geramos, compilamos e executamos uma versão texttt{C++} do programa listado em ref{ex:trapintloop}. O código texttt{C++} gerado pelo Shed-Skin pode ser conferido na listagem ref{ex:trapintloop_C}</p>
+<p>Como pudemos verificar, o ganho em performance é considerável. Lamentávelmente, o Shed-Skin não permite criar módulos <a href="#id15"><span class="problematic" id="id16">``</span></a>de extensão&#8217;&#8217; que possam ser importados por outros programas em Python, só programas independentes. Mas esta limitação pode vir a ser superada no futuro.</p>
+<p>lstinputlisting[language=c++,frame=trBL, caption=Código texttt{C++} gerado pelo Shed-skin a partir do script trapintloopy.py,label=ex:trapintloop_C]{code/trapintloop.cpp}
+section{Integração com a Linguagem texttt{Fortran}}index{FORTRAN}
+A linguagem texttt{Fortran} é uma das mais antigas linguagens de programação ainda em uso. Desenvolvida nos anos 50 pela IBM, foi projetada especificamente para aplicações científicas. A sigla texttt{Fortran} deriva de <a href="#id17"><span class="problematic" id="id18">``</span></a>IBM mathematical FORmula TRANslation system&#8217;&#8216;. Dada a sua longa existência, existe uma grande quantidade de código científico escrito em texttt{Fortran} disponível para uso. Felizmente, a integração do texttt{Fortran} com o Python pode ser feita de forma extremamente simples, através da ferramenta texttt{f2py}, que demonstraremos a seguir.
+subsection{texttt{f2py}}
+Esta ferramenta está disponível como parte do Pacote numpy (url{www.scipy.org}). Para ilustrar o uso do texttt{f2py}, vamos voltar ao problema da integração pela regra trapezoidal (equação ref{eq:trapezio}). Como vimos, a implementação deste algoritmo em Python, utilizando um laço texttt{for}, é ineficiente. Para linguagens compiladas como texttt{C++} ou texttt{Fortran}, laços são executados com grande eficiência. Vejamos a performance de uma implementação em texttt{Fortran} da regra trapezoidal (listagem ref{ex:trapintf}).</p>
+<p>lstinputlisting[language=fortran,frame=trBL, caption=implementação em texttt{Fortran} da regra trapezoidal. label=ex:trapintf]{code/trapint.f}</p>
+<p>A listagem ref{ex:compfor} nos mostra como compilar e executar o código da listagem ref{ex:trapintf}. Este comando de compilação pressupõe que você possua  o texttt{GCC} (Gnu Compiler Collection) versão 4.0 ou superior. No caso de versões mais antigas deve-se substituir texttt{gfortran} por texttt{g77} ou texttt{f77}.
+begin{lstlisting}[language=csh,frame=trBL, caption= Compilando e executando o programa da listagem ref{ex:trapintf},label=ex:compfor]
+$`</p>
+<blockquote>
+<div><blockquote>
+<div>gfortran -o trapint trapint.f
+:math:<a href="#id19"><span class="problematic" id="id20">`</span></a>$ time ./trapint</div></blockquote>
+<p>Resultado:    16.01428
+Resultado:    48941.40</p>
+</div></blockquote>
+<p>real    0m2.028s
+user    0m1.712s
+sys     0m0.013s
+end{lstlisting}</p>
+<p>Como em texttt{Fortran} não temos a conveniência de uma função para <a href="#id21"><span class="problematic" id="id22">``</span></a>cronometrar&#8217;&#8217; nossa função, utilizamos o comando texttt{time} do Unix. Podemos constatar que o tempo de execução é similar ao obtido com a versão em texttt{C++} (listagem ref{ex:trapintloop_C}).</p>
+<p>Ainda que não seja estritamente necessário, é recomendável que o código texttt{Fortran} seja preparado com comentários especiais (texttt{Cf2py}), antes de ser processado e compilado pelo texttt{f2py}. A listagem ref{ex:trapintf} já inclui estes comentários, para facilitar a nossa exposição. Estes comentários nos permitem informar ao texttt{f2py} as variáveis de entrada e saída de cada função e algumas outras coisas. No exemplo ref{ex:trapintf}, os principais parametros passados ao texttt{f2py}, através das linhas de comentário texttt{Cf2py intent()}, são texttt{in, out, hide e cache}. As duas primeiras identificam as variáveis de entrada e saída da função ou procedure. O parâmetro texttt{hide} faz com que a variável de saída texttt{res}, obrigatoriamente declarada no cabeçalho da procedure em texttt{Fortran} fique oculta ao ser importada no Python. O parâmetro cache reduz o custo da realocação de  memória em variáveis que são redefinidas dentro de um laço em texttt{Fortran}.</p>
+<p>Antes que possamos <a href="#id23"><span class="problematic" id="id24">``</span></a>importar&#8217;&#8217; nossas funções em texttt{Fortran} para uso em um programa em Python, precisamos compilar nossos fontes em texttt{Fortran} com o texttt{f2py}. A listagem ref{ex:compf2py} nos mostra como fazer isso.
+begin{lstlisting}[language=csh,frame=trBL, caption= Compilando com texttt{f2py},label=ex:compf2py]
+$`</p>
+<blockquote>
+<div>f2py -m trapintf -c trapint.f</div></blockquote>
+<p>Uma vez compilados os fontes em <tt class="docutils literal"><span class="pre">Fortran</span></tt> com o <tt class="docutils literal"><span class="pre">f2py</span></tt>, podemos
+então escrever uma variação do script <tt class="docutils literal"><span class="pre">trapintloop.py</span></tt> (listagem
+ex:trapintloop) para verificar os ganhos de performance. A listagem
+ex:trapintloopcomp contém nosso script de teste.
+[frame=trBL, caption=Script para comparação entre Python e \texttt{Fortran} via \texttt{f2py},label=ex:trapintloopcomp] {code/trapintloopcomp.py}</p>
+<p>A listagem ex:trapintloopcomp contem uma versão da regra
+trapezoidal em Python puro e importa a função <tt class="docutils literal"><span class="pre">tint</span></tt> do nosso
+programa em <tt class="docutils literal"><span class="pre">Fortran</span></tt>. A função em <tt class="docutils literal"><span class="pre">Fortran</span></tt> é chamado de duas
+formas: uma para integrar funções implementadas em Python (na forma
+funções <tt class="docutils literal"><span class="pre">lambda</span></tt>) e outra substituindo as funções <tt class="docutils literal"><span class="pre">lambda</span></tt>
+pelos seus equivalentes em <tt class="docutils literal"><span class="pre">Fortran</span></tt>.</p>
+<p>Executando <tt class="docutils literal"><span class="pre">trapintloopcomp.py</span></tt>, podemos avaliar os ganhos em
+performance (listagem ex:comp). Em ambas as formas de utilização da
+função <tt class="docutils literal"><span class="pre">ftint</span></tt>, existem chamadas para objetos Python dentro do
+laço <tt class="docutils literal"><span class="pre">DO</span></tt>. Vem daí a degradação da performance, em relação à
+execução do programa em <tt class="docutils literal"><span class="pre">Fortran</span></tt>, puramente.</p>
+<blockquote>
+<div>:math:<a href="#id25"><span class="problematic" id="id26">`</span></a>$ python trapintloopcomp.py</div></blockquote>
+<p>resultado: 16
+Tempo: 13.29 seg
+resultado: 49029
+Tempo: 29.14 seg
+tempo do Fortran com funcoes em Python
+resultado: 16
+Tempo: 7.31 seg
+resultado: 48941
+Tempo: 24.95 seg
+tempo do Fortran com funcoes em Fortran
+resultado: 16
+Tempo: 4.85 seg
+resultado: 48941
+Tempo: 6.42 seg
+end{lstlisting}</p>
+<p>Neste ponto, devemos parar e fazer uma reflexão. Será justo comparar a pior implementação possível em Python (utilizando laços texttt{for}), com códigos compilados em texttt{C++} e texttt{Fortran}? Realmente, não é justo. Vejamos como se sai uma implementação competente  da regra trapezoidal em Python (com uma ajudinha do pacote numpy). Consideremos a listagem ref{ex:trapintvect}.</p>
+<p>lstinputlisting[frame=trBL, caption=Implementação vetorizada da regra trapezoidal,label=ex:trapintvect]{code/trapintvect.py}</p>
+<p>Executando a listagem ref{ex:trapintvect}, vemos que a implementação vetorizada em Python ganha (0.28 e 2.57 segundos)de nossas soluções utilizando texttt{f2py}.</p>
+<p>Da mesma forma que com o texttt{Pyrex}, podemos distribuir programas escritos em Python com extensões escritas em texttt{Fortran}, com a ajuda do pacote setuptools. Na listagem ref{ex:setupf2py} vemos o exemplo de como escrever um setup.py para este fim. Neste exemplo, temos um texttt{setup.py} extrememente limitado, contendo apenas os parâmetros necessarios para a compilação de uma extensão denominada texttt{flib}, a partir de uma programa em texttt{Fortran}, localizado no arquivo texttt{flib.f}, dentro do pacote <a href="#id27"><span class="problematic" id="id28">``</span></a>texttt{meupacote}&#8217;&#8216;. Observe, que ao definir módulos de extensão através da função Extension, podemos passar também outros argumentos, tais como outras bibliotecas das quais nosso código dependa.
+begin{lstlisting}[frame=trBL, caption=texttt{setup.py} para distribuir programas com extensões em texttt{Fortran} ,label=ex:setupf2py]
+import ez_setup
+ez_setup.use_setuptools()
+import setuptools
+from numpy.distutils.core import setup, Extension
+flib = Extension(name=&#8217;meupacote.flib&#8217;,</p>
+<blockquote>
+<div>libraries=[],
+library_dirs=[],
+f2py_options=[],
+sources=[&#8216;meupacote/flib.f&#8217;]
+)</div></blockquote>
+<dl class="docutils">
+<dt>setup(name = &#8216;mypackage&#8217;,</dt>
+<dd><blockquote class="first">
+<div>version = &#8216;0.3.5&#8217;,
+packages = [&#8216;meupacote&#8217;],
+ext_modules = [flib]</div></blockquote>
+<p class="last">)</p>
+</dd>
+</dl>
+<p>end{lstlisting}</p>
+<p>section{A Píton que sabia Javanês &#8212; Integração com Java}index{Java}
+Peço licença ao mestre Lima Barreto, para parodiar o título do seu excelente conto, pois não pude resistir à analogia. A linguagem Python, conforme descobrimos ao longo deste livro, é extremamente versátil, e deve esta versatilidade, em parte, à sua biblioteca padrão. Entretanto existe uma outra linguagem que excede em muito o Python (ao menos atualmente), na quantidade de módulos disponíveis para os mais variados fins: o texttt{Java}.</p>
+<p>A linguagem texttt{Java} tem, todavia, contra si uma série de fatores: A complexidade de sua sintaxe rivaliza com a do texttt{C++}, e não é eficiente, como esperaríamos que o fosse, uma linguagem compilada, com tipagem estática. Mas todos estes aspectos negativos não são suficientes para anular as vantagens do vasto número de bibliotecas disponíveis e da sua portabilidade.</p>
+<p>Como poderíamos capturar o que o texttt{Java} tem de bom, sem levar como <a href="#id29"><span class="problematic" id="id30">``</span></a>brinde&#8217;&#8217; seus aspectos negativos? É aqui que entra o texttt{Jython}.</p>
+<p>O texttt{Jython} é uma implementação completa do Python 2.2footnote{O desenvolvimento do texttt{Jython continua, mas não se sabe ainda quando alcançará o CPython (implementação em texttt{C} do Python).}} em texttt{Java}. Com o texttt{Jython} programadores texttt{Java} podem embutir o Python em seus aplicativos e applets e nós, programadores Python, podemos utilizar, livremente, toda (ou quase toda) a biblioteca padrão do Python com classes em texttt{Java}. Além destas vantagens, O texttt{Jython} também é uma linguagem Open Source, ou seja de código aberto.</p>
+<p>subsection{O interpretador Jython}label{sec:jython}
+index{Jython}</p>
+<p>Para iniciar nossa aventura com o texttt{Jython}, precisaremos instalá-lo, e ter instalada uma máquina virtual texttt{Java} (ou JVM)  versão 1.4 ou mais recente.</p>
+<p>Vamos tentar usá-lo como usaríamos o interpretador Python e ver se notamos alguma diferença.
+begin{lstlisting}[frame=trBL, caption=Usando o interpretador texttt{Jython} ,label=lst:int-jython]
+$`</p>
+<blockquote>
+<div>jython Jython 2.1 on java1.4.2-01 (JIT: null) Type &#8220;copyright&#8221;,
+&#8220;credits&#8221; or &#8220;license&#8221; for more information. print &#8216;hello world&#8217;
+hello world import math() dir(math) [&#8216;acos&#8217;, &#8216;asin&#8217;, &#8216;atan&#8217;,
+&#8216;atan2&#8217;, &#8216;ceil&#8217;, &#8216;classDictInit&#8217;, &#8216;cos&#8217;, &#8216;cosh&#8217;, &#8216;e&#8217;, &#8216;exp&#8217;,
+&#8216;fabs&#8217;, &#8216;floor&#8217;, &#8216;fmod&#8217;, &#8216;frexp&#8217;, &#8216;hypot&#8217;, &#8216;ldexp&#8217;, &#8216;log&#8217;, &#8216;log10&#8217;,
+&#8216;modf&#8217;, &#8216;pi&#8217;, &#8216;pow&#8217;, &#8216;sin&#8217;, &#8216;sinh&#8217;, &#8216;sqrt&#8217;, &#8216;tan&#8217;, &#8216;tanh&#8217;] math.pi
+3.141592653589793</div></blockquote>
+<p>Até agora, tudo parece funcionar muito bem. Vamos tentar um exemplo
+um pouco mais avançado e ver de que forma o <tt class="docutils literal"><span class="pre">Jython</span></tt> pode
+simplificar um programa em <tt class="docutils literal"><span class="pre">Java</span></tt>.</p>
+<blockquote>
+<div>import javax.swing.JOptionPane; class testDialog public static void
+main ( String[] args ) javax.swing.JOptionPane.showMessageDialog (
+null, &#8220;Isto e um teste.&#8221; );</div></blockquote>
+<p>A versão apresentada na listagem lst:Swingjava está escrita em
+<tt class="docutils literal"><span class="pre">Java</span></tt>. Vamos ver como ficaria a versão em <tt class="docutils literal"><span class="pre">Jython</span></tt>.</p>
+<blockquote>
+<div>import javax.swing.JOptionPane
+javax.swing.JOptionPane.showMessageDialog(None,&#8221;Isto e um
+teste.&#8221;)</div></blockquote>
+<p>Podemos observar, na listagem lst:Swingjython, que eliminamos a
+verborragia característica do <tt class="docutils literal"><span class="pre">Java</span></tt>, e que o programa em
+<tt class="docutils literal"><span class="pre">Jython</span></tt> ficou bem mais &#8220;pitônico&#8221;. Outro detalhe que vale a pena
+comentar, é que não precisamos compilar (mas podemos se quisermos)
+o código em <tt class="docutils literal"><span class="pre">Jython</span></tt>, como seria necessário com o <tt class="docutils literal"><span class="pre">Java</span></tt>. Só
+isto já é uma grande vantagem do <tt class="docutils literal"><span class="pre">Jython</span></tt>. Em suma, utilizado-se
+o <tt class="docutils literal"><span class="pre">Jython</span></tt> ao invés do <tt class="docutils literal"><span class="pre">Java</span></tt>, ganha-se em produtividade duas
+vezes: Uma, ao escrever menos linhas de código e outra, ao não ter
+que recompilar o programa a cada vez que se introduz uma pequena
+modificação.</p>
+<p>Para não deixar os leitores curiosos acerca da finalidade do código
+apresentado na listagem lst:Swingjython, seu resultado encontra-se
+na figura fig:Swing-jython.</p>
+<div class="section" id="criando-applets-em-jython">
+<h2>Criando &#8220;Applets&#8221; em Jython<a class="headerlink" href="#criando-applets-em-jython" title="Link permanente para este título">¶</a></h2>
+<p>Para os conhecedores de <tt class="docutils literal"><span class="pre">Java</span></tt>, o <tt class="docutils literal"><span class="pre">Jython</span></tt> pode ser utilizado
+para criar &#8220;servlets&#8221;, &#8220;beans&#8221; e &#8220;applets&#8221; com a mesma facilidade
+que criamos um aplicativo em <tt class="docutils literal"><span class="pre">Jython</span></tt>. Vamos ver um exemplo de
+&#8220;applet&#8221;(listagem lst:applet-jython).</p>
+<blockquote>
+<div>import java.applet.Applet; class appletp ( java.applet.Applet ):
+def paint ( self, g ): g.drawString ( &#8220;Eu sou um Applet Jython!&#8221;,
+5, 5 )</div></blockquote>
+<p>Para quem não conhece <tt class="docutils literal"><span class="pre">Java</span></tt>, um applet é um mini-aplicativo
+feito para ser executado dentro de um Navegador (Mozilla, Opera
+etc.) que disponha de um &#8220;plug-in&#8221; para executar código em
+<tt class="docutils literal"><span class="pre">Java</span></tt>. Portanto, desta vez, precisaremos compilar o código da
+listagem lst:applet-jython para que a máquina virtual <tt class="docutils literal"><span class="pre">Java</span></tt>
+possa executá-lo. Para isso, salvamos o código e utilizamos o
+compilador do <tt class="docutils literal"><span class="pre">Jython</span></tt>, o <tt class="docutils literal"><span class="pre">jythonc</span></tt>.</p>
+<blockquote>
+<div><p>jythonc -deep -core -j appletp.jar appletp.py processing appletp</p>
+<p>Required packages: java.applet</p>
+<p>Creating adapters:</p>
+<p>Creating .java files: appletp module appletp extends
+java.applet.Applet</p>
+<p>Compiling .java to .class... Compiling with args:
+[&#8216;/opt/blackdown-jdk-1.4.2.01/bin/javac&#8217;, &#8216;-classpath&#8217;,
+&#8216;/usr/share/jython/lib/jython-2.1.jar:/usr/share/libreadline-java/lib/libreadline-java.jar:.:./jpywork::/usr/share/jython/tools/jythonc:/home/fccoelho/Documents/LivroPython/.:/usr/share/jython/Lib&#8217;,
+&#8216;./jpywork/appletp.java&#8217;] 0 Note: ./jpywork/appletp.java uses or
+overrides a deprecated API. Note: Recompile with -deprecation for
+details.</p>
+<p>Building archive: appletp.jar Tracking java dependencies:</p>
+</div></blockquote>
+<p>Uma vez compilado nosso applet, precisamos &#8220;embuti-lo&#8221; em um
+documento HTML (listagem lst:htmlapp. Então, basta apontar nosso
+navegador para este documento e veremos o applet ser executado.</p>
+<blockquote>
+<div>html head meta content=&#8221;text/html; charset=ISO-8859-1&#8221;
+http-equiv=&#8221;content-type&#8221; titlejython applet/title /head body Este
+eacute; o seu applet em Jython:br br br center applet
+code=&#8221;appletp&#8221; archive=&#8221;appletp.jar&#8221; name=&#8221;Applet em Jython&#8221;
+alt=&#8221;This browser doesn&#8217;t support JDK 1.1 applets.&#8221; align=&#8221;bottom&#8221;
+height=&#8221;50&#8221; width=&#8221;160&#8221; PARAM NAME=&#8221;codebase&#8221; VALUE=&#8221;.&#8221; h3Algo saiu
+errado ao carregar este applet./h3 /applet /center br br /body
+/html</div></blockquote>
+<p>Na compilação, o código em <tt class="docutils literal"><span class="pre">Jython</span></tt> é convertido completamente em
+código <tt class="docutils literal"><span class="pre">Java</span></tt> e então compilado através do compilador <tt class="docutils literal"><span class="pre">Java</span></tt>
+padrão.</p>
+</div>
+</div>
+<div class="section" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Link permanente para este título">¶</a></h1>
+<ol class="arabic simple">
+<li>Compile a listagem ex:weaveloop com o Shed-skin e veja se há ganho
+de performance. Antes de compilar, remova as linhas associadas ao
+uso do Weave.</li>
+<li>Após executar a função primes (listagem ex:pyrex), determine o
+tamanho da lista de números primos menor do que 1000. Em seguida
+modifique o código Pyrex, declarando a variável results como uma
+lista de inteiros, e eliminando a função <tt class="docutils literal"><span class="pre">append</span></tt> do laço
+<tt class="docutils literal"><span class="pre">while</span></tt>. Compare a performance desta nova versão com a da versão
+original.</li>
+</ol>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Índice Geral"
+             >índice</a></li>
+        <li class="right" >
+          <a href="jython.html" title="O interpretador Jython"
+             >próximo</a> |</li>
+        <li class="right" >
+          <a href="capferr.html" title="Editores Genéricos"
+             >anterior</a> |</li>
+        <li><a href="index.html">CCP2ndE 2 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2009-2013, Flávio Codeço Coelho.
+      Criado com <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

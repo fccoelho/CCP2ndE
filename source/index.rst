@@ -5,13 +5,27 @@
 
 Computação Científica com Python
 ================================
-Versão online
--------------
 
-Sumário:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
+
+   main
+   Cap1
+   Cap2
+   CapObj
+   Capplot
+   capferr
+   capext
+   jython
+   capmod
+   capgraph
+   capbd
+   capBayes
+   bash
+   unix
+   genindex
+
 
 
 

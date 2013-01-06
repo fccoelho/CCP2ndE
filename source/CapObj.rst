@@ -1,0 +1,168 @@
+.. _cap-obj:
+Programação Orientada a Objetos
+===============================
+
+    Introdução à programação orientada a objetos e sua implementação na linguagem Python. **Pré-requisitos:** Ter lido o capítulo :ref:`cap-fundamentos`.
+
+Programação orientada a objetos é um tema vasto na literatura computacional. Neste capítulo introduziremos os recursos presentes na linguagem Python para criar objetos e, através de exemplos, nos familiarizaremos com o paradigma da programação orientada a objetos.
+
+Historicamente, a elaboração de programas de computador passou por diversos paradigmas. Programas de computador começaram como uma simples lista de instruções a serem executadas, em sequência, pela CPU. Este paradigma de programação foi mais tarde denominado de programação não-estruturada. Sua principal característica é a presença de comandos para desviar a execução para pontos específicos do programa (goto, jump, etc.) Exemplos de linguagens não-estruturadas são Basic, Assembly e Fortran. Mais tarde surgiram as linguagens estruturadas, que permitiam a organização do programa em blocos que podiam ser executados em qualquer ordem. As Linguagens C e Pascal ganham grande popularidade, e linguagens até então não estruturadas (Basic, Fortran, etc.) ganham versões estruturadas. Outros exemplos de linguagens não estruturadas incluem Ada, D, Forth,PL/1, Perl, maple, Matlab, Mathematica, etc. 
+
+A estruturação de programas deu origem a diversos paradigmas de programação, tais como a programação funcional, na qual a computação é vista como a avaliação sequencial de funções matemáticas, e cujos principais exemplos atuais são as linguagens Lisp e Haskell.
+
+A programação estruturada atingiu seu pico em versatilidade e popularidade com o paradigma da programação orientada a objetos. Na programação orientada a objetos, o programa é dividido em unidades (objetos) contendo dados (estado) e funcionalidade (métodos) própria. Objetos são capazes de receber mensagens, processar dados (de acordo com seus métodos) e enviar mensagens a outros objetos. Cada objeto pode ser visto como uma máquina independente ou um ator que desempenha um papel específico. {objetos} {Objetos} Um tema frequente em computação científica, é a simulação de sistemas naturais de vários tipos, físicos, químicos, biológicos, etc. A orientação a objetos é uma ferramenta natural na construção de simulações, pois nos permite replicar a arquitetura do sistema natural em nossos programas, representando componentes de sistemas naturais como objetos computacionais.
+
+A orientação a objeto pode ser compreendida em analogia ao conceito
+gramatical de objeto. Os componentes principais de uma frase são:
+sujeito, verbo e objeto. Na programação orientada a objeto, a ação
+está sempre associada ao objeto e não ao sujeito, como em outros
+paradigmas de programação.
+
+Um dos pontos altos da linguagem Python que facilita sua
+assimilação por cientistas com experiência prévia em outras
+linguagens de programação, é que a linguagem não impõe nenhum
+estilo de programação ao usuário. Em Python pode-se programar de
+forma não estruturada, estruturada, procedural, funcional ou
+orientada a objeto. Além de acomodar as preferências de cada
+usuário, permite acomodar as conveniências do problema a ser
+resolvido pelo programa.
+
+Neste capítulo, introduziremos as técnicas básicas de programação
+orientada a objetos em Python. Em exemplos de outros capítulos,
+outros estilos de programação aparecerão, justificados pelo tipo de
+aplicação a que se propõe.
+
+Definindo Objetos e seus Atributos em Python
+--------------------------------------------
+
+Ao se construir um modelo de um sistema natural, uma das
+características desejáveis deste modelo, é um certo grau de
+generalidade. Por exemplo, ao construir um modelo computacional de
+um automóvel, desejamos que ele (o modelo) represente uma categoria
+de automóveis e não apenas nosso automóvel particular. Ao mesmo
+tempo, queremos ser capazes de ajustar este modelo para que ele
+possa representar nosso automóvel ou o de nosso vizinho sem
+precisar re-escrever o modelo inteiramente do zero. A estes modelos
+de objetos dá-se o nome de classes.
+
+A definição de classes em Python pode ser feita de forma mais ou
+menos genérica. À partir das classes, podemos construir instâncias
+ajustadas para representar exemplares específicos de objetos
+representados pela classe.
+
+    class Objeto: pass
+
+
+{classe} Na listagem ex:classe1, temos uma definição mínima de uma
+classe de objetos. Criamos uma classe chamada Objeto, inteiramente
+em branco. Como uma classe completamente vazia não é possível em
+Python, adicionamos o comando ``pass`` que não tem qualquer
+efeito.
+
+Para criar uma classe mais útil de objetos, precisamos definir
+alguns de seus ``atributos``. Como exemplo vamos criar uma classe
+que represente pessoas.
+
+    class pessoa: idade=20 altura=170 sexo='masculino' peso=70
+
+
+{classe!atributos} Na listagem ex:classe2, definimos alguns
+atributos para a classe pessoa. Agora, podemos criar instâncias do
+objeto pessoa e estas instâncias herdarão estes atributos.
+
+    maria = pessoa() maria.peso 70 maria.sexo 'masculino' maria
+    main.pessoa instance at 0x402f196c
+
+
+Entretanto, os atributos definidos para o objeto pessoa (listagem
+ex:classe2), são atributos que não se espera que permaneçam os
+mesmos para todas as possíveis instâncias (pessoas). O mais comum é
+que os atributos específicos das instâncias sejam fornecidos no
+momento da sua criação. Para isso, podemos definir quais as
+informações necessárias para criar uma instância do objeto pessoa.
+
+    class pessoa: ... def init(self,idade,altura,sexo,peso): ...
+    self.idade=idade ... self.altura=altura ... self.sexo=sexo ...
+    self.peso=70 maria = pessoa() Traceback (most recent call last):
+    File "stdin", line 1, in ? TypeError: init() takes exactly 5
+    arguments (1 given) maria=pessoa(35,155,'feminino',50) maria.sexo
+    'feminino'
+
+
+A função {\\\_\\\_init\\\_\\\_} que definimos na nova versão da
+classe pessoa (listagem ex:classe4), é uma função padrão de
+classes, que é executada automaticamente, sempre que uma nova
+instância é criada. Assim, se não passarmos as informações
+requeridas como argumentos pela função {\\\_\\\_init\\\_\\\_}
+(listagem ex:classe4, linha 7), recebemos uma mensagem de erro. Na
+linha 11 da listagem ex:classe4 vemos como instanciar a nova versão
+da classe pessoa. {Adicionando Funcionalidade a Objetos}
+Continuando com a analogia com objetos reais, os objetos
+computacionais também podem possuir funcionalidades, além de
+atributos. Estas funcionalidades são denominadas ``métodos`` de
+objeto. {classe!métodos} Métodos são definidos como funções
+pertencentes ao objeto. A função {\\\_\\\_init\\\_\\\_} que vimos
+há pouco é um método presente em todos os objetos, ainda que não
+seja definida pelo programador. Métodos são sempre definidos com,
+pelo menos, um argumento: ``self``, que pode ser omitido ao se
+invocar o método em uma instância do objeto (veja linha 11 da
+listagem ex:classe4). O argumento ``self`` também deve ser o
+primeiro argumento a ser declarado na lista de argumentos de um
+método.
+
+Herança
+-------
+
+{Herança} Para simplificar a definição de classes complexas,
+classes podem herdar atributos e métodos de outras classes. Por
+exemplo, uma classe Felino, poderia herdar de uma classe mamífero,
+que por sua vez herdaria de outra classe, vertebrados. Esta cadeia
+de herança pode ser extendida, conforme necessário (Listagem
+ex:her).
+
+    class Vertebrado: vertebra = True class Mamifero(Vertebrado): mamas
+    = True class Carnivoro(Mamifero): longoscaninos = True bicho =
+    Carnivoro() dir(bicho) ['doc', 'module', 'longoscaninos', 'mamas',
+    'vertebra'] issubclass(Carnivoro,Vertebrado) True bicho.class class
+    main.Carnivoro at 0xb7a1d17c isinstance(bicho,Mamifero) True
+
+
+Na listagem ex:her, vemos um exemplo de criação de um objeto,
+instância da classe Carnivoro, herdando os atributos dos ancestrais
+desta. Vemos também que é possivel testar a pertinência de um
+objeto a uma dada classe, através da função ``isinstance``. A
+função ``issubclass``, de forma análoga, nos permite verificar as
+relações parentais de duas classes.
+
+Utilizando Classes como Estruturas de Dados Genéricas.
+------------------------------------------------------
+
+Devido à natureza dinâmica do Python, podemos utilizar uma classe
+como um compartimento para quaisquer tipos de dados. Tal construto
+seria equivalente ao tipo ``struct`` da linguagem ``C``. Para
+exemplificar, vamos definir uma classe vazia:
+
+    class Cachorro: pass rex=Cachorro() rex.dono = 'Pedro' rex.raca =
+    'Pastor' rex.peso=25 rex.dono 'Pedro' laika = Cachorro() laika.dono
+    AttributeError: Cachorro instance has no attribute 'dono'
+
+
+No exemplo ex:classbag, a classe ``Cachorro`` é criada vazia, mas
+ainda assim, atributos podem ser atribuidos a suas instâncias, sem
+alterar a estrutura da classe. {Exercícios}
+
+
+#.
+   Utilizando os conceitos de herança e os exemplos de classes
+   apresentados, construa uma classe ``Cachorro`` que herde atributos
+   das classes ``Carnivoro`` e ``Mamífero`` e crie instâncias que
+   possuam donos, raças, etc.
+
+#.
+   No Python, o que define um objeto como "chamável" (funções, por
+   exemplo) é a presença do método {\\\_\\\_call\\\_\\\_}. Crie uma
+   classe, cujas instâncias podem ser "chamadas", por possuírem o
+   método {\\\_\\\_call\\\_\\\_}.
+
+
+
