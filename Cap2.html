@@ -69,6 +69,7 @@
 <li><a class="reference internal" href="#listas">Listas</a></li>
 <li><a class="reference internal" href="#tuplas">Tuplas</a></li>
 <li><a class="reference internal" href="#strings">Strings</a></li>
+<li><a class="reference internal" href="#dicionarios">Dicionários</a></li>
 <li><a class="reference internal" href="#conjuntos">Conjuntos</a></li>
 <li><a class="reference internal" href="#iteracao">Iteração</a></li>
 <li><a class="reference internal" href="#lidando-com-erros-excecoes">Lidando com erros: Exceções</a></li>
@@ -431,167 +432,155 @@ muito mais rápido, especialmente para grandes listas. O operador de multiplica�
 <span class="go">(&#39;especie&#39;, &#39;peso&#39;)</span>
 </pre></div>
 </div>
-<p>Os elementos de uma tupla podem ser referenciados através de
-índices, (posição) de forma idêntica a como é feito em listas.
-Tuplas também podem ser fatiadas, gerando outras tuplas.</p>
-<p>As tuplas não possuem métodos. Isto se deve ao fato de as tuplas
-serem imutáveis. Os métodos <tt class="docutils literal"><span class="pre">append</span></tt>, <tt class="docutils literal"><span class="pre">extend</span></tt>, e <tt class="docutils literal"><span class="pre">pop</span></tt>
-naturalmente não se aplicam a tuplas, uma vez que não se pode
-adicionar ou remover elementos de uma tupla. Não podemos fazer
-busca em tuplas, visto que não dispomos do método <tt class="docutils literal"><span class="pre">index</span></tt>. No
-entanto, podemos usar <tt class="docutils literal"><span class="pre">in</span></tt> para determinar se um elemento existe
-em uma tupla, como se faz em listas.</p>
-<blockquote>
-<div>tu=() tu () tu=&#8217;casa&#8217;, -Repare na vírgula ao final! tu (&#8216;casa&#8217;,)
-tu=1,2,3,4 tu (1, 2, 3, 4) var =w,x,y,z var (w,x,y,z) var = tu w 1
-x 2 y 3 z 4</div></blockquote>
-<p>Conforme exemplificado em ex-criatupla2, uma tupla vazia, é
-definida pela expressão <tt class="docutils literal"><span class="pre">()</span></tt>, já no caso de uma tupla unitária,
-isto é, com apenas um elemento, fazemos a atribuição com uma
-vírgula após o elemento, caso contrário (<tt class="docutils literal"><span class="pre">tu=('casa')</span></tt> ), o
-interpretador não poderá distinguir se os parênteses estão sendo
-utilizados como delimitadores normais ou delimitadores de tupla. O
-comando <tt class="docutils literal"><span class="pre">tu=('casa',)</span></tt> é equivalente ao apresentado na quarta
-linha da listagem ex-criatupla2, apenas mais longo.</p>
-<p>Na sétima linha da listagem ex-criatupla2, temos uma extensão do
-conceito apresentado na linha anterior: a definição de uma tupla
-sem a necessidade de parênteses. A este processo, se dá o nome de
-<em>empacotamento de sequência</em>. O empacotamento de vários elementos
-sempre gera uma tupla.</p>
-<p>As tuplas, apesar de não serem tão versáteis quanto as listas, são
-mais rápidas. Portanto, sempre que se precisar de uma sequênca de
-elementos para servir apenas de referência, sem a necessidade de
-edição, deve-se utilizar uma tupla. Tuplas também são úteis na
-formatação de strings como veremos na listagem ex-formstring.</p>
-<p>Apesar das tuplas serem imutáveis, pode-se contornar esta limitação
-fatiando e concatenando tuplas. Listas também podem ser convertidas
-em tuplas, com a função <tt class="docutils literal"><span class="pre">tuple(lista)</span></tt>, assim como tuplas podem
-ser convertidas em listas através da função <tt class="docutils literal"><span class="pre">list(tupla)</span></tt>.</p>
-<p>Uma outra aplicação interessante para tuplas, mostrada na listagem
-ex-criatupla2, é a atribuição múltipla, em que uma tupla de
-valores, é atribuída a uma lista de nomes de variáveis armazenados
-em uma tupla. Neste caso, as duas sequências devem ter, exatamente,
+<p>Os elementos de uma tupla podem ser referenciados através de índices, (posição) de forma idêntica a como é feito em listas. Tuplas também podem ser fatiadas, gerando outras tuplas.</p>
+<p>As tuplas não possuem métodos. Isto se deve ao fato de as tuplas serem imutáveis. Os métodos <tt class="docutils literal"><span class="pre">append</span></tt>, <tt class="docutils literal"><span class="pre">extend</span></tt>, e <tt class="docutils literal"><span class="pre">pop</span></tt> naturalmente não se aplicam a tuplas, uma vez que não se pode adicionar ou remover elementos de uma tupla. Não podemos fazer busca em tuplas, visto que não dispomos do método <tt class="docutils literal"><span class="pre">index</span></tt>. No entanto, podemos usar <tt class="docutils literal"><span class="pre">in</span></tt> para determinar se um elemento existe em uma tupla, como se faz em listas:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span><span class="o">=</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span>
+<span class="go">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span><span class="o">=</span><span class="s">&#39;casa&#39;</span><span class="p">,</span> <span class="c">#Repare na vírgula ao final!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span>
+<span class="go">(&#39;casa&#39;,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tu</span>
+<span class="go">(1, 2, 3, 4)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span>
+<span class="go">(w,x,y,z)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">var</span> <span class="o">=</span> <span class="n">tu</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<p>Conforme exemplificado em ex-criatupla2, uma tupla vazia, é definida pela expressão <tt class="docutils literal"><span class="pre">()</span></tt>, já no caso de uma tupla unitária, isto é, com apenas um elemento, fazemos a atribuição com uma vírgula após o elemento, caso contrário (<tt class="docutils literal"><span class="pre">tu=('casa')</span></tt> ), o interpretador não poderá distinguir se os parênteses estão sendo utilizados como delimitadores normais ou delimitadores de tupla. O comando <tt class="docutils literal"><span class="pre">tu=('casa',)</span></tt> é equivalente ao apresentado na quarta linha da listagem ex-criatupla2, apenas mais longo.</p>
+<p>Na sétima linha da listagem ex-criatupla2, temos uma extensão do conceito apresentado na linha anterior: a definição de uma tupla sem a necessidade de parênteses. A este processo, se dá o nome de <em>empacotamento de sequência</em>. O empacotamento de vários elementos sempre gera uma tupla.</p>
+<p>As tuplas, apesar de não serem tão versáteis quanto as listas, são mais rápidas. Portanto, sempre que se precisar de uma sequênca de elementos para servir apenas de referência, sem a necessidade de edição, deve-se utilizar uma tupla. Tuplas também são úteis na formatação de strings como veremos na listagem ex-formstring.</p>
+<p>Apesar das tuplas serem imutáveis, pode-se contornar esta limitação fatiando e concatenando tuplas. Listas também podem ser convertidas em tuplas, com a função <tt class="docutils literal"><span class="pre">tuple(lista)</span></tt>, assim como tuplas podem ser convertidas em listas através da função <tt class="docutils literal"><span class="pre">list(tupla)</span></tt>.</p>
+<p>Uma outra aplicação interessante para tuplas, mostrada na listagem ex-criatupla2, é a atribuição múltipla, em que uma tupla de valores, é atribuída a uma lista de nomes de variáveis armazenados em uma tupla. Neste caso, as duas sequências devem ter, exatamente,
 o mesmo número de elementos.</p>
 </div>
 <div class="section" id="strings">
 <h2>Strings<a class="headerlink" href="#strings" title="Link permanente para este título">¶</a></h2>
-<p>{strings} Strings são um terceiro tipo de sequências em Python.
-Strings são sequências de caracteres delimitados por aspas simples,
-<tt class="docutils literal"><span class="pre">'string345'</span></tt> ou duplas <tt class="docutils literal"><span class="pre">&quot;string&quot;</span></tt>. Todos os operadores
-discutidos até agora para outras sequências, tais como <tt class="docutils literal"><span class="pre">+</span></tt>,
-<tt class="docutils literal"><span class="pre">*</span></tt>, <tt class="docutils literal"><span class="pre">in</span></tt>, <tt class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></tt>, <tt class="docutils literal"><span class="pre">s[i]</span></tt> e <tt class="docutils literal"><span class="pre">s[i:j]</span></tt>, também são
-válidos para strings. Strings também podem ser definidas com três
-aspas (duplas ou simples). Esta última forma é utilizada para
-definir strings contendo quebras de linha.</p>
-<blockquote>
-<div>st=&#8216;123 de oliveira4&#8217; len(st) 16 min(st) &#8216; &#8216; max(st) &#8216;v&#8217; texto =
-&#8220;&#8221;&#8220;primeira linha segunda linha terceira linha&#8221;&#8220;&#8221; print texto
-primeira linha segunda linha terceira linha</div></blockquote>
-<p>Conforme ilustrado na listagem ex-string, uma string é uma
-sequência de quaisquer caracteres alfanuméricos, incluindos
-espaços. A função <tt class="docutils literal"><span class="pre">len()</span></tt>, retorna o comprimento da string, ou de
-uma lista ou tupla. As funções <tt class="docutils literal"><span class="pre">min()</span></tt> e <tt class="docutils literal"><span class="pre">max()</span></tt> retornam o
-valor mínimo e o máximo de uma sequência, respectivamente. Neste
-caso, como a sequência é uma string, os valores são os códigos
-ASCII de cada caracter. Estes comandos também são válidos para
-listas e tuplas.</p>
-<p>O tipo String possui 33 métodos distintos (na versão 2.2.1 do
-Python). Seria por demais enfadonho listar e descrever cada um
-destes métodos neste capítulo. Nesta seção vamos ver alguns métodos
-de strings em ação no contexto de alguns exemplos. Outros métodos
-aparecerão em outros exemplos nos demais capítulos.</p>
-<p>O uso mais comum dado a strings é a manipulação de textos que fazem
-parte da entrada ou saída de um programa. Nestes casos, é
-interessante poder montar strings, facilmente, a partir de outras
-estruturas de dados. Em Python, a inserção de valores em strings
-envolve o marcador {\%s}.</p>
-<blockquote>
-<div><p>animal=&#8217;Hamster 1&#8217; peso=98 &#8216;</p>
-<p>&#8216;Hamster 1: 98 gramas&#8217;</p>
-</div></blockquote>
-<p>{strings!formatando}</p>
-<p>Na listagem ex-formstring, temos uma expressão de sintaxe não tão
-óbvia mas de grande valor na geração de strings. O operador {\%}
-(módulo), indica que os elementos da tupla seguinte serão mapeados,
-em sequência, nas posições indicadas pelos marcadores {\%s} na
-string.</p>
-<p>Esta expressão pode parecer uma complicação desnecessária para uma
-simples concatenação de strings. Mas não é. Vejamos porquê:</p>
-<blockquote>
-<div><p>animal=&#8217;Hamster 1&#8217; peso=98 &#8216;</p>
-<p>&#8216;Hamster 1: 98 gramas&#8217; animal+&#8217;: &#8216;+peso+&#8217; gramas&#8217; Traceback (most
-recent call last): File &#8220;input&#8221;, line 1, in ? TypeError: cannot
-concatenate &#8216;str&#8217; and &#8216;int&#8217; objects</p>
-</div></blockquote>
-<p>Pelo erro apresentado na listagem ex-concstring, vemos que a
-formatação da string utilizando o operador módulo e os marcadores
-{\%s}, faz mais do que apenas concatenar strings, também converte
-a variável <strong>peso</strong> (inteiro) em uma string.
-{Dicionários}(ss:dict){dicionários} O dicionário é um tipo de dado
-muito interessante do Python: É uma estrutura que funciona como um
-banco de dados em miniatura, no sentido de que seus elementos
-consistem de pares &#8220;<strong>chave : valor</strong>&#8221;, armazenados sem ordenação.
-Isto significa que não existem índices para os elementos de um
-dicionário, a informação é acessada através das chaves.</p>
-<blockquote>
-<div>Z=&#8217;C&#8217;:12, &#8216;O&#8217;:16, &#8216;N&#8217;:12, &#8216;Na&#8217;:40 Z[&#8216;O&#8217;] 16 Z[&#8216;H&#8217;]=1 Z &#8216;Na&#8217;: 40,
-&#8216;C&#8217;: 12, &#8216;H&#8217;: 1, &#8216;O&#8217;: 16, &#8216;N&#8217;: 12 Z.keys() [&#8216;Na&#8217;, &#8216;C&#8217;, &#8216;H&#8217;, &#8216;O&#8217;,
-&#8216;N&#8217;] Z.haskey(&#8216;N&#8217;) 1</div></blockquote>
-<p>As chaves podem ser de qualquer tipo imutável: números, strings,
-tuplas (que contenham apenas tipos imutáveis). Dicionários possuem
-os métodos listados na tabela tab:metdic.</p>
-<p>Os conjuntos (chave:valor) são chamados de ítens do dicionários.
-Esta terminologia é importante pois podemos acessar, separadamente,
-chaves, valores ou ítens de um dicionário.</p>
-<p>Os valores de um dicionário podem ser de qualquer tipo, números,
-strings, listas, tuplas e até mesmo outros dicionários. Também não
-há qualquer restrição para o armazenamento de diferentes tipos de
-dados em um mesmo dicionário.</p>
-<p>Conforme exemplificado em ex-criadic, pode-se adicionar novos ítens
-a um dicionário, a qualquer momento, bastando atribuir um valor a
-uma chave. Contudo, é preciso ter cuidado. Se você tentar criar um
-ítem com uma chave que já existe, o novo ítem substituirá o
-antigo.</p>
-<p>{dicionários!métodos}</p>
-<p>Os métodos !D.iteritems()!, <tt class="docutils literal"><span class="pre">D.iterkeys()</span></tt> e <tt class="docutils literal"><span class="pre">D.itervalues()</span></tt>
-criam iteradores. Iteradores permitem iterar através dos ítens,
-chaves ou valores de um dicionário. Veja a listagem ex-iterdic:</p>
-<blockquote>
-<div>Z.items() [(&#8216;Na&#8217;, 40), (&#8216;C&#8217;, 12), (&#8216;H&#8217;, 1), (&#8216;O&#8217;, 16), (&#8216;N&#8217;, 12)]
-i=Z.iteritems() i dictionary-iterator object at 0x8985d00 i.next()
-(&#8216;Na&#8217;, 40) i.next() (&#8216;C&#8217;, 12) e assim por diante... k=Z.iterkeys()
-k.next() &#8216;Na&#8217; k.next() &#8216;C&#8217; k.next() &#8216;H&#8217; k.next() &#8216;O&#8217; k.next() &#8216;N&#8217;
-k.next() Traceback (most recent call last): File &#8220;input&#8221;, line 1,
-in ? StopIteration</div></blockquote>
-<p>O uso de iteradores é interessante quando se precisa acessar o
-conteúdo de um dicionário, elemento-a-elemento, sem repetição. Ao
-final da iteração, o iterador retorna um aviso: <tt class="docutils literal"><span class="pre">StopIteration</span></tt>.</p>
+<p>Strings são um terceiro tipo de sequências em Python. Strings são sequências de caracteres delimitados por aspas simples, <tt class="docutils literal"><span class="pre">'string345'</span></tt> ou duplas <tt class="docutils literal"><span class="pre">&quot;string&quot;</span></tt>. Todos os operadores discutidos até agora para outras sequências, tais como <tt class="docutils literal"><span class="pre">+</span></tt>, <tt class="docutils literal"><span class="pre">*</span></tt>, <tt class="docutils literal"><span class="pre">in</span></tt>, <tt class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></tt>, <tt class="docutils literal"><span class="pre">s[i]</span></tt> e <tt class="docutils literal"><span class="pre">s[i:j]</span></tt>, também são válidos para strings. Strings também podem ser definidas com três aspas (duplas ou simples). Esta última forma é utilizada para definir strings contendo quebras de linha:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">st</span><span class="o">=</span><span class="s">&#39;123 de oliveira4&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="go">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">min</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="go">&#39; &#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">max</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+<span class="go">&#39;v&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">texto</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;primeira linha</span>
+<span class="go">segunda linha</span>
+<span class="go">terceira linha&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">texto</span>
+<span class="go">primeira linha</span>
+<span class="go">segunda linha</span>
+<span class="go">terceira linha</span>
+</pre></div>
+</div>
+<p>Conforme ilustrado na listagem ex-string, uma string é uma sequência de quaisquer caracteres alfanuméricos, incluindos espaços. A função <tt class="docutils literal"><span class="pre">len()</span></tt>, retorna o comprimento da string, ou de uma lista ou tupla. As funções <tt class="docutils literal"><span class="pre">min()</span></tt> e <tt class="docutils literal"><span class="pre">max()</span></tt> retornam o valor mínimo e o máximo de uma sequência, respectivamente. Neste caso, como a sequência é uma string, os valores são os códigos ASCII de cada caracter. Estes comandos também são válidos para listas e tuplas.</p>
+<p>O tipo String possui 40 métodos distintos (na versão 2.7.3 do Python). Seria por demais enfadonho listar e descrever cada um destes métodos neste capítulo. Nesta seção vamos ver alguns métodos de strings em ação no contexto de alguns exemplos. Outros métodos aparecerão em outros exemplos nos demais capítulos.</p>
+<p>O uso mais comum dado a strings é a manipulação de textos que fazem parte da entrada ou saída de um programa. Nestes casos, é interessante poder montar strings, facilmente, a partir de outras estruturas de dados. Em Python, a inserção de valores em strings envolve o marcador <tt class="docutils literal"><span class="pre">%s</span></tt>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">animal</span><span class="o">=</span><span class="s">&#39;Hamster 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">peso</span><span class="o">=</span><span class="mi">98</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> gramas&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span><span class="n">peso</span><span class="p">)</span>
+<span class="go">&#39;Hamster 1: 98 gramas&#39;</span>
+</pre></div>
+</div>
+<p>Na listagem ex-formstring, temos uma expressão de sintaxe não tão óbvia mas de grande valor na geração de strings. O operador <tt class="docutils literal"><span class="pre">%</span></tt> (módulo), indica que os elementos da tupla seguinte serão mapeados, em sequência, nas posições indicadas pelos marcadores <tt class="docutils literal"><span class="pre">%s</span></tt> na string.</p>
+<p>Esta expressão pode parecer uma complicação desnecessária para uma simples concatenação de strings. Mas não é. Vejamos porquê:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">animal</span><span class="o">=</span><span class="s">&#39;Hamster 1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">peso</span><span class="o">=</span><span class="mi">98</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;</span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s"> gramas&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">animal</span><span class="p">,</span><span class="n">peso</span><span class="p">)</span>
+<span class="go">&#39;Hamster 1: 98 gramas&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Hamster 1: 98 gramas&#39;</span> <span class="n">animal</span><span class="o">+</span><span class="s">&#39;: &#39;</span><span class="o">+</span><span class="n">peso</span><span class="o">+</span><span class="s">&#39; gramas&#39;</span>
+<span class="x">Traceback (most recent call last): File &quot;input&quot;, line 1, in ?</span>
+<span class="x">TypeError: cannot concatenate &#39;str&#39; and &#39;int&#39; objects</span>
+</pre></div>
+</div>
+<p>Pelo erro apresentado na listagem ex-concstring, vemos que a formatação da string utilizando o operador módulo e os marcadores <tt class="docutils literal"><span class="pre">%s</span></tt>, faz mais do que apenas concatenar strings, também converte a variável <strong>peso</strong> (inteiro) em uma string.</p>
+</div>
+<div class="section" id="dicionarios">
+<h2>Dicionários<a class="headerlink" href="#dicionarios" title="Link permanente para este título">¶</a></h2>
+<p>O dicionário é um tipo de dado muito interessante do Python: É uma estrutura que funciona como um banco de dados em miniatura, no sentido de que seus elementos consistem de pares &#8220;<strong>chave : valor</strong>&#8221;, armazenados sem ordenação. Isto significa que não existem índices para os elementos de um dicionário, a informação é acessada através das chaves.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;C&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&#39;O&#39;</span><span class="p">:</span><span class="mi">16</span><span class="p">,</span> <span class="s">&#39;N&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s">&#39;Na&#39;</span><span class="p">:</span><span class="mi">40</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="p">[</span><span class="s">&#39;O&#39;</span><span class="p">]</span>
+<span class="go">16</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="p">[</span><span class="s">&#39;H&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span>
+<span class="go">{&#39;Na&#39;: 40, &#39;C&#39;: 12, &#39;H&#39;: 1, &#39;O&#39;: 16, &#39;N&#39;: 12}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;Na&#39;, &#39;C&#39;, &#39;H&#39;, &#39;O&#39;, &#39;N&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="o">.</span><span class="n">has_key</span><span class="p">(</span><span class="s">&#39;N&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s">&#39;Na&#39;</span> <span class="ow">in</span> <span class="n">Z</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>As chaves podem ser de qualquer tipo imutável: números, strings, tuplas (que contenham apenas tipos imutáveis). Dicionários possuem os métodos listados na tabela tab:metdic.</p>
+<p>Os conjuntos (chave:valor) são chamados de ítens do dicionários. Esta terminologia é importante pois podemos acessar, separadamente, chaves, valores ou ítens de um dicionário.</p>
+<p>Os valores de um dicionário podem ser de qualquer tipo, números, strings, listas, tuplas e até mesmo outros dicionários. Também não há qualquer restrição para o armazenamento de diferentes tipos de dados em um mesmo dicionário.</p>
+<p>Conforme exemplificado em ex-criadic, pode-se adicionar novos ítens a um dicionário, a qualquer momento, bastando atribuir um valor a uma chave. Contudo, é preciso ter cuidado. Se você tentar criar um ítem com uma chave que já existe, o novo ítem substituirá o antigo.</p>
+<p>Os métodos <tt class="docutils literal"><span class="pre">D.iteritems()</span></tt>, <tt class="docutils literal"><span class="pre">D.iterkeys()</span></tt> e <tt class="docutils literal"><span class="pre">D.itervalues()</span></tt> criam iteradores. Iteradores permitem iterar através dos ítens, chaves ou valores de um dicionário. Veja a listagem ex-iterdic:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Z</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+<span class="go">[(&#39;Na&#39;, 40), (&#39;C&#39;, 12), (&#39;H&#39;, 1), (&#39;O&#39;, 16), (&#39;N&#39;, 12)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">=</span><span class="n">Z</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span>
+<span class="go">dictionary-iterator object at 0x8985d00</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">(&#39;Na&#39;, 40)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">(&#39;C&#39;, 12) # e assim por diante...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">=</span><span class="n">Z</span><span class="o">.</span><span class="n">iterkeys</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;Na&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;C&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;H&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;O&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="go">&#39;N&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<span class="x">Traceback (most recent call last): File &quot;input&quot;, line 1,</span>
+<span class="x">in ? StopIteration</span>
+</pre></div>
+</div>
+<p>O uso de iteradores é interessante quando se precisa acessar o conteúdo de um dicionário, elemento-a-elemento, sem repetição. Ao final da iteração, o iterador retorna um aviso: <tt class="docutils literal"><span class="pre">StopIteration</span></tt>.</p>
 </div>
 <div class="section" id="conjuntos">
 <h2>Conjuntos<a class="headerlink" href="#conjuntos" title="Link permanente para este título">¶</a></h2>
-<p>{conjuntos} Reafirmando sua vocação científica, a partir da versão
-2.4, uma estrutura de dados para representar o conceito matemático
-de conjunto foi introduzida na linguagem Python. Um conjunto no
-Python é uma coleção de elementos sem ordenação e sem repetições. O
-objeto conjunto em Python aceita operações matemáticas de conjuntos
-tais como união, interseção, diferença e diferença simétrica
-(exemplo ex-conjuntos).</p>
-<blockquote>
-<div>a = set(&#8216;pirapora&#8217;) b = set(&#8216;paranapanema&#8217;) a letras em a set([&#8216;i&#8217;,
-&#8216;p&#8217;, &#8216;r&#8217;, &#8216;a&#8217;, &#8216;o&#8217;]) a - b Letras em a mas não em b set([&#8216;i&#8217;, &#8216;o&#8217;])
-a b letras em a ou b set([&#8216;a&#8217;, &#8216;e&#8217;, &#8216;i&#8217;, &#8216;m&#8217;, &#8216;o&#8217;, &#8216;n&#8217;, &#8216;p&#8217;, &#8216;r&#8217;])
-a b letras em a e b set([&#8216;a&#8217;, &#8216;p&#8217;, &#8216;r&#8217;]) a b letras em a ou b mas
-não em ambos set([&#8216;i&#8217;, &#8216;m&#8217;, &#8216;e&#8217;, &#8216;o&#8217;, &#8216;n&#8217;])</div></blockquote>
-<p>No exemplo ex-conjuntos pode-se observar as seguintes
-correspondências entre a notação do Python e a notação matemática
-convencional:</p>
+<p>Reafirmando sua vocação científica, a partir da versão 2.4, uma estrutura de dados para representar o conceito matemático de conjunto foi introduzida na linguagem Python. Um conjunto no Python é uma coleção de elementos sem ordenação e sem repetições. O objeto conjunto em Python aceita operações matemáticas de conjuntos tais como união, interseção, diferença e diferença simétrica (exemplo ex-conjuntos).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s">&#39;pirapora&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s">&#39;paranapanema&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="c">#letras em a</span>
+<span class="go">set([&#39;i&#39;, &#39;p&#39;, &#39;r&#39;, &#39;a&#39;, &#39;o&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="c"># Letras em a mas não em b</span>
+<span class="go">set([&#39;i&#39;, &#39;o&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="c">#letras em a ou b</span>
+<span class="go">set([&#39;a&#39;, &#39;e&#39;, &#39;i&#39;, &#39;m&#39;, &#39;o&#39;, &#39;n&#39;, &#39;p&#39;, &#39;r&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span> <span class="c">#letras em a e b</span>
+<span class="go">set([&#39;a&#39;, &#39;p&#39;, &#39;r&#39;])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">^</span> <span class="n">b</span> <span class="c">#letras em a ou b mas não em ambos</span>
+<span class="go">set([&#39;i&#39;, &#39;m&#39;, &#39;e&#39;, &#39;o&#39;, &#39;n&#39;])</span>
+</pre></div>
+</div>
+<p>No exemplo ex-conjuntos pode-se observar as seguintes correspondências entre a notação do Python e a notação matemática convencional:</p>
 <dl class="docutils">
 <dt>a - b:</dt>
-<dd><p class="first"><span class="math">$A-B$</span> <a class="footnote-reference" href="#id127" id="id9">[7]</a></p>
-<p>[a <span class="math">$\mid$</span> b:] <span class="math">$A\cup B$</span></p>
-<p>[a &amp; b:] <span class="math">$A\cap B$</span></p>
-<p class="last">[a <span class="math">$\hat{ }$</span> b:] <span class="math">$(A\cup B)-(A\cap B)$</span></p>
-</dd>
+<dd><span class="math">$A-B$</span> <a class="footnote-reference" href="#id127" id="id9">[7]</a></dd>
+<dt>a <span class="math">$\mid$</span> b:</dt>
+<dd><span class="math">$A\cup B$</span></dd>
+<dt>a &amp; b:</dt>
+<dd><span class="math">$A\cap B$</span></dd>
+<dt>a <span class="math">$\hat{ }$</span> b:</dt>
+<dd><span class="math">$(A\cup B)-(A\cap B)$</span></dd>
 </dl>
 <p>Em condições normais o interpretador executa as linhas de um
 programa uma a uma. As exceções a este caso são linhas pertencentes
