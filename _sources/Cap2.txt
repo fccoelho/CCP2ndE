@@ -390,201 +390,193 @@ Uma tupla, é uma lista imutável, ou seja, ao contrário de uma lista, após a 
     ('especie', 'peso')
 
 
-Os elementos de uma tupla podem ser referenciados através de
-índices, (posição) de forma idêntica a como é feito em listas.
-Tuplas também podem ser fatiadas, gerando outras tuplas.
+Os elementos de uma tupla podem ser referenciados através de índices, (posição) de forma idêntica a como é feito em listas. Tuplas também podem ser fatiadas, gerando outras tuplas.
 
-As tuplas não possuem métodos. Isto se deve ao fato de as tuplas
-serem imutáveis. Os métodos ``append``, ``extend``, e ``pop``
-naturalmente não se aplicam a tuplas, uma vez que não se pode
-adicionar ou remover elementos de uma tupla. Não podemos fazer
-busca em tuplas, visto que não dispomos do método ``index``. No
-entanto, podemos usar ``in`` para determinar se um elemento existe
-em uma tupla, como se faz em listas.
+As tuplas não possuem métodos. Isto se deve ao fato de as tuplas serem imutáveis. Os métodos ``append``, ``extend``, e ``pop`` naturalmente não se aplicam a tuplas, uma vez que não se pode adicionar ou remover elementos de uma tupla. Não podemos fazer busca em tuplas, visto que não dispomos do método ``index``. No entanto, podemos usar ``in`` para determinar se um elemento existe em uma tupla, como se faz em listas::
 
-    tu=() tu () tu='casa', -Repare na vírgula ao final! tu ('casa',)
-    tu=1,2,3,4 tu (1, 2, 3, 4) var =w,x,y,z var (w,x,y,z) var = tu w 1
-    x 2 y 3 z 4
+    >>> tu=()
+    >>> tu
+    ()
+    >>> tu='casa', #Repare na vírgula ao final!
+    >>> tu
+    ('casa',)
+    >>> tu=1,2,3,4
+    >>> tu
+    (1, 2, 3, 4)
+    >>> var = w,x,y,z
+    >>> var
+    (w,x,y,z)
+    >>> var = tu
+    >>> w
+    1
+    >>> x
+    2
+    >>> y
+    3
+    >>> z
+    4
 
 
-Conforme exemplificado em ex-criatupla2, uma tupla vazia, é
-definida pela expressão ``()``, já no caso de uma tupla unitária,
-isto é, com apenas um elemento, fazemos a atribuição com uma
-vírgula após o elemento, caso contrário (``tu=('casa')`` ), o
-interpretador não poderá distinguir se os parênteses estão sendo
-utilizados como delimitadores normais ou delimitadores de tupla. O
-comando ``tu=('casa',)`` é equivalente ao apresentado na quarta
-linha da listagem ex-criatupla2, apenas mais longo.
+Conforme exemplificado em ex-criatupla2, uma tupla vazia, é definida pela expressão ``()``, já no caso de uma tupla unitária, isto é, com apenas um elemento, fazemos a atribuição com uma vírgula após o elemento, caso contrário (``tu=('casa')`` ), o interpretador não poderá distinguir se os parênteses estão sendo utilizados como delimitadores normais ou delimitadores de tupla. O comando ``tu=('casa',)`` é equivalente ao apresentado na quarta linha da listagem ex-criatupla2, apenas mais longo.
 
-Na sétima linha da listagem ex-criatupla2, temos uma extensão do
-conceito apresentado na linha anterior: a definição de uma tupla
-sem a necessidade de parênteses. A este processo, se dá o nome de
-*empacotamento de sequência*. O empacotamento de vários elementos
-sempre gera uma tupla.
+Na sétima linha da listagem ex-criatupla2, temos uma extensão do conceito apresentado na linha anterior: a definição de uma tupla sem a necessidade de parênteses. A este processo, se dá o nome de *empacotamento de sequência*. O empacotamento de vários elementos sempre gera uma tupla.
 
-As tuplas, apesar de não serem tão versáteis quanto as listas, são
-mais rápidas. Portanto, sempre que se precisar de uma sequênca de
-elementos para servir apenas de referência, sem a necessidade de
-edição, deve-se utilizar uma tupla. Tuplas também são úteis na
-formatação de strings como veremos na listagem ex-formstring.
+As tuplas, apesar de não serem tão versáteis quanto as listas, são mais rápidas. Portanto, sempre que se precisar de uma sequênca de elementos para servir apenas de referência, sem a necessidade de edição, deve-se utilizar uma tupla. Tuplas também são úteis na formatação de strings como veremos na listagem ex-formstring.
 
-Apesar das tuplas serem imutáveis, pode-se contornar esta limitação
-fatiando e concatenando tuplas. Listas também podem ser convertidas
-em tuplas, com a função ``tuple(lista)``, assim como tuplas podem
-ser convertidas em listas através da função ``list(tupla)``.
+Apesar das tuplas serem imutáveis, pode-se contornar esta limitação fatiando e concatenando tuplas. Listas também podem ser convertidas em tuplas, com a função ``tuple(lista)``, assim como tuplas podem ser convertidas em listas através da função ``list(tupla)``.
 
-Uma outra aplicação interessante para tuplas, mostrada na listagem
-ex-criatupla2, é a atribuição múltipla, em que uma tupla de
-valores, é atribuída a uma lista de nomes de variáveis armazenados
-em uma tupla. Neste caso, as duas sequências devem ter, exatamente,
+Uma outra aplicação interessante para tuplas, mostrada na listagem ex-criatupla2, é a atribuição múltipla, em que uma tupla de valores, é atribuída a uma lista de nomes de variáveis armazenados em uma tupla. Neste caso, as duas sequências devem ter, exatamente,
 o mesmo número de elementos.
 
 Strings
 -------
 
-{strings} Strings são um terceiro tipo de sequências em Python.
-Strings são sequências de caracteres delimitados por aspas simples,
-``'string345'`` ou duplas ``"string"``. Todos os operadores
-discutidos até agora para outras sequências, tais como ``+``,
-``*``, ``in``, ``not in``, ``s[i]`` e ``s[i:j]``, também são
-válidos para strings. Strings também podem ser definidas com três
-aspas (duplas ou simples). Esta última forma é utilizada para
-definir strings contendo quebras de linha.
+.. index: strings
 
-    st='123 de oliveira4' len(st) 16 min(st) ' ' max(st) 'v' texto =
-    """primeira linha segunda linha terceira linha""" print texto
-    primeira linha segunda linha terceira linha
+Strings são um terceiro tipo de sequências em Python. Strings são sequências de caracteres delimitados por aspas simples, ``'string345'`` ou duplas ``"string"``. Todos os operadores discutidos até agora para outras sequências, tais como ``+``, ``*``, ``in``, ``not in``, ``s[i]`` e ``s[i:j]``, também são válidos para strings. Strings também podem ser definidas com três aspas (duplas ou simples). Esta última forma é utilizada para definir strings contendo quebras de linha::
+
+    >>> st='123 de oliveira4'
+    >>> len(st)
+    16
+    >>> min(st)
+    ' '
+    >>> max(st)
+    'v'
+    >>> texto = """primeira linha
+    segunda linha
+    terceira linha"""
+    >>> print texto
+    primeira linha
+    segunda linha
+    terceira linha
 
 
-Conforme ilustrado na listagem ex-string, uma string é uma
-sequência de quaisquer caracteres alfanuméricos, incluindos
-espaços. A função ``len()``, retorna o comprimento da string, ou de
-uma lista ou tupla. As funções ``min()`` e ``max()`` retornam o
-valor mínimo e o máximo de uma sequência, respectivamente. Neste
-caso, como a sequência é uma string, os valores são os códigos
-ASCII de cada caracter. Estes comandos também são válidos para
-listas e tuplas.
+Conforme ilustrado na listagem ex-string, uma string é uma sequência de quaisquer caracteres alfanuméricos, incluindos espaços. A função ``len()``, retorna o comprimento da string, ou de uma lista ou tupla. As funções ``min()`` e ``max()`` retornam o valor mínimo e o máximo de uma sequência, respectivamente. Neste caso, como a sequência é uma string, os valores são os códigos ASCII de cada caracter. Estes comandos também são válidos para listas e tuplas.
 
-O tipo String possui 33 métodos distintos (na versão 2.2.1 do
-Python). Seria por demais enfadonho listar e descrever cada um
-destes métodos neste capítulo. Nesta seção vamos ver alguns métodos
-de strings em ação no contexto de alguns exemplos. Outros métodos
-aparecerão em outros exemplos nos demais capítulos.
+O tipo String possui 40 métodos distintos (na versão 2.7.3 do Python). Seria por demais enfadonho listar e descrever cada um destes métodos neste capítulo. Nesta seção vamos ver alguns métodos de strings em ação no contexto de alguns exemplos. Outros métodos aparecerão em outros exemplos nos demais capítulos.
 
-O uso mais comum dado a strings é a manipulação de textos que fazem
-parte da entrada ou saída de um programa. Nestes casos, é
-interessante poder montar strings, facilmente, a partir de outras
-estruturas de dados. Em Python, a inserção de valores em strings
-envolve o marcador {\\%s}.
-
-    animal='Hamster 1' peso=98 '
-
+O uso mais comum dado a strings é a manipulação de textos que fazem parte da entrada ou saída de um programa. Nestes casos, é interessante poder montar strings, facilmente, a partir de outras estruturas de dados. Em Python, a inserção de valores em strings envolve o marcador ``%s``.
+::
+    >>> animal='Hamster 1'
+    >>> peso=98
+    >>> '%s: %s gramas'%(animal,peso)
     'Hamster 1: 98 gramas'
 
 
-{strings!formatando}
+.. index: strings; formatando
 
-Na listagem ex-formstring, temos uma expressão de sintaxe não tão
-óbvia mas de grande valor na geração de strings. O operador {\\%}
-(módulo), indica que os elementos da tupla seguinte serão mapeados,
-em sequência, nas posições indicadas pelos marcadores {\\%s} na
-string.
+Na listagem ex-formstring, temos uma expressão de sintaxe não tão óbvia mas de grande valor na geração de strings. O operador ``%`` (módulo), indica que os elementos da tupla seguinte serão mapeados, em sequência, nas posições indicadas pelos marcadores ``%s`` na string.
 
-Esta expressão pode parecer uma complicação desnecessária para uma
-simples concatenação de strings. Mas não é. Vejamos porquê:
+Esta expressão pode parecer uma complicação desnecessária para uma simples concatenação de strings. Mas não é. Vejamos porquê:
 
-    animal='Hamster 1' peso=98 '
-
-    'Hamster 1: 98 gramas' animal+': '+peso+' gramas' Traceback (most
-    recent call last): File "input", line 1, in ? TypeError: cannot
-    concatenate 'str' and 'int' objects
+    >>> animal='Hamster 1'
+    >>> peso=98
+    >>> '%s: %s gramas'%(animal,peso)
+    'Hamster 1: 98 gramas'
+    >>> 'Hamster 1: 98 gramas' animal+': '+peso+' gramas'
+    Traceback (most recent call last): File "input", line 1, in ?
+    TypeError: cannot concatenate 'str' and 'int' objects
 
 
-Pelo erro apresentado na listagem ex-concstring, vemos que a
-formatação da string utilizando o operador módulo e os marcadores
-{\\%s}, faz mais do que apenas concatenar strings, também converte
-a variável **peso** (inteiro) em uma string.
-{Dicionários}(ss:dict){dicionários} O dicionário é um tipo de dado
-muito interessante do Python: É uma estrutura que funciona como um
-banco de dados em miniatura, no sentido de que seus elementos
-consistem de pares "**chave : valor**", armazenados sem ordenação.
-Isto significa que não existem índices para os elementos de um
-dicionário, a informação é acessada através das chaves.
+Pelo erro apresentado na listagem ex-concstring, vemos que a formatação da string utilizando o operador módulo e os marcadores ``%s``, faz mais do que apenas concatenar strings, também converte a variável **peso** (inteiro) em uma string.
 
-    Z='C':12, 'O':16, 'N':12, 'Na':40 Z['O'] 16 Z['H']=1 Z 'Na': 40,
-    'C': 12, 'H': 1, 'O': 16, 'N': 12 Z.keys() ['Na', 'C', 'H', 'O',
-    'N'] Z.haskey('N') 1
+Dicionários
+-----------
+
+.. index:
+   pair: dict, dicionários
+
+O dicionário é um tipo de dado muito interessante do Python: É uma estrutura que funciona como um banco de dados em miniatura, no sentido de que seus elementos consistem de pares "**chave : valor**", armazenados sem ordenação. Isto significa que não existem índices para os elementos de um dicionário, a informação é acessada através das chaves.
+::
+    >>> Z={'C':12, 'O':16, 'N':12, 'Na':40}
+    >>> Z['O']
+    16
+    >>> Z['H']=1
+    >>> Z
+    {'Na': 40, 'C': 12, 'H': 1, 'O': 16, 'N': 12}
+    >>> Z.keys()
+    ['Na', 'C', 'H', 'O', 'N']
+    >>> Z.has_key('N')
+    True
+    >>> 'Na' in Z
+    True
 
 
-As chaves podem ser de qualquer tipo imutável: números, strings,
-tuplas (que contenham apenas tipos imutáveis). Dicionários possuem
-os métodos listados na tabela tab:metdic.
+As chaves podem ser de qualquer tipo imutável: números, strings, tuplas (que contenham apenas tipos imutáveis). Dicionários possuem os métodos listados na tabela tab:metdic.
 
-Os conjuntos (chave:valor) são chamados de ítens do dicionários.
-Esta terminologia é importante pois podemos acessar, separadamente,
-chaves, valores ou ítens de um dicionário.
+Os conjuntos (chave:valor) são chamados de ítens do dicionários. Esta terminologia é importante pois podemos acessar, separadamente, chaves, valores ou ítens de um dicionário.
 
-Os valores de um dicionário podem ser de qualquer tipo, números,
-strings, listas, tuplas e até mesmo outros dicionários. Também não
-há qualquer restrição para o armazenamento de diferentes tipos de
-dados em um mesmo dicionário.
+Os valores de um dicionário podem ser de qualquer tipo, números, strings, listas, tuplas e até mesmo outros dicionários. Também não há qualquer restrição para o armazenamento de diferentes tipos de dados em um mesmo dicionário.
 
-Conforme exemplificado em ex-criadic, pode-se adicionar novos ítens
-a um dicionário, a qualquer momento, bastando atribuir um valor a
-uma chave. Contudo, é preciso ter cuidado. Se você tentar criar um
-ítem com uma chave que já existe, o novo ítem substituirá o
-antigo.
+Conforme exemplificado em ex-criadic, pode-se adicionar novos ítens a um dicionário, a qualquer momento, bastando atribuir um valor a uma chave. Contudo, é preciso ter cuidado. Se você tentar criar um ítem com uma chave que já existe, o novo ítem substituirá o antigo.
 
 
 
-{dicionários!métodos}
+.. index: dicionários; métodos
 
-Os métodos !D.iteritems()!, ``D.iterkeys()`` e ``D.itervalues()``
-criam iteradores. Iteradores permitem iterar através dos ítens,
-chaves ou valores de um dicionário. Veja a listagem ex-iterdic:
+Os métodos ``D.iteritems()``, ``D.iterkeys()`` e ``D.itervalues()`` criam iteradores. Iteradores permitem iterar através dos ítens, chaves ou valores de um dicionário. Veja a listagem ex-iterdic:
 
-    Z.items() [('Na', 40), ('C', 12), ('H', 1), ('O', 16), ('N', 12)]
-    i=Z.iteritems() i dictionary-iterator object at 0x8985d00 i.next()
-    ('Na', 40) i.next() ('C', 12) e assim por diante... k=Z.iterkeys()
-    k.next() 'Na' k.next() 'C' k.next() 'H' k.next() 'O' k.next() 'N'
-    k.next() Traceback (most recent call last): File "input", line 1,
+    >>> Z.items()
+    [('Na', 40), ('C', 12), ('H', 1), ('O', 16), ('N', 12)]
+    >>> i=Z.iteritems()
+    >>> i
+    dictionary-iterator object at 0x8985d00
+    >>> i.next()
+    ('Na', 40)
+    >>> i.next()
+    ('C', 12) # e assim por diante...
+    >>> k=Z.iterkeys()
+    >>> k.next()
+    'Na'
+    >>> k.next()
+    'C'
+    >>> k.next()
+    'H'
+    >>> k.next()
+    'O'
+    >>> k.next()
+    'N'
+    >>> k.next()
+    Traceback (most recent call last): File "input", line 1,
     in ? StopIteration
 
 
-O uso de iteradores é interessante quando se precisa acessar o
-conteúdo de um dicionário, elemento-a-elemento, sem repetição. Ao
-final da iteração, o iterador retorna um aviso: ``StopIteration``.
+O uso de iteradores é interessante quando se precisa acessar o conteúdo de um dicionário, elemento-a-elemento, sem repetição. Ao final da iteração, o iterador retorna um aviso: ``StopIteration``.
 
 Conjuntos
 ---------
 
-{conjuntos} Reafirmando sua vocação científica, a partir da versão
-2.4, uma estrutura de dados para representar o conceito matemático
-de conjunto foi introduzida na linguagem Python. Um conjunto no
-Python é uma coleção de elementos sem ordenação e sem repetições. O
-objeto conjunto em Python aceita operações matemáticas de conjuntos
-tais como união, interseção, diferença e diferença simétrica
-(exemplo ex-conjuntos).
+.. index: conjuntos
 
-    a = set('pirapora') b = set('paranapanema') a letras em a set(['i',
-    'p', 'r', 'a', 'o']) a - b Letras em a mas não em b set(['i', 'o'])
-    a b letras em a ou b set(['a', 'e', 'i', 'm', 'o', 'n', 'p', 'r'])
-    a b letras em a e b set(['a', 'p', 'r']) a b letras em a ou b mas
-    não em ambos set(['i', 'm', 'e', 'o', 'n'])
+Reafirmando sua vocação científica, a partir da versão 2.4, uma estrutura de dados para representar o conceito matemático de conjunto foi introduzida na linguagem Python. Um conjunto no Python é uma coleção de elementos sem ordenação e sem repetições. O objeto conjunto em Python aceita operações matemáticas de conjuntos tais como união, interseção, diferença e diferença simétrica (exemplo ex-conjuntos).
+::
+    >>> a = set('pirapora')
+    >>> b = set('paranapanema')
+    >>> a #letras em a
+    set(['i', 'p', 'r', 'a', 'o'])
+    >>> a - b # Letras em a mas não em b
+    set(['i', 'o'])
+    >>> a | b #letras em a ou b
+    set(['a', 'e', 'i', 'm', 'o', 'n', 'p', 'r'])
+    >>> a & b #letras em a e b
+    set(['a', 'p', 'r'])
+    >>> a ^ b #letras em a ou b mas não em ambos
+    set(['i', 'm', 'e', 'o', 'n'])
 
 
-No exemplo ex-conjuntos pode-se observar as seguintes
-correspondências entre a notação do Python e a notação matemática
-convencional:
+No exemplo ex-conjuntos pode-se observar as seguintes correspondências entre a notação do Python e a notação matemática convencional:
 
 a - b:
     :math:`$A-B$` [7]_
 
-    [a :math:`$\mid$` b:] :math:`$A\cup B$`
+a :math:`$\mid$` b:
+    :math:`$A\cup B$`
 
-    [a & b:] :math:`$A\cap B$`
+a & b:
+    :math:`$A\cap B$`
 
-    [a :math:`$\hat{ }$` b:] :math:`$(A\cup B)-(A\cap B)$`
+a :math:`$\hat{ }$` b:
+    :math:`$(A\cup B)-(A\cap B)$`
 
 
 Controle de fluxo

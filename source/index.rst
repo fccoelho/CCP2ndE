@@ -24,7 +24,6 @@ Computação Científica com Python
    capBayes
    bash
    unix
-   genindex
 
 
 
