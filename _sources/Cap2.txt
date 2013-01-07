@@ -567,16 +567,16 @@ Reafirmando sua vocação científica, a partir da versão 2.4, uma estrutura de
 No exemplo ex-conjuntos pode-se observar as seguintes correspondências entre a notação do Python e a notação matemática convencional:
 
 a - b:
-    :math:`$A-B$` [7]_
+    :math:`A-B` [7]_
 
-a :math:`$\mid$` b:
-    :math:`$A\cup B$`
+a :math:`\mid` b:
+    :math:`A\cup B`
 
 a & b:
-    :math:`$A\cap B$`
+    :math:`A\cap B`
 
-a :math:`$\hat{ }$` b:
-    :math:`$(A\cup B)-(A\cap B)$`
+a :math:`\hat{ }` b:
+    :math:`(A\cup B)-(A\cap B)`
 
 
 Controle de fluxo
